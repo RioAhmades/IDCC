@@ -4,44 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Catat, catatan keuangan harian. Rekam pengeluaran harian, lihat pola belanja per minggu, tanpa akun dan tanpa iklan.">
-<title>Catat, catatan keuangan harian</title>
+<meta name="description" content="Catat, pencatat keuangan harian. Jelajahi fiturnya, lalu masuk dengan akun demo.">
+<title>Catat, pencatat keuangan harian</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a class="skip-link" href="#catat">Langsung ke formulir</a>
+<a class="skip-link" href="#main">Langsung ke konten</a>
 
-    <!-- Ikon digambar sendiri sebagai bentuk geometris, bukan dari pustaka ikon, supaya set-nya terasa milik produk ini. -->
 <svg width="0" height="0" aria-hidden="true" focusable="false" class="svg-defs">
   <defs>
-    <symbol id="i-makanan" viewBox="0 0 20 20">
-      <path d="M3 9h14a7 7 0 0 1-14 0Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M2 17.5h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-transport" viewBox="0 0 20 20">
-      <path d="M3.5 12.5 5 6.5h10l1.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M3.5 12.5h13v3h-13zM6.5 15.5v1.5M13.5 15.5v1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-belanja" viewBox="0 0 20 20">
-      <path d="M4.5 6.5h11l-1 11h-9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M8 6.5a2 2 0 0 1 4 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-lainnya" viewBox="0 0 20 20">
-      <path d="M3.5 3.5h7l6 6-7 7-6-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M7.5 7.5h.01" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-masuk" viewBox="0 0 20 20">
-      <path d="M10 3v8m0 0L6.5 7.5M10 11l3.5-3.5M4 14v2.5h12V14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-buka" viewBox="0 0 20 20">
-      <path d="M5.5 8 10 12.5 14.5 8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-simpan" viewBox="0 0 20 20">
-      <path d="M4 4h9l3 3v9H4zM7 4v4h6V4M7 16v-4h6v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-    </symbol>
     <symbol id="i-terang" viewBox="0 0 20 20">
       <circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
       <path d="M10 2.5v1.5M10 16v1.5M2.5 10H4M16 10h1.5M4.7 4.7l1.1 1.1M14.2 14.2l1.1 1.1M15.3 4.7l-1.1 1.1M5.8 14.2l-1.1 1.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -53,25 +27,20 @@
       <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
       <path d="M10 4a6 6 0 0 1 0 12Z" fill="currentColor"/>
     </symbol>
-    <symbol id="i-peringatan" viewBox="0 0 20 20">
-      <path d="M10 3.5 17.5 16.5h-15z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M10 8.5v3.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-      <path d="M10 14.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
   </defs>
 </svg>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="wordmark" href="#catat">
+    <a class="wordmark" href="index.html">
       <span class="wordmark-mark" aria-hidden="true"></span>
       <span class="wordmark-text">Catat</span>
     </a>
 
-    <nav class="topnav" aria-label="Bagian halaman">
-      <a class="topnav-link" href="#transaksi-terbaru">Transaksi</a>
-      <a class="topnav-link" href="#ringkasan-bulanan">Ringkasan</a>
-      <a class="topnav-link" href="#insight">Insight</a>
+    <nav class="topnav" aria-label="Navigasi utama">
+      <a class="topnav-link" href="#isi">Isi aplikasi</a>
+      <a class="topnav-link" href="#akun-demo">Akun demo</a>
+      <a class="topnav-link" href="login.html">Masuk</a>
     </nav>
 
     <fieldset class="appearance">
@@ -97,664 +66,87 @@
 
 <main id="main">
 
-  <section class="section section-entry" id="catat" aria-labelledby="judul-catat">
-    <div class="wrap entry-grid">
-
-      <div class="entry-form-col">
-        <p class="section-kicker">Rabu, 30 September 2026</p>
-        <h1 class="h1" id="judul-catat">Catat pengeluaran hari ini</h1>
-        <p class="lede">Isi nominal, pilih kategori, selesai. Tiga kolom, tanpa akun, tanpa iklan.</p>
-
-        <form class="entry-form" action="#transaksi-terbaru" method="get">
-
-          <fieldset class="field-group">
-            <legend class="label">Jenis</legend>
-            <div class="segmented">
-              <input class="segmented-input" type="radio" name="jenis" id="jenis-keluar" value="keluar" checked>
-              <label class="segmented-option segmented-option--out" for="jenis-keluar">Pengeluaran</label>
-              <input class="segmented-input" type="radio" name="jenis" id="jenis-masuk" value="masuk">
-              <label class="segmented-option segmented-option--in" for="jenis-masuk">Pemasukan</label>
-            </div>
-          </fieldset>
-
-          <div class="field-row">
-            <p class="field">
-              <label class="label" for="nominal">Nominal <span class="label-required" aria-hidden="true">wajib</span></label>
-              <span class="input-money">
-                <span class="input-affix" aria-hidden="true">Rp</span>
-                <input class="input input--money" type="number" id="nominal" name="nominal" min="1000" step="100" inputmode="numeric" placeholder="28.000" required aria-describedby="bantuan-nominal">
-              </span>
-              <span class="hint" id="bantuan-nominal">Tanpa titik pemisah, misalnya 28000 untuk Rp28.000.</span>
-            </p>
-
-            <p class="field">
-              <label class="label" for="kategori">Kategori <span class="label-required" aria-hidden="true">wajib</span></label>
-              <span class="select-wrap">
-                <select class="select" id="kategori" name="kategori" required>
-                  <option value="" disabled selected>Pilih kategori</option>
-                  <optgroup label="Pengeluaran">
-                    <option value="makanan">Makanan dan Minuman</option>
-                    <option value="transportasi">Transportasi</option>
-                    <option value="belanja">Belanja</option>
-                    <option value="lainnya">Lainnya</option>
-                  </optgroup>
-                  <optgroup label="Pemasukan">
-                    <option value="gaji">Gaji</option>
-                    <option value="bonus">Bonus</option>
-                    <option value="lainnya-masuk">Lainnya</option>
-                  </optgroup>
-                </select>
-                <svg class="icon select-caret" aria-hidden="true" width="16" height="16"><use href="#i-buka"/></svg>
-              </span>
-            </p>
-          </div>
-
-          <p class="field">
-            <label class="label" for="catatan">Catatan <span class="label-optional">opsional</span></label>
-            <input class="input" type="text" id="catatan" name="catatan" maxlength="60" placeholder="Makan siang di warung dekat kantor">
-          </p>
-
-          <p class="entry-preview" role="status">
-            <span class="entry-preview-label">Siap dicatat</span>
-            <span class="entry-preview-text"></span>
-          </p>
-
-          <div class="field-error" role="alert">
-            <svg class="icon" aria-hidden="true" width="18" height="18"><use href="#i-peringatan"/></svg>
-            <p class="field-error-text">Nominal dan kategori belum lengkap. Isi keduanya sebelum menyimpan.</p>
-          </div>
-
-          <button class="btn btn--primary" type="submit">
-            <svg class="icon" aria-hidden="true" width="18" height="18"><use href="#i-simpan"/></svg>
-            Simpan transaksi
-          </button>
-
-          <p class="form-note">Prototipe statis tanpa JavaScript. Tombol simpan mengecek isian lalu bawa Anda ke daftar transaksi di bawah, lengkap dengan nominal dan kategori di alamat halaman. Penyimpanan otomatis butuh JavaScript.</p>
-        </form>
-      </div>
-
-      <aside class="panel" aria-labelledby="judul-panel">
-        <p class="panel-kicker">September 2026</p>
-        <h2 class="panel-title" id="judul-panel">Sisasaldo bulan ini</h2>
-        <p class="panel-figure">Rp8.307.200</p>
-
-        <dl class="panel-rows">
-          <div class="panel-row">
-            <dt>Pemasukan</dt>
-            <dd class="num num--in">Rp9.650.000</dd>
-          </div>
-          <div class="panel-row">
-            <dt>Pengeluaran</dt>
-            <dd class="num num--out">Rp1.342.800</dd>
-          </div>
-          <div class="panel-row">
-            <dt>Rata-rata per hari</dt>
-            <dd class="num">Rp44.760</dd>
-          </div>
-        </dl>
-
-        <p class="panel-foot">Angka di halaman ini berasal dari data contoh bulan September 2026.</p>
-      </aside>
-
-    </div>
-  </section>
-
-  <section class="section section-ledger" id="transaksi-terbaru" aria-labelledby="judul-transaksi">
-    <div class="wrap">
-
-      <header class="section-head">
-        <div>
-          <h2 class="h2" id="judul-transaksi">Transaksi terbaru</h2>
-          <p class="section-meta"><span class="ledger-count" aria-live="polite"></span> sejak 2 September 2026</p>
-        </div>
-        <div class="filters" role="group" aria-label="Saring daftar transaksi">
-          <input class="filter-input" type="radio" name="saring" id="saring-semua" value="semua" checked>
-          <label class="chip" for="saring-semua">Semua</label>
-          <input class="filter-input" type="radio" name="saring" id="saring-keluar" value="keluar">
-          <label class="chip" for="saring-keluar">Pengeluaran</label>
-          <input class="filter-input" type="radio" name="saring" id="saring-masuk" value="masuk">
-          <label class="chip" for="saring-masuk">Pemasukan</label>
-        </div>
-      </header>
-
-      <div class="ledger-panel">
-
-        <ul class="ledger" role="list">
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-makanan"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Kopi susu dan roti panggang</span>
-                  <span class="row-meta">Makanan dan Minuman, 2 Sep</span>
-                </span>
-                <span class="num num--out">Rp28.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Makanan dan Minuman</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>2 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-transport"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Ojek online ke kantor</span>
-                  <span class="row-meta">Transportasi, 2 Sep</span>
-                </span>
-                <span class="num num--out">Rp18.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Transportasi</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>2 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-belanja"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Sabun dan pasta gigi</span>
-                  <span class="row-meta">Belanja, 3 Sep</span>
-                </span>
-                <span class="num num--out">Rp74.500</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Belanja</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>3 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-makanan"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Makan siang, warung dekat kantor</span>
-                  <span class="row-meta">Makanan dan Minuman, 4 Sep</span>
-                </span>
-                <span class="num num--out">Rp32.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Makanan dan Minuman</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>4 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-lainnya"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Langganan aplikasi musik</span>
-                  <span class="row-meta">Lainnya, 5 Sep</span>
-                </span>
-                <span class="num num--out">Rp54.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Lainnya</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>5 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-transport"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Bensin motor</span>
-                  <span class="row-meta">Transportasi, 7 Sep</span>
-                </span>
-                <span class="num num--out">Rp35.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Transportasi</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>7 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--in">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-masuk"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Gaji bulanan</span>
-                  <span class="row-meta">Gaji, 10 Sep</span>
-                </span>
-                <span class="num num--in">Rp8.450.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pemasukan</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Gaji</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>10 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-makanan"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Belanja bulanan di supermarket</span>
-                  <span class="row-meta">Makanan dan Minuman, 11 Sep</span>
-                </span>
-                <span class="num num--out">Rp412.300</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Makanan dan Minuman</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>11 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-transport"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">KRL dan bus</span>
-                  <span class="row-meta">Transportasi, 12 Sep</span>
-                </span>
-                <span class="num num--out">Rp22.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Transportasi</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>12 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-lainnya"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Hadiah ulang tahun teman</span>
-                  <span class="row-meta">Lainnya, 14 Sep</span>
-                </span>
-                <span class="num num--out">Rp150.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Lainnya</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>14 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-makanan"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Makan malam di restoran</span>
-                  <span class="row-meta">Makanan dan Minuman, 18 Sep</span>
-                </span>
-                <span class="num num--out">Rp186.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Makanan dan Minuman</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>18 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-belanja"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Buku dan alat tulis</span>
-                  <span class="row-meta">Belanja, 20 Sep</span>
-                </span>
-                <span class="num num--out">Rp137.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Belanja</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>20 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--in">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-masuk"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Bonus proyek</span>
-                  <span class="row-meta">Bonus, 25 Sep</span>
-                </span>
-                <span class="num num--in">Rp1.200.000</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pemasukan</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Bonus</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>25 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-transport"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Bensin dan servis motor</span>
-                  <span class="row-meta">Transportasi, 26 Sep</span>
-                </span>
-                <span class="num num--out">Rp148.500</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Transportasi</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>26 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-
-          <li class="row row--out">
-            <details class="row-disclosure">
-              <summary class="row-summary">
-                <span class="row-icon" aria-hidden="true"><svg class="icon" width="20" height="20"><use href="#i-makanan"/></svg></span>
-                <span class="row-text">
-                  <span class="row-title">Kopi dan camilan</span>
-                  <span class="row-meta">Makanan dan Minuman, 28 Sep</span>
-                </span>
-                <span class="num num--out">Rp45.500</span>
-              </summary>
-              <div class="row-body">
-                <dl class="facts">
-                  <div class="fact"><dt>Jenis</dt><dd>Pengeluaran</dd></div>
-                  <div class="fact"><dt>Kategori</dt><dd>Makanan dan Minuman</dd></div>
-                  <div class="fact"><dt>Tanggal</dt><dd>28 September 2026</dd></div>
-                </dl>
-              </div>
-            </details>
-          </li>
-        </ul>
-
-        <div class="state state--empty">
-          <p class="state-title">Belum ada catatan</p>
-          <p class="state-text">Belum ada transaksi yang masuk. Isi formulir di bagian atas untuk membuat catatan pertama.</p>
-        </div>
-
-        <div class="state state--loading" role="status">
-          <p class="state-title">Memuat catatan</p>
-          <div class="skeleton" aria-hidden="true"><span class="skeleton-bar"></span><span class="skeleton-bar"></span><span class="skeleton-bar"></span></div>
-        </div>
-
-        <div class="state state--error" role="alert">
-          <p class="state-title"><svg class="icon" aria-hidden="true" width="18" height="18"><use href="#i-peringatan"/></svg> Catatan gagal dimuat</p>
-          <p class="state-text">Penyimpanan lokal tidak dapat dibaca. Periksa izin penyimpanan peramban, lalu muat ulang halaman.</p>
-        </div>
-
-        <div class="state state--none" role="status">
-          <p class="state-title">Tidak ada catatan yang cocok</p>
-          <p class="state-text">Saringan Pengeluaran dan tombol sembunyikan pengeluaran tidak menyisakan catatan. Pilih saringan lain atau kosongkan tombol tersebut.</p>
-        </div>
-
-        <footer class="ledger-foot">
-          <input class="hide-input" type="checkbox" id="sembunyikan-keluar">
-          <label class="btn btn--quiet" for="sembunyikan-keluar">Sembunyikan semua pengeluaran</label>
-
-          <details class="state-switch">
-            <summary class="state-switch-summary">Kondisi data lain</summary>
-            <div class="state-switch-body">
-              <p class="state-switch-note">Prototipe statis, jadi kondisi berikut disimulasikan untuk menunjukkan tampilan layar yang akan muncul di aplikasi.</p>
-              <input class="state-input" type="radio" name="kondisi" id="kondisi-siap" value="siap" checked>
-              <label class="chip" for="kondisi-siap">Ada data</label>
-              <input class="state-input" type="radio" name="kondisi" id="kondisi-kosong" value="kosong">
-              <label class="chip" for="kondisi-kosong">Belum ada data</label>
-              <input class="state-input" type="radio" name="kondisi" id="kondisi-memuat" value="memuat">
-              <label class="chip" for="kondisi-memuat">Sedang memuat</label>
-              <input class="state-input" type="radio" name="kondisi" id="kondisi-gagal" value="gagal">
-              <label class="chip" for="kondisi-gagal">Gagal memuat</label>
-            </div>
-          </details>
-        </footer>
-
+  <section class="hero" aria-labelledby="judul-utama">
+    <div class="wrap hero-inner">
+      <p class="section-kicker">Pencatat keuangan harian</p>
+      <h1 class="h1" id="judul-utama">Catat uang yang keluar, satu isian setiap hari</h1>
+      <p class="lede">Catat menyusun pengeluaran dan pemasukan harian jadi daftar, ringkasan mingguan, dan sorotan bulanan.</p>
+      <p class="hero-note">Ini prototipe statis tanpa JavaScript. Halaman belum menyimpan data dan belum menghitung angka. Halaman ini menjelaskan rencananya dan menyediakan akun demo untuk mencoba tampilan aplikasi.</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="login.html">Masuk dengan akun demo</a>
       </div>
     </div>
   </section>
 
-  <section class="section section-weeks" id="ringkasan-bulanan" aria-labelledby="judul-ringkasan">
-    <div class="wrap">
-      <header class="section-head">
-        <div>
-          <h2 class="h2" id="judul-ringkasan">Ringkasan September</h2>
-          <p class="section-meta">Geser ke samping untuk berpindah minggu.</p>
-        </div>
-
-        <nav class="weeknav" aria-label="Pilih minggu">
-          <a class="weeknav-link" href="#minggu-1">1</a>
-          <a class="weeknav-link" href="#minggu-2">2</a>
-          <a class="weeknav-link" href="#minggu-3">3</a>
-          <a class="weeknav-link" href="#minggu-4">4</a>
-          <p class="weeknav-status">
-            <span class="weeknav-default">September 2026</span>
-            <span class="weeknav-current" aria-live="polite"></span>
-          </p>
-        </nav>
-      </header>
-
-      <div class="weekstrip" tabindex="0" role="region" aria-label="Kartu ringkasan per minggu, dapat digeser dengan keyboard">
-
-        <article class="week" id="minggu-1" aria-labelledby="minggu-1-judul">
-          <header class="week-head">
-            <h3 class="week-title" id="minggu-1-judul">Minggu 1</h3>
-            <p class="week-range"><time datetime="2026-09-01">1 Sep</time> sampai <time datetime="2026-09-07">7 Sep</time></p>
-          </header>
-          <dl class="week-nums">
-            <div class="week-num"><dt>Keluar</dt><dd class="num num--out">Rp241.500</dd></div>
-            <div class="week-num"><dt>Masuk</dt><dd class="num num--in">Rp0</dd></div>
-          </dl>
-          <div class="bars">
-            <p class="bars-title">Kategori teratas</p>
-            <div class="bar-row">
-              <p class="bar-label">Belanja <span class="num">Rp74.500</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 31%"></span></span>
-            </div>
-            <div class="bar-row">
-              <p class="bar-label">Makanan dan Minuman <span class="num">Rp60.000</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 25%"></span></span>
-            </div>
-            <div class="bar-row">
-              <p class="bar-label">Lainnya <span class="num">Rp54.000</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 22%"></span></span>
-            </div>
-          </div>
-        </article>
-
-        <article class="week" id="minggu-2" aria-labelledby="minggu-2-judul">
-          <header class="week-head">
-            <h3 class="week-title" id="minggu-2-judul">Minggu 2</h3>
-            <p class="week-range"><time datetime="2026-09-08">8 Sep</time> sampai <time datetime="2026-09-14">14 Sep</time></p>
-          </header>
-          <dl class="week-nums">
-            <div class="week-num"><dt>Keluar</dt><dd class="num num--out">Rp584.300</dd></div>
-            <div class="week-num"><dt>Masuk</dt><dd class="num num--in">Rp8.450.000</dd></div>
-          </dl>
-          <div class="bars">
-            <p class="bars-title">Kategori teratas</p>
-            <div class="bar-row">
-              <p class="bar-label">Makanan dan Minuman <span class="num">Rp412.300</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 71%"></span></span>
-            </div>
-            <div class="bar-row">
-              <p class="bar-label">Lainnya <span class="num">Rp150.000</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 26%"></span></span>
-            </div>
-            <div class="bar-row">
-              <p class="bar-label">Transportasi <span class="num">Rp22.000</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 4%"></span></span>
-            </div>
-          </div>
-        </article>
-
-        <article class="week" id="minggu-3" aria-labelledby="minggu-3-judul">
-          <header class="week-head">
-            <h3 class="week-title" id="minggu-3-judul">Minggu 3</h3>
-            <p class="week-range"><time datetime="2026-09-15">15 Sep</time> sampai <time datetime="2026-09-21">21 Sep</time></p>
-          </header>
-          <dl class="week-nums">
-            <div class="week-num"><dt>Keluar</dt><dd class="num num--out">Rp323.000</dd></div>
-            <div class="week-num"><dt>Masuk</dt><dd class="num num--in">Rp0</dd></div>
-          </dl>
-          <div class="bars">
-            <p class="bars-title">Kategori teratas</p>
-            <div class="bar-row">
-              <p class="bar-label">Makanan dan Minuman <span class="num">Rp186.000</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 58%"></span></span>
-            </div>
-            <div class="bar-row">
-              <p class="bar-label">Belanja <span class="num">Rp137.000</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 42%"></span></span>
-            </div>
-          </div>
-        </article>
-
-        <article class="week" id="minggu-4" aria-labelledby="minggu-4-judul">
-          <header class="week-head">
-            <h3 class="week-title" id="minggu-4-judul">Minggu 4</h3>
-            <p class="week-range"><time datetime="2026-09-22">22 Sep</time> sampai <time datetime="2026-09-30">30 Sep</time></p>
-          </header>
-          <dl class="week-nums">
-            <div class="week-num"><dt>Keluar</dt><dd class="num num--out">Rp194.000</dd></div>
-            <div class="week-num"><dt>Masuk</dt><dd class="num num--in">Rp1.200.000</dd></div>
-          </dl>
-          <div class="bars">
-            <p class="bars-title">Kategori teratas</p>
-            <div class="bar-row">
-              <p class="bar-label">Transportasi <span class="num">Rp148.500</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 77%"></span></span>
-            </div>
-            <div class="bar-row">
-              <p class="bar-label">Makanan dan Minuman <span class="num">Rp45.500</span></p>
-              <span class="bar"><span class="bar-fill" style="--isi: 23%"></span></span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-insight" id="insight" aria-labelledby="judul-insight">
+  <section class="section" id="isi" aria-labelledby="judul-isi">
     <div class="wrap wrap--narrow">
       <header class="section-head">
         <div>
-          <h2 class="h2" id="judul-insight">Insight bulan ini</h2>
-          <p class="section-meta">Dihitung dari data contoh September 2026.</p>
+          <h2 class="h2" id="judul-isi">Isi aplikasi</h2>
+          <p class="section-meta">Empat bagian, dari mencatat sampai membaca pola bulanan.</p>
         </div>
       </header>
 
-      <div class="insights">
-
-        <details class="insight" open>
-          <summary class="insight-summary">
-            <span class="insight-name">Kategori terbesar</span>
-            <span class="insight-value">Makanan dan Minuman</span>
-            <svg class="icon insight-caret" aria-hidden="true" width="20" height="20"><use href="#i-buka"/></svg>
-          </summary>
-          <div class="insight-body">
-            <div class="insight-inner">
-              <p class="insight-lead">Makanan dan Minuman menyerap Rp703.800 atau 52 persen dari seluruh pengeluaran bulan ini.</p>
-              <span class="bar bar--wide"><span class="bar-fill" style="--isi: 52%"></span></span>
-              <p class="insight-note">Jumlah itu termasuk belanja bulanan Rp412.300 pada 11 September, satu transaksi yang sendiri mengisi 71 persen pengeluaran minggu kedua.</p>
-            </div>
+      <ul class="parts" role="list">
+        <li class="part">
+          <div class="part-head">
+            <h3 class="part-name">Catat</h3>
+            <a class="part-link" href="app.html#catat">Buka formulir</a>
           </div>
-        </details>
-
-        <details class="insight">
-          <summary class="insight-summary">
-            <span class="insight-name">Hari paling boros</span>
-            <span class="insight-value">Jumat, 11 Sep</span>
-            <svg class="icon insight-caret" aria-hidden="true" width="20" height="20"><use href="#i-buka"/></svg>
-          </summary>
-          <div class="insight-body">
-            <div class="insight-inner">
-              <p class="insight-lead">Jumat, 11 September mencatat Rp412.300, seluruhnya dari belanja bulanan di supermarket.</p>
-              <p class="insight-note">Jumlah itu sekitar sembilan kali lipat dari rata-rata harian Rp44.760.</p>
-            </div>
+          <p class="part-text">Formulir tiga isian untuk mencatat pengeluaran atau pemasukan, lengkap dengan validasi dan pratinjau sebelum disimpan.</p>
+        </li>
+        <li class="part">
+          <div class="part-head">
+            <h3 class="part-name">Transaksi</h3>
+            <a class="part-link" href="app.html#transaksi-terbaru">Lihat daftar</a>
           </div>
-        </details>
-
-        <details class="insight">
-          <summary class="insight-summary">
-            <span class="insight-name">Rasio pengeluaran</span>
-            <span class="insight-value">13,9 persen</span>
-            <svg class="icon insight-caret" aria-hidden="true" width="20" height="20"><use href="#i-buka"/></svg>
-          </summary>
-          <div class="insight-body">
-            <div class="insight-inner">
-              <p class="insight-lead">Pengeluaran Rp1.342.800 memakai 13,9 persen dari pemasukan Rp9.650.000, sisa Rp8.307.200.</p>
-              <p class="insight-note">Angka ini hanya mencakup satu bulan dan belum memperhitungkan cicilan, yang tidak tercatat di halaman ini.</p>
-            </div>
+          <p class="part-text">Daftar catatan harian, satu baris per transaksi. Karena aplikasi mulai dari nol, daftar ini mula-mula kosong.</p>
+        </li>
+        <li class="part">
+          <div class="part-head">
+            <h3 class="part-name">Ringkasan</h3>
+            <a class="part-link" href="app.html#ringkasan-bulanan">Buka ringkasan</a>
           </div>
-        </details>
-
-        <details class="insight">
-          <summary class="insight-summary">
-            <span class="insight-name">Peluang penghematan</span>
-            <span class="insight-value">Transportasi</span>
-            <svg class="icon insight-caret" aria-hidden="true" width="20" height="20"><use href="#i-buka"/></svg>
-          </summary>
-          <div class="insight-body">
-            <div class="insight-inner">
-              <p class="insight-lead">Transportasi mencapai Rp223.500, lebih besar daripada kategori Belanja yang Rp211.500.</p>
-              <p class="insight-note">Satu perjalanan ojek online yang dilewati per minggu setara Rp72.000 sebulan, sekitar 32 persen dari pengeluaran transportasi.</p>
-            </div>
+          <p class="part-text">Tempat jumlah per minggu: pengeluaran, pemasukan, dan kategori teratas tiap minggu. Masih menunggu data.</p>
+        </li>
+        <li class="part">
+          <div class="part-head">
+            <h3 class="part-name">Insight</h3>
+            <a class="part-link" href="app.html#insight">Buka insight</a>
           </div>
-        </details>
+          <p class="part-text">Tempat sorotan bulanan: kategori terbesar, hari paling boros, dan rasio pengeluaran terhadap pemasukan. Masih menunggu data.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
+  <section class="section section-weeks" id="akun-demo" aria-labelledby="judul-akun">
+    <div class="wrap wrap--narrow">
+      <header class="section-head">
+        <div>
+          <h2 class="h2" id="judul-akun">Akun demo</h2>
+          <p class="section-meta">Dua nilai contoh di bawah membuka tampilan aplikasi.</p>
+        </div>
+      </header>
+
+      <div class="demo-card">
+        <p class="demo-title">Masuk memakai akun ini</p>
+        <p class="demo-text">Halaman masuk memakai akun contoh di bawah. Gerbangnya hanya untuk demo: tanpa JavaScript tidak ada autentikasi asli, dan tampilan aplikasi tetap bisa dibuka langsung dari tautan di halaman ini.</p>
+
+        <dl class="demo-rows">
+          <div class="demo-row">
+            <dt>Email</dt>
+            <dd>demo@catat.id</dd>
+          </div>
+          <div class="demo-row">
+            <dt>Kata sandi</dt>
+            <dd>catat2026</dd>
+          </div>
+        </dl>
+
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="login.html">Masuk dengan akun demo</a>
+        </div>
       </div>
     </div>
   </section>
@@ -763,8 +155,7 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <p class="footer-text">Catat, catatan keuangan harian. Tanpa akun, tanpa iklan, tanpa penyimpanan di server.</p>
-    <p class="footer-text">Seluruh nominal pada prototipe ini adalah data contoh bulan September 2026.</p>
+    <p class="footer-text">Catat, pencatat keuangan harian. Prototipe statis tanpa JavaScript, tanpa akun asli, tanpa penyimpanan di server.</p>
   </div>
 </footer>
 </body>
