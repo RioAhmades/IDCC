@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Catat aplikasi, catat pengeluaran dan pemasukan harian. Mulai dari nol, tanpa transaksi contoh.">
-<title>Aplikasi Catat</title>
+<meta name="description" content="Catat aplikasi, catat pengeluaran dan pemasukan harian, lalu baca ulang sebagai daftar, ringkasan mingguan, dan sorotan bulanan.">
+<title>Catat.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -84,7 +84,7 @@
       <div class="entry-form-col">
         <p class="section-kicker">Hari ini</p>
         <h1 class="h1" id="judul-catat">Catat pengeluaran hari ini</h1>
-        <p class="lede">Isi nominal, pilih kategori, selesai. Aplikasi mulai dari nol, jadi daftar di bawah masih kosong.</p>
+        <p class="lede">Isi nominal, pilih kategori, selesai. Daftar di bawah memakai data contoh September 2026, jadi Anda bisa menilai tampilannya tanpa mengisi dulu.</p>
 
         <form class="entry-form" action="#transaksi-terbaru" method="get">
 
@@ -150,31 +150,31 @@
             Simpan transaksi
           </button>
 
-          <p class="form-note">Prototipe statis tanpa JavaScript. Tombol simpan mengecek isian lalu bawa Anda ke bagian daftar transaksi. Penyimpanan otomatis butuh JavaScript, jadi catatan belum tersimpan.</p>
+          <p class="form-note">Prototipe statis tanpa JavaScript. Tombol simpan mengecek isian lalu bawa Anda ke bagian daftar transaksi. Penyimpanan otomatis butuh JavaScript, jadi isian Anda belum masuk daftar. Angka di halaman ini berasal dari data contoh.</p>
         </form>
       </div>
 
       <aside class="panel" aria-labelledby="judul-panel">
         <p class="panel-kicker">Bulan ini</p>
         <h2 class="panel-title" id="judul-panel">Sisa saldo bulan ini</h2>
-        <p class="panel-figure">Rp0</p>
+        <p class="panel-figure">Rp5.090.000</p>
 
         <dl class="panel-rows">
           <div class="panel-row">
             <dt>Pemasukan</dt>
-            <dd class="num num--in">Rp0</dd>
+            <dd class="num num--in">Rp6.950.000</dd>
           </div>
           <div class="panel-row">
             <dt>Pengeluaran</dt>
-            <dd class="num num--out">Rp0</dd>
+            <dd class="num num--out">Rp1.860.000</dd>
           </div>
           <div class="panel-row">
             <dt>Rata-rata per hari</dt>
-            <dd class="num">Rp0</dd>
+            <dd class="num">Rp62.000</dd>
           </div>
         </dl>
 
-        <p class="panel-foot">Belum ada transaksi bulan ini, jadi semua angka masih nol.</p>
+        <p class="panel-foot">19 catatan contoh September 2026. Rata-rata per hari membagi pengeluaran dengan 30 hari pada bulan itu.</p>
       </aside>
 
     </div>
@@ -186,13 +186,118 @@
       <header class="section-head">
         <div>
           <h2 class="h2" id="judul-transaksi">Transaksi terbaru</h2>
-          <p class="section-meta">Daftar catatan, satu baris per transaksi.</p>
+          <p class="section-meta">19 catatan contoh September 2026, terbaru di atas.</p>
         </div>
       </header>
 
+      <div class="ledger">
+        <p class="ledger-totals">
+          <span class="num num--out">Rp1.860.000 keluar</span>
+          <span class="num num--in">Rp6.950.000 masuk</span>
+        </p>
+
+        <ul class="txn-list" role="list">
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-29">29 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Gaji</span> <span class="txn-note">Gaji September</span></span>
+            <span class="txn-amount num num--in">+Rp6.500.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-29">29 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Makanan dan Minuman</span> <span class="txn-note">Kopi dan roti pagi</span></span>
+            <span class="txn-amount num num--out">Rp28.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-28">28 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Transportasi</span> <span class="txn-note">Ojek ke kantor</span></span>
+            <span class="txn-amount num num--out">Rp45.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-28">28 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Makanan dan Minuman</span> <span class="txn-note">Makan siang warteg</span></span>
+            <span class="txn-amount num num--out">Rp62.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-27">27 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Belanja</span> <span class="txn-note">Belanja mingguan</span></span>
+            <span class="txn-amount num num--out">Rp210.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-26">26 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Makanan dan Minuman</span> <span class="txn-note">Makan siang</span></span>
+            <span class="txn-amount num num--out">Rp35.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-25">25 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Transportasi</span> <span class="txn-note">Bensin</span></span>
+            <span class="txn-amount num num--out">Rp120.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-24">24 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Belanja</span> <span class="txn-note">Potong rambut</span></span>
+            <span class="txn-amount num num--out">Rp185.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-22">22 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Makanan dan Minuman</span> <span class="txn-note">Makan malam</span></span>
+            <span class="txn-amount num num--out">Rp48.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-19">19 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Lainnya</span> <span class="txn-note">Bayar internet dan listrik</span></span>
+            <span class="txn-amount num num--out">Rp310.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-17">17 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Transportasi</span> <span class="txn-note">Ojek ke kantor</span></span>
+            <span class="txn-amount num num--out">Rp42.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-15">15 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Makanan dan Minuman</span> <span class="txn-note">Kopi dan sarapan</span></span>
+            <span class="txn-amount num num--out">Rp54.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-12">12 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Belanja</span> <span class="txn-note">Baju dan sepatu</span></span>
+            <span class="txn-amount num num--out">Rp240.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-10">10 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Transportasi</span> <span class="txn-note">Bensin dan servis motor</span></span>
+            <span class="txn-amount num num--out">Rp150.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-08">08 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Makanan dan Minuman</span> <span class="txn-note">Makan siang kantor</span></span>
+            <span class="txn-amount num num--out">Rp96.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-05">05 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Lainnya</span> <span class="txn-note">Obat dan vitamin</span></span>
+            <span class="txn-amount num num--out">Rp125.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-04">04 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Transportasi</span> <span class="txn-note">Ojek online</span></span>
+            <span class="txn-amount num num--out">Rp38.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-02">02 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Makanan dan Minuman</span> <span class="txn-note">Bahan makanan untuk seminggu</span></span>
+            <span class="txn-amount num num--out">Rp72.000</span>
+          </li>
+          <li class="txn">
+            <span class="txn-date"><time datetime="2026-09-01">01 Sep</time></span>
+            <span class="txn-body"><span class="txn-cat">Lainnya</span> <span class="txn-note">Freelance desain</span></span>
+            <span class="txn-amount num num--in">+Rp450.000</span>
+          </li>
+        </ul>
+      </div>
+
       <div class="state state--empty">
         <p class="state-title">Belum ada catatan</p>
-        <p class="state-text">Aplikasi mulai dari nol. Formulir di atas memvalidasi isian dan menampilkan pratinjau, tetapi prototipe tanpa JavaScript ini belum menyimpan transaksi, jadi daftar tetap kosong.</p>
+        <p class="state-text">Bulan ini belum ada satu pun transaksi. Isi formulir di atas untuk membuat catatan pertama, lalu daftar di bawah akan terisi dengan sendirinya.</p>
         <p class="state-action"><a href="#catat">Ke formulir catat</a></p>
       </div>
 
@@ -203,15 +308,17 @@
 
       <div class="state state--error" role="alert">
         <p class="state-title"><svg class="icon" aria-hidden="true" width="18" height="18"><use href="#i-peringatan"/></svg> Catatan gagal dimuat</p>
-        <p class="state-text">Penyimpanan lokal tidak dapat dibaca. Periksa izin penyimpanan peramban, lalu muat ulang halaman.</p>
+        <p class="state-text">Penyimpanan lokal tidak dapat dibaca, jadi daftar tidak bisa ditampilkan. Periksa izin penyimpanan peramban, lalu muat ulang halaman. Catatan Anda sendiri tidak ikut hilang.</p>
       </div>
 
       <div class="ledger-foot">
         <details class="state-switch">
           <summary class="state-switch-summary">Lihat kondisi layar lain</summary>
           <div class="state-switch-body">
-            <p class="state-switch-note">Prototipe statis, jadi kondisi berikut disimulasikan untuk menunjukkan tampilan layar yang akan muncul saat ada data.</p>
-            <input class="state-input" type="radio" name="kondisi" id="kondisi-kosong" value="kosong" checked>
+            <p class="state-switch-note">Prototipe statis, jadi kondisi berikut disimulasikan. Pilihan ini mengatur tiga bagian sekaligus: daftar transaksi, ringkasan mingguan, dan insight.</p>
+            <input class="state-input" type="radio" name="kondisi" id="kondisi-ada" value="ada" checked>
+            <label class="chip" for="kondisi-ada">Ada transaksi</label>
+            <input class="state-input" type="radio" name="kondisi" id="kondisi-kosong" value="kosong">
             <label class="chip" for="kondisi-kosong">Belum ada data</label>
             <input class="state-input" type="radio" name="kondisi" id="kondisi-memuat" value="memuat">
             <label class="chip" for="kondisi-memuat">Sedang memuat</label>
@@ -229,9 +336,42 @@
       <header class="section-head">
         <div>
           <h2 class="h2" id="judul-ringkasan">Ringkasan bulanan</h2>
-          <p class="section-meta">Menunggu data.</p>
+          <p class="section-meta">Ke mana uang pergi tiap minggu, September 2026.</p>
         </div>
       </header>
+
+      <ol class="weeks" role="list">
+        <li class="week">
+          <p class="week-head"><span class="week-label">Minggu 1</span> <span class="week-range">1 sampai 6 Sep</span></p>
+          <p class="week-bar" aria-hidden="true"><span class="week-fill" style="--share: 39.3%"></span></p>
+          <p class="week-nums"><span class="num num--out">Rp235.000 keluar</span> <span class="num num--in">Rp450.000 masuk</span></p>
+          <p class="week-top">Kategori teratas: Lainnya, Rp125.000</p>
+        </li>
+        <li class="week">
+          <p class="week-head"><span class="week-label">Minggu 2</span> <span class="week-range">7 sampai 13 Sep</span></p>
+          <p class="week-bar" aria-hidden="true"><span class="week-fill" style="--share: 81.3%"></span></p>
+          <p class="week-nums"><span class="num num--out">Rp486.000 keluar</span> <span class="week-zero">Tidak ada pemasukan</span></p>
+          <p class="week-top">Kategori teratas: Belanja, Rp240.000</p>
+        </li>
+        <li class="week">
+          <p class="week-head"><span class="week-label">Minggu 3</span> <span class="week-range">14 sampai 20 Sep</span></p>
+          <p class="week-bar" aria-hidden="true"><span class="week-fill" style="--share: 67.9%"></span></p>
+          <p class="week-nums"><span class="num num--out">Rp406.000 keluar</span> <span class="week-zero">Tidak ada pemasukan</span></p>
+          <p class="week-top">Kategori teratas: Lainnya, Rp310.000</p>
+        </li>
+        <li class="week">
+          <p class="week-head"><span class="week-label">Minggu 4</span> <span class="week-range">21 sampai 27 Sep</span></p>
+          <p class="week-bar" aria-hidden="true"><span class="week-fill" style="--share: 100%"></span></p>
+          <p class="week-nums"><span class="num num--out">Rp598.000 keluar</span> <span class="week-zero">Tidak ada pemasukan</span></p>
+          <p class="week-top">Kategori teratas: Belanja, Rp395.000</p>
+        </li>
+        <li class="week">
+          <p class="week-head"><span class="week-label">Minggu 5</span> <span class="week-range">28 sampai 30 Sep</span></p>
+          <p class="week-bar" aria-hidden="true"><span class="week-fill" style="--share: 22.6%"></span></p>
+          <p class="week-nums"><span class="num num--out">Rp135.000 keluar</span> <span class="num num--in">Rp6.500.000 masuk</span></p>
+          <p class="week-top">Kategori teratas: Makanan dan Minuman, Rp90.000</p>
+        </li>
+      </ol>
 
       <div class="state state--empty">
         <p class="state-title">Ringkasan menunggu data</p>
@@ -246,9 +386,24 @@
       <header class="section-head">
         <div>
           <h2 class="h2" id="judul-insight">Insight bulan ini</h2>
-          <p class="section-meta">Menunggu data.</p>
+          <p class="section-meta">Sorotan dari 19 catatan September 2026.</p>
         </div>
       </header>
+
+      <dl class="insights">
+        <div class="insight">
+          <dt>Kategori terbesar</dt>
+          <dd>Belanja<span class="insight-note">Rp635.000, 34% dari seluruh pengeluaran bulan ini</span></dd>
+        </div>
+        <div class="insight">
+          <dt>Hari paling boros</dt>
+          <dd>19 Sep<span class="insight-note">Rp310.000 dalam satu hari, untuk internet dan listrik</span></dd>
+        </div>
+        <div class="insight">
+          <dt>Rasio pengeluaran</dt>
+          <dd>27%<span class="insight-note">Dari pemasukan Rp6.950.000, tersisa Rp5.090.000</span></dd>
+        </div>
+      </dl>
 
       <div class="state state--empty">
         <p class="state-title">Insight menunggu data</p>
@@ -262,7 +417,7 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <p class="footer-text">Catat, pencatat keuangan harian. Prototipe statis tanpa JavaScript, tanpa akun asli, tanpa penyimpanan di server.</p>
+    <p class="footer-text">Catat, pencatat keuangan harian. Prototipe statis tanpa JavaScript, tanpa akun asli, tanpa penyimpanan di server. Angka dan catatan di halaman ini adalah data contoh.</p>
   </div>
 </footer>
 </body>
