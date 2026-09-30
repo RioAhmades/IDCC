@@ -3,160 +3,409 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="description" content="Catat, pencatat keuangan harian. Jelajahi fiturnya, lalu masuk dengan akun demo.">
-<title>Catat, pencatat keuangan harian</title>
+<meta name="color-scheme" content="dark">
+<meta name="description" content="NUSA, jelajah budaya Indonesia. Lima pulau dari barat ke timur, masing-masing dengan enam sisi: budaya, makanan, rumah adat, bahasa, tradisi, dan tempat bersejarah.">
+<title>NUSA, jelajah budaya Indonesia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Bodoni+Moda:opsz,wght@6..96,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Langsung ke konten</a>
-
-<svg width="0" height="0" aria-hidden="true" focusable="false" class="svg-defs">
-  <defs>
-    <symbol id="i-terang" viewBox="0 0 20 20">
-      <circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M10 2.5v1.5M10 16v1.5M2.5 10H4M16 10h1.5M4.7 4.7l1.1 1.1M14.2 14.2l1.1 1.1M15.3 4.7l-1.1 1.1M5.8 14.2l-1.1 1.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-gelap" viewBox="0 0 20 20">
-      <path d="M15.5 12.5A6 6 0 0 1 7.5 4.5a6 6 0 1 0 8 8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-sistem" viewBox="0 0 20 20">
-      <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M10 4a6 6 0 0 1 0 12Z" fill="currentColor"/>
-    </symbol>
-  </defs>
-</svg>
+<a class="skip-link" href="#jelajah">Langsung ke daftar pulau</a>
 
 <header class="topbar">
-  <div class="wrap topbar-inner">
-    <a class="wordmark" href="index.html">
-      <span class="wordmark-mark" aria-hidden="true"></span>
-      <span class="wordmark-text">Catat</span>
-    </a>
-
+  <div class="wrap topbar__inner">
+    <a class="wordmark" href="#hero">NUSA</a>
     <nav class="topnav" aria-label="Navigasi utama">
-      <a class="topnav-link" href="#isi">Isi aplikasi</a>
-      <a class="topnav-link" href="#akun-demo">Akun demo</a>
-      <a class="topnav-link" href="login.html">Masuk</a>
+      <a class="topnav__link" href="#jelajah">Jelajah</a>
+      <a class="topnav__link" href="#penutup">Penutup</a>
     </nav>
-
-    <fieldset class="appearance">
-      <legend class="sr-only">Tampilan halaman</legend>
-      <input class="appearance-input" type="radio" name="tampilan" id="tampilan-sistem" value="sistem" checked>
-      <label class="appearance-option" for="tampilan-sistem" title="Ikuti pengaturan perangkat">
-        <svg class="icon" aria-hidden="true" width="18" height="18"><use href="#i-sistem"/></svg>
-        <span class="sr-only">Ikuti pengaturan perangkat</span>
-      </label>
-      <input class="appearance-input" type="radio" name="tampilan" id="tampilan-terang" value="terang">
-      <label class="appearance-option" for="tampilan-terang" title="Tampilan terang">
-        <svg class="icon" aria-hidden="true" width="18" height="18"><use href="#i-terang"/></svg>
-        <span class="sr-only">Tampilan terang</span>
-      </label>
-      <input class="appearance-input" type="radio" name="tampilan" id="tampilan-gelap" value="gelap">
-      <label class="appearance-option" for="tampilan-gelap" title="Tampilan gelap">
-        <svg class="icon" aria-hidden="true" width="18" height="18"><use href="#i-gelap"/></svg>
-        <span class="sr-only">Tampilan gelap</span>
-      </label>
-    </fieldset>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="hero" aria-labelledby="judul-utama">
-    <div class="wrap hero-inner">
-      <p class="section-kicker">Pencatat keuangan harian</p>
-      <h1 class="h1" id="judul-utama">Catat uang yang keluar, satu isian setiap hari</h1>
-      <p class="lede">Catat menyusun pengeluaran dan pemasukan harian jadi daftar, ringkasan mingguan, dan sorotan bulanan.</p>
-      <p class="hero-note">Ini prototipe statis tanpa JavaScript. Halaman belum menyimpan data dan belum menghitung angka. Halaman ini menjelaskan rencananya dan menyediakan akun demo untuk mencoba tampilan aplikasi.</p>
-      <div class="hero-actions">
-        <a class="btn btn--primary" href="login.html">Masuk dengan akun demo</a>
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" role="img" aria-label="Lanskap kepulauan Indonesia dari ketinggian pada sore hari"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__text">
+        <h1 class="hero__title" id="hero-title">Discover Indonesia</h1>
+        <p class="hero__sub">Thousands of stories. One archipelago.</p>
+        <p class="hero__lead">Lima pulau besar, tiga puluh sisi yang berbeda. Yang tertulis di bawah adalah potongan kebiasaan yang masih hidup: tari piring Minangkabau, batik Pekalongan, ukiran Dayak, tari pomburu Bugis, dan noken Papua.</p>
+        <a class="cue" href="#jelajah">Pilih pulau</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="isi" aria-labelledby="judul-isi">
-    <div class="wrap wrap--narrow">
-      <header class="section-head">
-        <div>
-          <h2 class="h2" id="judul-isi">Isi aplikasi</h2>
-          <p class="section-meta">Empat bagian, dari mencatat sampai membaca pola bulanan.</p>
-        </div>
-      </header>
-
-      <ul class="parts" role="list">
-        <li class="part">
-          <div class="part-head">
-            <h3 class="part-name">Catat</h3>
-            <a class="part-link" href="app.html#catat">Buka formulir</a>
-          </div>
-          <p class="part-text">Formulir tiga isian untuk mencatat pengeluaran atau pemasukan, lengkap dengan validasi dan pratinjau sebelum disimpan.</p>
-        </li>
-        <li class="part">
-          <div class="part-head">
-            <h3 class="part-name">Transaksi</h3>
-            <a class="part-link" href="app.html#transaksi-terbaru">Lihat daftar</a>
-          </div>
-          <p class="part-text">Daftar catatan harian, satu baris per transaksi, dikelompokkan per tanggal dan diurutkan dari yang terbaru.</p>
-        </li>
-        <li class="part">
-          <div class="part-head">
-            <h3 class="part-name">Ringkasan</h3>
-            <a class="part-link" href="app.html#ringkasan-bulanan">Buka ringkasan</a>
-          </div>
-          <p class="part-text">Jumlah per minggu: pengeluaran, pemasukan, dan kategori teratas tiap minggu September 2026.</p>
-        </li>
-        <li class="part">
-          <div class="part-head">
-            <h3 class="part-name">Insight</h3>
-            <a class="part-link" href="app.html#insight">Buka insight</a>
-          </div>
-          <p class="part-text">Sorotan September 2026: kategori terbesar, hari paling boros, dan rasio pengeluaran terhadap pemasukan.</p>
-        </li>
-      </ul>
+  <section class="explorer" id="jelajah" aria-labelledby="jelajah-title">
+    <div class="wrap">
+      <h2 class="section-title" id="jelajah-title">Lima pulau dari barat ke timur</h2>
+      <p class="section-lead">Pilih satu pulau, lalu telusuri enam sisinya: budaya, makanan, rumah adat, bahasa, tradisi, dan tempat bersejarah.</p>
     </div>
-  </section>
 
-  <section class="section section-weeks" id="akun-demo" aria-labelledby="judul-akun">
-    <div class="wrap wrap--narrow">
-      <header class="section-head">
-        <div>
-          <h2 class="h2" id="judul-akun">Akun demo</h2>
-          <p class="section-meta">Dua nilai contoh di bawah membuka tampilan aplikasi.</p>
-        </div>
-      </header>
+    <div class="wrap explorer__grid">
 
-      <div class="demo-card">
-        <p class="demo-title">Masuk memakai akun ini</p>
-        <p class="demo-text">Halaman masuk memakai akun contoh di bawah. Gerbangnya hanya untuk demo: tanpa JavaScript tidak ada autentikasi asli, dan tampilan aplikasi tetap bisa dibuka langsung dari tautan di halaman ini.</p>
+      <div class="rail" role="group" aria-label="Pilih pulau">
+        <input class="sr-input" type="radio" name="pulau" id="pulau-sumatra" checked>
+        <label class="island" for="pulau-sumatra">
+          <span class="island__num">01</span>
+          <span class="island__text">
+            <span class="island__name">Sumatra</span>
+            <span class="island__sub">Bentang tinggi, lembah subur, atap tanduk kerbau.</span>
+          </span>
+        </label>
 
-        <dl class="demo-rows">
-          <div class="demo-row">
-            <dt>Email</dt>
-            <dd>demo@catat.id</dd>
+        <input class="sr-input" type="radio" name="pulau" id="pulau-java">
+        <label class="island" for="pulau-java">
+          <span class="island__num">02</span>
+          <span class="island__text">
+            <span class="island__name">Java</span>
+            <span class="island__sub">Sawah berundak, candi batu, kota-kota tua.</span>
+          </span>
+        </label>
+
+        <input class="sr-input" type="radio" name="pulau" id="pulau-kalimantan">
+        <label class="island" for="pulau-kalimantan">
+          <span class="island__num">03</span>
+          <span class="island__text">
+            <span class="island__name">Kalimantan</span>
+            <span class="island__sub">Hutan sungai panjang, rumah panjang, ukiran bertulisan.</span>
+          </span>
+        </label>
+
+        <input class="sr-input" type="radio" name="pulau" id="pulau-sulawesi">
+        <label class="island" for="pulau-sulawesi">
+          <span class="island__num">04</span>
+          <span class="island__text">
+            <span class="island__name">Sulawesi</span>
+            <span class="island__sub">Tongkonan, rempah, gunung yang membelah pulau.</span>
+          </span>
+        </label>
+
+        <input class="sr-input" type="radio" name="pulau" id="pulau-papua">
+        <label class="island" for="pulau-papua">
+          <span class="island__num">05</span>
+          <span class="island__text">
+            <span class="island__name">Papua</span>
+            <span class="island__sub">Honai di lereng gunung, sagu, bahasa per lembah.</span>
+          </span>
+        </label>
+      </div>
+
+      <div class="stagewrap">
+
+        <div class="stage" aria-hidden="true">
+          <div class="stage__layer" data-foto="sumatra">
+            <div class="stage__fallback"></div>
+            <div class="stage__photo"></div>
+            <div class="stage__scrim"></div>
           </div>
-          <div class="demo-row">
-            <dt>Kata sandi</dt>
-            <dd>catat2026</dd>
+          <div class="stage__layer" data-foto="java">
+            <div class="stage__fallback"></div>
+            <div class="stage__photo"></div>
+            <div class="stage__scrim"></div>
           </div>
-        </dl>
-
-        <div class="hero-actions">
-          <a class="btn btn--primary" href="login.html">Masuk dengan akun demo</a>
+          <div class="stage__layer" data-foto="kalimantan">
+            <div class="stage__fallback"></div>
+            <div class="stage__photo"></div>
+            <div class="stage__scrim"></div>
+          </div>
+          <div class="stage__layer" data-foto="sulawesi">
+            <div class="stage__fallback"></div>
+            <div class="stage__photo"></div>
+            <div class="stage__scrim"></div>
+          </div>
+          <div class="stage__layer" data-foto="papua">
+            <div class="stage__fallback"></div>
+            <div class="stage__photo"></div>
+            <div class="stage__scrim"></div>
+          </div>
         </div>
+
+        <div class="sheet" data-pulau="sumatra">
+          <header class="sheet__head">
+            <h3 class="sheet__name">Sumatra</h3>
+            <p class="sheet__desc">Pulau yang membelah Samudra Hindia dari utara ke selatan, dengan deretan pegunungan tinggi di barat yang menghadap langsung ke lautan lepas.</p>
+            <p class="sr-only">Foto lapisan untuk Sumatra: atap rumah Gadang Minangkabau yang melengkung menyerupai tanduk kerbau.</p>
+          </header>
+
+          <div class="sheet__body">
+            <fieldset class="tabs">
+              <legend class="sr-only">Kategori Sumatra</legend>
+              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-1" checked>
+              <label class="tab" for="k-sumatra-1"><span class="tab__num">01</span>Budaya</label>
+              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-2">
+              <label class="tab" for="k-sumatra-2"><span class="tab__num">02</span>Makanan</label>
+              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-3">
+              <label class="tab" for="k-sumatra-3"><span class="tab__num">03</span>Rumah adat</label>
+              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-4">
+              <label class="tab" for="k-sumatra-4"><span class="tab__num">04</span>Bahasa</label>
+              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-5">
+              <label class="tab" for="k-sumatra-5"><span class="tab__num">05</span>Tradisi</label>
+              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-6">
+              <label class="tab" for="k-sumatra-6"><span class="tab__num">06</span>Tempat bersejarah</label>
+            </fieldset>
+
+            <div class="panels">
+              <article class="panel" data-sel="sumatra-1">
+                <h4 class="panel__title">Budaya</h4>
+                <p>Tari Piring dari Tanah Minang memadukan gerakan melingkar dengan piring yang ditata rapi di telapak tangan. Di Bengkulu, Tabuik diarakkan keliling kota dengan arca raksasa yang dibuat khusus untuk hari besar.</p>
+              </article>
+              <article class="panel" data-sel="sumatra-2">
+                <h4 class="panel__title">Makanan</h4>
+                <p>Rendang dimasak perlahan dengan santan dan bumbu rempah sampai kuah mengental dan dagingnya empuk. Soto Medan memakai potongan daging dan jero dalam kuah bening yang gurih.</p>
+              </article>
+              <article class="panel" data-sel="sumatra-3">
+                <h4 class="panel__title">Rumah adat</h4>
+                <p>Rumah Gadang Minangkabau beratap melengkung seperti tanduk kerbau, dan jumlah gonjongnya disesuaikan dengan kedudukan pemiliknya. Di Sumatera Utara, Rumah Batak berdiri berderet di tepi Danau Toba dengan atap yang memanjang.</p>
+              </article>
+              <article class="panel" data-sel="sumatra-4">
+                <h4 class="panel__title">Bahasa</h4>
+                <p>Minangkabau, Batak, Bugis, dan Melayu menjadi bahasa utama pulau ini. Bahasa Melayu menjadi dasar Bahasa Indonesia dan sampai sekarang masih jadi penghubung antar pulau.</p>
+              </article>
+              <article class="panel" data-sel="sumatra-5">
+                <h4 class="panel__title">Tradisi</h4>
+                <p>Bertasbih adalah prosesi penyambutan dalam adat kawin dan penghormatan tamu di Minangkabau. Tabuik Bengkulu dilaksanakan menjelang bulan Muharram sebagai bentuk doa dan syukur bersama.</p>
+              </article>
+              <article class="panel" data-sel="sumatra-6">
+                <h4 class="panel__title">Tempat bersejarah</h4>
+                <p>Candi Bahal di Bukittinggi adalah kompleks candi Hindu dari sekitar abad ke-9 hingga ke-11, dan tata letaknya masih terlihat jelas. Kompleks Candi Muaro Jambi di tepi Sungai Batanghari menyimpan jejak pusat kegiatan Buddhisme Kerajaan Melayu dan kini berstatus cagar budaya nasional.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="sheet" data-pulau="java">
+          <header class="sheet__head">
+            <h3 class="sheet__name">Java</h3>
+            <p class="sheet__desc">Pulau sawah dan gunung api yang menjadi tempat tinggal dan perdagangan paling ramai, membujur dari ujung barat sampai ujung timur.</p>
+            <p class="sr-only">Foto lapisan untuk Java: barisan Candi Borobudur yang berbingkai gunung pada kabut pagi.</p>
+          </header>
+
+          <div class="sheet__body">
+            <fieldset class="tabs">
+              <legend class="sr-only">Kategori Java</legend>
+              <input class="sr-input" type="radio" name="kat-java" id="k-java-1" checked>
+              <label class="tab" for="k-java-1"><span class="tab__num">01</span>Budaya</label>
+              <input class="sr-input" type="radio" name="kat-java" id="k-java-2">
+              <label class="tab" for="k-java-2"><span class="tab__num">02</span>Makanan</label>
+              <input class="sr-input" type="radio" name="kat-java" id="k-java-3">
+              <label class="tab" for="k-java-3"><span class="tab__num">03</span>Rumah adat</label>
+              <input class="sr-input" type="radio" name="kat-java" id="k-java-4">
+              <label class="tab" for="k-java-4"><span class="tab__num">04</span>Bahasa</label>
+              <input class="sr-input" type="radio" name="kat-java" id="k-java-5">
+              <label class="tab" for="k-java-5"><span class="tab__num">05</span>Tradisi</label>
+              <input class="sr-input" type="radio" name="kat-java" id="k-java-6">
+              <label class="tab" for="k-java-6"><span class="tab__num">06</span>Tempat bersejarah</label>
+            </fieldset>
+
+            <div class="panels">
+              <article class="panel" data-sel="java-1">
+                <h4 class="panel__title">Budaya</h4>
+                <p>Wayang menempatkan dalang bukan hanya sebagai pemain bayangan, tetapi juga pencerita, pemusik, dan tokoh ritual. Batik menjadikan kain sebagai arsip tertulis lewat motifnya, dan Reog Ponorogo sering membuka pesta desa.</p>
+              </article>
+              <article class="panel" data-sel="java-2">
+                <h4 class="panel__title">Makanan</h4>
+                <p>Sate dengan bumbu kacang sudah menjadi bagian dari malam hari di Yogyakarta. Gudeg dibuat dari nangka muda yang dikukus bersama areh, sedangkan Rawon Surabaya memakai kuah keluak gelap berisi daging dan telur.</p>
+              </article>
+              <article class="panel" data-sel="java-3">
+                <h4 class="panel__title">Rumah adat</h4>
+                <p>Rumah Joglo di Jawa Tengah memiliki atap limas yang bertumpu pada empat pilar saka guru, yang ditafsirkan sebagai urutan sosial. Di Yogyakarta, Rumah Limasan tumbuh makin tinggi ke arah belakang sebagai tanda keluarga yang sedang berhasil.</p>
+              </article>
+              <article class="panel" data-sel="java-4">
+                <h4 class="panel__title">Bahasa</h4>
+                <p>Jawa, Sunda, Madura, dan Betawi hidup berdampingan, masing-masing dengan kosakata dan tingkat kesopanan yang berbeda. Pertunjukan wayang memakai bentuk Jawa yang lebih tua sehingga penonton tetap bisa mengikuti ceritanya.</p>
+              </article>
+              <article class="panel" data-sel="java-5">
+                <h4 class="panel__title">Tradisi</h4>
+                <p>Grebeg Maulud di Demak dilaksanakan pada tanggal 12 Rabiul Awal dengan prosesi anak-anak yang membawa obor. Kuda Lumping di Jawa Timur ditampilkan setelah panen sebagai rasa syukur dan keberanian pemuda.</p>
+              </article>
+              <article class="panel" data-sel="java-6">
+                <h4 class="panel__title">Tempat bersejarah</h4>
+                <p>Borobudur dan Prambanan ditetapkan sebagai Warisan Dunia UNESCO pada 1991, yang pertama candi Buddha terbesar di dunia dan yang kedua candi Hindu untuk Trimurti. Trowulan di Jawa Timur menyisakan gapura kepala kala dari bekas ibu kota Majapahit.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="sheet" data-pulau="kalimantan">
+          <header class="sheet__head">
+            <h3 class="sheet__name">Kalimantan</h3>
+            <p class="sheet__desc">Bentang yang arahnya ditentukan oleh sungai-sungai besar, dan dari sanalah perahu masuk ke wilayah yang tidak tersentuh jalan darat.</p>
+            <p class="sr-only">Foto lapisan untuk Kalimantan: rumah panjang di tepi sungai Kalimantan pada sore hari.</p>
+          </header>
+
+          <div class="sheet__body">
+            <fieldset class="tabs">
+              <legend class="sr-only">Kategori Kalimantan</legend>
+              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-1" checked>
+              <label class="tab" for="k-kalimantan-1"><span class="tab__num">01</span>Budaya</label>
+              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-2">
+              <label class="tab" for="k-kalimantan-2"><span class="tab__num">02</span>Makanan</label>
+              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-3">
+              <label class="tab" for="k-kalimantan-3"><span class="tab__num">03</span>Rumah adat</label>
+              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-4">
+              <label class="tab" for="k-kalimantan-4"><span class="tab__num">04</span>Bahasa</label>
+              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-5">
+              <label class="tab" for="k-kalimantan-5"><span class="tab__num">05</span>Tradisi</label>
+              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-6">
+              <label class="tab" for="k-kalimantan-6"><span class="tab__num">06</span>Tempat bersejarah</label>
+            </fieldset>
+
+            <div class="panels">
+              <article class="panel" data-sel="kalimantan-1">
+                <h4 class="panel__title">Budaya</h4>
+                <p>Orang Dayak memahat motif pada perisai, mandau, dan tato sebagai bahasa yang dibaca, bukan sekadar hiasan. Rebab mulut dan gong menjadi pengiring utama ketika gala adat dilangsungkan.</p>
+              </article>
+              <article class="panel" data-sel="kalimantan-2">
+                <h4 class="panel__title">Makanan</h4>
+                <p>Soto Banjar khas Kalimantan Selatan memakai daging unggas dan ikan dengan kuah kental berbumbu kunyit, lengkuas, dan kemiri. Lawuh adalah hidangan sayur mentah yang diulek memakai cobek tuhu.</p>
+              </article>
+              <article class="panel" data-sel="kalimantan-3">
+                <h4 class="panel__title">Rumah adat</h4>
+                <p>Rumah Betang di Kalimantan Tengah bisa membentang sangat panjang dan menampung banyak keluarga dalam satu atap, dengan loteng sebagai ruang bersama. Di Kalimantan Timur, lamin Dayak memakai susunan dua lantai dengan kandang hewan dan tempat tinggal manusia bersebelahan.</p>
+              </article>
+              <article class="panel" data-sel="kalimantan-4">
+                <h4 class="panel__title">Bahasa</h4>
+                <p>Bahasa Dayak, Banjar, Kutai, dan Iban menjadi bahasa utama, sebagian besar masuk rumpun Austronesia. Sungai menjadi jalur utama, sehingga kosakata bahasa kaya akan istilah air dan hutan.</p>
+              </article>
+              <article class="panel" data-sel="kalimantan-5">
+                <h4 class="panel__title">Tradisi</h4>
+                <p>Hudoq Belawai di Kalimantan Tengah merupakan ritual syukur bagi masyarakat Dayak Benuaq dengan sesaji dan makan bersama. Tradisi Erai di sepanjang Sungai Kapuas dilaksanakan sebagai bentuk syukur kepada sungai.</p>
+              </article>
+              <article class="panel" data-sel="kalimantan-6">
+                <h4 class="panel__title">Tempat bersejarah</h4>
+                <p>Candi Muara Teweh di Barito Utara disebut candi, tetapi sebenarnya kumpulan peti batu dan makam dari masa Hindu. Di Tenggarong berdiri istana Kerajaan Kutai Kartanegara, kini Museum Mulawarman, dengan Prasasti Yupa sebagai bukti tertulis kerajaan.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="sheet" data-pulau="sulawesi">
+          <header class="sheet__head">
+            <h3 class="sheet__name">Sulawesi</h3>
+            <p class="sheet__desc">Bentuknya seperti kelopak yang sedang mekar, keempat lengannya menjadi laut terbuka dan lengan bawahnya menjadi teluk yang tenang.</p>
+            <p class="sr-only">Foto lapisan untuk Sulawesi: atap rumah tongkonau Sulawesi Utara dalam siluet.</p>
+          </header>
+
+          <div class="sheet__body">
+            <fieldset class="tabs">
+              <legend class="sr-only">Kategori Sulawesi</legend>
+              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-1" checked>
+              <label class="tab" for="k-sulawesi-1"><span class="tab__num">01</span>Budaya</label>
+              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-2">
+              <label class="tab" for="k-sulawesi-2"><span class="tab__num">02</span>Makanan</label>
+              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-3">
+              <label class="tab" for="k-sulawesi-3"><span class="tab__num">03</span>Rumah adat</label>
+              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-4">
+              <label class="tab" for="k-sulawesi-4"><span class="tab__num">04</span>Bahasa</label>
+              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-5">
+              <label class="tab" for="k-sulawesi-5"><span class="tab__num">05</span>Tradisi</label>
+              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-6">
+              <label class="tab" for="k-sulawesi-6"><span class="tab__num">06</span>Tempat bersejarah</label>
+            </fieldset>
+
+            <div class="panels">
+              <article class="panel" data-sel="sulawesi-1">
+                <h4 class="panel__title">Budaya</h4>
+                <p>Ma'badong di Sulawesi Utara adalah tradisi berkumpul yang dinyatakan lewat gendang dan nyanyian. Orang Toraja menjaga warisan ukir kayu, dari rumah tongkonan sampai rumah pemakaman tau tau.</p>
+              </article>
+              <article class="panel" data-sel="sulawesi-2">
+                <h4 class="panel__title">Makanan</h4>
+                <p>Coto Makassar adalah sup kental daging dan jero dengan bumbu kacang tanah yang digiling halus. Pallumara khas Sulawesi Selatan dimasak dari jagung, santan, dan kelapa parut, lazim disajikan bersama ikan.</p>
+              </article>
+              <article class="panel" data-sel="sulawesi-3">
+                <h4 class="panel__title">Rumah adat</h4>
+                <p>Tongkonan di Toraja beratap melengkung seperti perahu dengan ujung terangkat, bentuk yang sama muncul pada lumbung padi Tangkluk. Di Gowa, Balla Lompoa dibangun tanpa paku dan berdiri di atas batu.</p>
+              </article>
+              <article class="panel" data-sel="sulawesi-4">
+                <h4 class="panel__title">Bahasa</h4>
+                <p>Bahasa Bugis dan Makassar saling dipahami dan dipakai luas di pesisir selatan. Bahasa Toraja dipakai di dataran tinggi, sedangkan Minahasa dipakai di utara.</p>
+              </article>
+              <article class="panel" data-sel="sulawesi-5">
+                <h4 class="panel__title">Tradisi</h4>
+                <p>Rambu Solo' di Toraja berjalan sebagai rangkaian upacara pemakaman, dengan puncak pada peletakkan jenazah di dalam kurungan batu. Ma'badong di Minahasa dilaksanakan setelah duka untuk menyatakan kebersamaan warga.</p>
+              </article>
+              <article class="panel" data-sel="sulawesi-6">
+                <h4 class="panel__title">Tempat bersejarah</h4>
+                <p>Fort Rotterdam di Makassar dibangun pertama kali tahun 1545 oleh Kerajaan Gowa-Tallo sebagai Benteng Ujung Pandang, lalu dibangun ulang oleh Belanda setelah perang dengan Makassar. Situs megalit di Taman Nasional Lore Lindu, Sulawesi Tengah, seperti Baturesi, menunjukkan tradisi ukir batu yang berbeda dari candi Hindu.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="sheet" data-pulau="papua">
+          <header class="sheet__head">
+            <h3 class="sheet__name">Papua</h3>
+            <p class="sheet__desc">Bagian paling timur, dengan dataran tinggi yang dikelilingi hutan dan lembah yang dihuni oleh bahasa yang berbeda.</p>
+            <p class="sr-only">Foto lapisan untuk Papua: honai di lembah Baliem yang dikelilingi bukit hijau.</p>
+          </header>
+
+          <div class="sheet__body">
+            <fieldset class="tabs">
+              <legend class="sr-only">Kategori Papua</legend>
+              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-1" checked>
+              <label class="tab" for="k-papua-1"><span class="tab__num">01</span>Budaya</label>
+              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-2">
+              <label class="tab" for="k-papua-2"><span class="tab__num">02</span>Makanan</label>
+              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-3">
+              <label class="tab" for="k-papua-3"><span class="tab__num">03</span>Rumah adat</label>
+              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-4">
+              <label class="tab" for="k-papua-4"><span class="tab__num">04</span>Bahasa</label>
+              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-5">
+              <label class="tab" for="k-papua-5"><span class="tab__num">05</span>Tradisi</label>
+              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-6">
+              <label class="tab" for="k-papua-6"><span class="tab__num">06</span>Tempat bersejarah</label>
+            </fieldset>
+
+            <div class="panels">
+              <article class="panel" data-sel="papua-1">
+                <h4 class="panel__title">Budaya</h4>
+                <p>Noken adalah tas anyaman tangan yang menjadi lambang khas Papua, dikerjakan oleh perempuan di dataran tinggi. Tari Tifa dan dentingan tifa mengiringi upacara yang punya makna tersendiri, bukan sekadar hiburan.</p>
+              </article>
+              <article class="panel" data-sel="papua-2">
+                <h4 class="panel__title">Makanan</h4>
+                <p>Papeda adalah bubur sagu yang dimasak perlahan dan disajikan dengan ikan atau sayur, dan menjadi pokok harian di Papua. Sagu di dataran rendah diolah menjadi wadah penyimpanan apar dan bisa disimpan lama.</p>
+              </article>
+              <article class="panel" data-sel="papua-3">
+                <h4 class="panel__title">Rumah adat</h4>
+                <p>Honai di Papua Pegunungan berbentuk bulat dengan jendela bundar, atapnya kerucut dari daun sagu. Bentuknya membuat rumah ini tetap hangat di pegunungan yang dingin, dan dipakai bersama oleh satu keluarga besar.</p>
+              </article>
+              <article class="panel" data-sel="papua-4">
+                <h4 class="panel__title">Bahasa</h4>
+                <p>Bentang bahasa Papua sangat beragam dan bahasa setempat lebih sering dipakai daripada Bahasa Indonesia dalam keseharian. Masing-masing suku punya bahasa sendiri dan sebagian berasal dari keluarga bahasa yang berbeda-beda.</p>
+              </article>
+              <article class="panel" data-sel="papua-5">
+                <h4 class="panel__title">Tradisi</h4>
+                <p>Pesta Nggong di Papua merayakan panen tebu dengan tarian dan dentingan gendang. Musyawarah adat masih dipakai lembaga adat untuk membahas hal yang menyangkut tanah dan hak ulayat.</p>
+              </article>
+              <article class="panel" data-sel="papua-6">
+                <h4 class="panel__title">Tempat bersejarah</h4>
+                <p>Jayapura dikenal sebagai Numbay sebelum masa kolonial, lalu menjadi Hollandia dari 1910 sampai 1962 dan Sukarnapura sejak 1962 sebagai ibu kota Papua Belanda. Nama-nama itu menandai berulangnya perubahan penguasaan di wilayah paling timur Indonesia.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <p class="footer-text">Catat, pencatat keuangan harian. Prototipe statis tanpa JavaScript, tanpa akun asli, tanpa penyimpanan di server.</p>
+<footer class="site-foot" id="penutup">
+  <div class="wrap foot__grid">
+    <div>
+      <h2 class="foot__title">Satu archipelago, banyak cara membaca</h2>
+      <p class="foot__text">Enam sisi itu belum daftar lengkap. Adat di setiap tempat jauh lebih dalam dari enam kalimat, dan setiap komunitas punya versi yang lebih panjang lagi. Yang tersisa di sini adalah peta kasar supaya kamu tahu mau mulai dari mana.</p>
+    </div>
+    <div class="foot__aside">
+      <p class="foot__cue-label">Lanjut membaca</p>
+      <a class="cue cue--light" href="#jelajah">Kembali ke daftar pulau</a>
+    </div>
   </div>
 </footer>
+
 </body>
 </html>
