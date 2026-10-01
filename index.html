@@ -3,409 +3,2640 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="dark">
-<meta name="description" content="NUSA, jelajah budaya Indonesia. Lima pulau dari barat ke timur, masing-masing dengan enam sisi: budaya, makanan, rumah adat, bahasa, tradisi, dan tempat bersejarah.">
-<title>NUSA, jelajah budaya Indonesia</title>
+<title>NUSA - Jelajah Budaya Indonesia</title>
+<meta name="description" content="Peta interaktif 38 provinsi Indonesia. Telusuri budaya, makanan, rumah adat, bahasa, tradisi, dan sejarah setiap provinsi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Bodoni+Moda:opsz,wght@6..96,400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a class="skip-link" href="#jelajah">Langsung ke daftar pulau</a>
+
+<a class="skip-link" href="#dossier">Lompat ke daftar provinsi</a>
 
 <header class="topbar">
   <div class="wrap topbar__inner">
-    <a class="wordmark" href="#hero">NUSA</a>
+    <a class="wordmark" href="#atas">NUSA</a>
     <nav class="topnav" aria-label="Navigasi utama">
-      <a class="topnav__link" href="#jelajah">Jelajah</a>
-      <a class="topnav__link" href="#penutup">Penutup</a>
+      <a class="topnav__link" href="#peta">Peta</a>
+      <a class="topnav__link" href="#dossier">Isi</a>
     </nav>
   </div>
 </header>
 
-<main id="main">
+<main id="atas">
 
-  <section class="hero" id="hero" aria-labelledby="hero-title">
-    <div class="hero__bg" role="img" aria-label="Lanskap kepulauan Indonesia dari ketinggian pada sore hari"></div>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" role="presentation"></div>
     <div class="wrap hero__inner">
-      <div class="hero__text">
-        <h1 class="hero__title" id="hero-title">Discover Indonesia</h1>
-        <p class="hero__sub">Thousands of stories. One archipelago.</p>
-        <p class="hero__lead">Lima pulau besar, tiga puluh sisi yang berbeda. Yang tertulis di bawah adalah potongan kebiasaan yang masih hidup: tari piring Minangkabau, batik Pekalongan, ukiran Dayak, tari pomburu Bugis, dan noken Papua.</p>
-        <a class="cue" href="#jelajah">Pilih pulau</a>
-      </div>
+      <h1 class="hero__title" id="hero-title">Indonesia,<br>sepatah kata<br>yang belum selesai</h1>
+      <p class="hero__sub">Tiga puluh delapan provinsi. Enam lapis cerita.</p>
+      <p class="hero__lead">Setiap provinsi punya tarian, sajian, dan rumah yang berbeda. Peta di bawah membuka satu per satu, dari Aceh di ujung barat sampai Papua di ujung timur. Pilih provinsi, lalu pilih sendiri lapisan yang ingin dibaca lebih dalam.</p>
+      <a class="cue" href="#peta">Mulai dari peta</a>
     </div>
   </section>
 
-  <section class="explorer" id="jelajah" aria-labelledby="jelajah-title">
+  <!-- PETA + ATLAS -->
+  <section class="atlas wrap" id="peta" aria-labelledby="atlas-title">
+    <div class="atlas__head">
+      <h2 class="section-title" id="atlas-title">Peta lengkap</h2>
+      <p class="section-lead">Arahkan kursor ke salah satu provinsi untuk melihat namanya. Kilik untuk membuka isinya. Kontur di bawah disusun ulang sebagai diagram, bukan batas resmi.</p>
+    </div>
+
+    <div class="mapview">
+      <svg class="map" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Peta skematis 38 provinsi Indonesia">
+        <rect class="map__sea" x="0" y="0" width="1000" height="400"></rect>
+
+        <text class="map__region" x="140" y="30">SUMATRA</text>
+        <text class="map__region" x="300" y="100">KEPULAUAN RIAU</text>
+        <text class="map__region" x="285" y="348">JAWA</text>
+        <text class="map__region" x="410" y="248">KALIMANTAN</text>
+        <text class="map__region" x="550" y="62">SULAWESI</text>
+        <text class="map__region" x="600" y="376">NUSA TENGGARA</text>
+        <text class="map__region" x="700" y="190">MALUKU</text>
+        <text class="map__region" x="870" y="82">PAPUA</text>
+
+        <!-- SUMATRA -->
+        <a class="prov prov--sum prov--live" data-prov="aceh" href="#aceh">
+          <path class="pv" d="M55,55 L85,72 L110,100 L78,85 Z"></path>
+          <text x="82" y="78">Aceh</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="sumut" href="#sumut">
+          <path class="pv" d="M78,85 L110,100 L134,128 L100,115 Z"></path>
+          <text x="106" y="107">Sumut</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="sumbar" href="#sumbar">
+          <path class="pv" d="M100,115 L134,128 L157,157 L122,146 Z"></path>
+          <text x="128" y="136">Sumbar</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="riau" href="#riau">
+          <path class="pv" d="M122,146 L157,157 L180,188 L144,178 Z"></path>
+          <text x="151" y="167">Riau</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="jambi" href="#jambi">
+          <path class="pv" d="M144,178 L180,188 L202,220 L166,210 Z"></path>
+          <text x="173" y="199">Jambi</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="sumsel" href="#sumsel">
+          <path class="pv" d="M166,210 L202,220 L223,248 L188,240 Z"></path>
+          <text x="195" y="230">Sumsel</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="bengkulu" href="#bengkulu">
+          <path class="pv" d="M188,240 L223,248 L240,272 L208,266 Z"></path>
+          <text x="215" y="256">Bengkulu</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="lampung" href="#lampung">
+          <path class="pv" d="M208,266 L240,272 L250,293 L225,290 Z"></path>
+          <text x="231" y="280">Lampung</text>
+        </a>
+
+        <!-- KEPU LAUAN -->
+        <a class="prov prov--sum prov--live" data-prov="kepriau" href="#kepriau">
+          <path class="pv--hit" d="M246,146 L286,146 L286,194 L246,194 Z"></path>
+          <path class="pv" d="M252,152 L268,158 L264,176 L272,184 L262,192 L252,182 L248,168 Z"></path>
+          <text x="260" y="172">Kepriau</text>
+        </a>
+        <a class="prov prov--sum prov--live" data-prov="babel" href="#babel">
+          <path class="pv--hit" d="M294,228 L342,228 L342,282 L294,282 Z"></path>
+          <path class="pv" d="M302,236 L316,234 L322,244 L316,256 L304,254 L298,244 Z"></path>
+          <path class="pv" d="M322,262 L334,260 L338,270 L330,278 L320,274 Z"></path>
+          <text x="318" y="256">Babel</text>
+        </a>
+
+        <!-- JAWA -->
+        <a class="prov prov--jaw prov--live" data-prov="banten" href="#banten">
+          <path class="pv" d="M190,298 L214,296 L216,314 L192,318 L188,308 Z"></path>
+          <text x="202" y="307">Banten</text>
+        </a>
+        <a class="prov prov--jaw prov--live" data-prov="jabar" href="#jabar">
+          <path class="pv" d="M216,296 L262,298 L266,314 L218,316 Z"></path>
+          <text x="241" y="307">Jabar</text>
+        </a>
+        <a class="prov prov--jaw prov--live" data-prov="jateng" href="#jateng">
+          <path class="pv" d="M266,298 L312,298 L316,314 L268,316 Z"></path>
+          <text x="291" y="307">Jateng</text>
+        </a>
+        <a class="prov prov--jaw prov--live" data-prov="diy" href="#diy">
+          <path class="pv" d="M316,298 L330,300 L332,312 L318,316 Z"></path>
+          <text x="324" y="307">DIY</text>
+        </a>
+        <a class="prov prov--jaw prov--live" data-prov="jatim" href="#jatim">
+          <path class="pv" d="M332,300 L352,306 L378,306 L392,314 L372,322 L336,318 Z"></path>
+          <text x="362" y="313">Jatim</text>
+        </a>
+
+        <!-- KALIMANTAN -->
+        <a class="prov prov--kal prov--live" data-prov="kalbar" href="#kalbar">
+          <path class="pv" d="M336,124 L372,118 L378,150 L372,186 L340,188 L334,158 Z"></path>
+          <text x="356" y="154">Kalbar</text>
+        </a>
+        <a class="prov prov--kal prov--live" data-prov="kalteng" href="#kalteng">
+          <path class="pv" d="M372,118 L418,114 L424,148 L418,172 L380,176 L374,148 Z"></path>
+          <text x="398" y="144">Kalteng</text>
+        </a>
+        <a class="prov prov--kal prov--live" data-prov="kaltu" href="#kaltu">
+          <path class="pv" d="M344,62 L456,58 L462,92 L430,104 L356,104 L340,88 Z"></path>
+          <text x="400" y="82">Kaltu</text>
+        </a>
+        <a class="prov prov--kal prov--live" data-prov="kalsel" href="#kalsel">
+          <path class="pv" d="M380,176 L416,174 L448,190 L452,216 L420,228 L386,220 L376,196 Z"></path>
+          <text x="414" y="202">Kalsel</text>
+        </a>
+        <a class="prov prov--kal prov--live" data-prov="kaltim" href="#kaltim">
+          <path class="pv" d="M424,104 L462,98 L488,112 L494,148 L478,180 L430,182 L422,150 Z"></path>
+          <text x="458" y="142">Kaltim</text>
+        </a>
+
+        <!-- NUSA TENGGARA -->
+        <a class="prov prov--nus prov--live" data-prov="bali" href="#bali">
+          <path class="pv" d="M406,318 L424,316 L426,326 L408,328 Z"></path>
+          <text x="416" y="322">Bali</text>
+        </a>
+        <a class="prov prov--nus prov--live" data-prov="ntb" href="#ntb">
+          <path class="pv" d="M442,322 L462,316 L486,324 L480,334 L452,334 Z"></path>
+          <text x="464" y="325">NTB</text>
+        </a>
+        <a class="prov prov--nus prov--live" data-prov="ntt" href="#ntt">
+          <path class="pv" d="M506,326 L534,318 L566,326 L578,340 L546,346 L512,340 Z"></path>
+          <text x="542" y="332">NTT</text>
+        </a>
+
+        <!-- SULAWESI -->
+        <a class="prov prov--sul prov--live" data-prov="sulut" href="#sulut">
+          <path class="pv" d="M534,122 L566,116 L596,128 L600,146 L566,152 L536,144 Z"></path>
+          <text x="566" y="134">Sulut</text>
+        </a>
+        <a class="prov prov--sul prov--live" data-prov="gorontalo" href="#gorontalo">
+          <path class="pv" d="M492,152 L514,148 L518,166 L504,178 L490,168 Z"></path>
+          <text x="502" y="163">Gorontalo</text>
+        </a>
+        <a class="prov prov--sul prov--live" data-prov="sulteng" href="#sulteng">
+          <path class="pv" d="M518,154 L546,158 L556,182 L542,202 L518,192 Z"></path>
+          <text x="536" y="178">Sulteng</text>
+        </a>
+        <a class="prov prov--sul prov--live" data-prov="sulbar" href="#sulbar">
+          <path class="pv" d="M456,188 L486,182 L500,200 L488,216 L462,214 L452,200 Z"></path>
+          <text x="476" y="199">Sulbar</text>
+        </a>
+        <a class="prov prov--sul prov--live" data-prov="sulsel" href="#sulsel">
+          <path class="pv" d="M510,214 L530,208 L546,232 L540,262 L518,274 L506,250 L500,228 Z"></path>
+          <text x="520" y="240">Sulsel</text>
+        </a>
+        <a class="prov prov--sul prov--live" data-prov="sultra" href="#sultra">
+          <path class="pv" d="M548,206 L578,212 L584,238 L562,252 L546,232 Z"></path>
+          <text x="566" y="232">Sultra</text>
+        </a>
+
+        <!-- MALUKU -->
+        <a class="prov prov--mal prov--live" data-prov="maluku" href="#maluku">
+          <path class="pv" d="M612,152 L632,148 L642,162 L634,176 L616,174 L608,162 Z"></path>
+          <text x="625" y="162">Maluku</text>
+        </a>
+        <a class="prov prov--mal prov--live" data-prov="malut" href="#malut">
+          <path class="pv" d="M652,112 L672,106 L690,118 L684,136 L660,140 L648,126 Z"></path>
+          <text x="668" y="124">Malut</text>
+        </a>
+
+        <!-- PAPUA -->
+        <a class="prov prov--pap prov--live" data-prov="pabnl" href="#pabnl">
+          <path class="pv" d="M762,134 L802,130 L838,140 L840,170 L760,170 L760,136 Z"></path>
+          <text x="800" y="150">Papua Barat Laut</text>
+        </a>
+        <a class="prov prov--pap prov--live" data-prov="pabar" href="#pabar">
+          <path class="pv" d="M760,170 L840,170 L842,225 L762,225 Z"></path>
+          <text x="801" y="198">Papua Barat</text>
+        </a>
+        <a class="prov prov--pap prov--live" data-prov="pabd" href="#pabd">
+          <path class="pv" d="M762,225 L842,225 L848,256 L812,272 L774,264 Z"></path>
+          <text x="804" y="247">Papua Barat Daya</text>
+        </a>
+        <a class="prov prov--pap prov--live" data-prov="papua" href="#papua">
+          <path class="pv" d="M842,136 L900,128 L960,140 L966,192 L906,210 L844,210 Z"></path>
+          <text x="904" y="168">Papua</text>
+        </a>
+        <a class="prov prov--pap prov--live" data-prov="papeg" href="#papeg">
+          <path class="pv" d="M846,218 L900,214 L902,246 L874,254 L850,250 Z"></path>
+          <text x="874" y="237">Papeg</text>
+        </a>
+        <a class="prov prov--pap prov--live" data-prov="pateng" href="#pateng">
+          <path class="pv" d="M904,216 L958,200 L962,240 L930,258 L906,252 Z"></path>
+          <text x="932" y="236">Pateng</text>
+        </a>
+        <a class="prov prov--pap prov--live" data-prov="pasel" href="#pasel">
+          <path class="pv" d="M850,262 L900,258 L948,266 L954,294 L892,304 L852,290 Z"></path>
+          <text x="902" y="280">Papsel</text>
+        </a>
+      </svg>
+    </div>
+
+    <p class="mapnote">Batas provinsi pada gambar ini disusun sebagai diagram untuk kebutuhan navigasi, bukan sebagai representasi kartografis resmi. Nama panjang memakai bentuk ringkas.</p>
+
+    <details class="provindex">
+      <summary class="provindex__toggle">Daftar provinsi</summary>
+      <div class="provindex__body">
+        <div class="provindex__group">
+          <p class="provindex__label">Sumatera</p>
+          <ul class="provindex__list">
+            <li><a class="provindex__link" href="#aceh">Aceh</a></li>
+            <li><a class="provindex__link" href="#sumut">Sumatera Utara</a></li>
+            <li><a class="provindex__link" href="#sumbar">Sumatera Barat</a></li>
+            <li><a class="provindex__link" href="#riau">Riau</a></li>
+            <li><a class="provindex__link" href="#kepriau">Kepulauan Riau</a></li>
+            <li><a class="provindex__link" href="#jambi">Jambi</a></li>
+            <li><a class="provindex__link" href="#sumsel">Sumatera Selatan</a></li>
+            <li><a class="provindex__link" href="#bengkulu">Bengkulu</a></li>
+            <li><a class="provindex__link" href="#lampung">Lampung</a></li>
+            <li><a class="provindex__link" href="#babel">Bangka Belitung</a></li>
+          </ul>
+        </div>
+        <div class="provindex__group">
+          <p class="provindex__label">Jawa</p>
+          <ul class="provindex__list">
+            <li><a class="provindex__link" href="#jabar">Jawa Barat</a></li>
+            <li><a class="provindex__link" href="#banten">Banten</a></li>
+            <li><a class="provindex__link" href="#jateng">Jawa Tengah</a></li>
+            <li><a class="provindex__link" href="#diy">DI Yogyakarta</a></li>
+            <li><a class="provindex__link" href="#jatim">Jawa Timur</a></li>
+          </ul>
+        </div>
+        <div class="provindex__group">
+          <p class="provindex__label">Kalimantan</p>
+          <ul class="provindex__list">
+            <li><a class="provindex__link" href="#kalbar">Kalimantan Barat</a></li>
+            <li><a class="provindex__link" href="#kalteng">Kalimantan Tengah</a></li>
+            <li><a class="provindex__link" href="#kalsel">Kalimantan Selatan</a></li>
+            <li><a class="provindex__link" href="#kaltim">Kalimantan Timur</a></li>
+            <li><a class="provindex__link" href="#kaltu">Kalimantan Utara</a></li>
+          </ul>
+        </div>
+        <div class="provindex__group">
+          <p class="provindex__label">Sulawesi</p>
+          <ul class="provindex__list">
+            <li><a class="provindex__link" href="#sulut">Sulawesi Utara</a></li>
+            <li><a class="provindex__link" href="#gorontalo">Gorontalo</a></li>
+            <li><a class="provindex__link" href="#sulteng">Sulawesi Tengah</a></li>
+            <li><a class="provindex__link" href="#sulbar">Sulawesi Barat</a></li>
+            <li><a class="provindex__link" href="#sulsel">Sulawesi Selatan</a></li>
+            <li><a class="provindex__link" href="#sultra">Sulawesi Tenggara</a></li>
+          </ul>
+        </div>
+        <div class="provindex__group">
+          <p class="provindex__label">Bali dan Nusa Tenggara</p>
+          <ul class="provindex__list">
+            <li><a class="provindex__link" href="#bali">Bali</a></li>
+            <li><a class="provindex__link" href="#ntb">Nusa Tenggara Barat</a></li>
+            <li><a class="provindex__link" href="#ntt">Nusa Tenggara Timur</a></li>
+          </ul>
+        </div>
+        <div class="provindex__group">
+          <p class="provindex__label">Maluku dan Papua</p>
+          <ul class="provindex__list">
+            <li><a class="provindex__link" href="#maluku">Maluku</a></li>
+            <li><a class="provindex__link" href="#malut">Maluku Utara</a></li>
+            <li><a class="provindex__link" href="#papua">Papua</a></li>
+            <li><a class="provindex__link" href="#pabar">Papua Barat</a></li>
+            <li><a class="provindex__link" href="#pabd">Papua Barat Daya</a></li>
+            <li><a class="provindex__link" href="#pabnl">Papua Barat Laut</a></li>
+            <li><a class="provindex__link" href="#pasel">Papua Selatan</a></li>
+            <li><a class="provindex__link" href="#pateng">Papua Tengah</a></li>
+            <li><a class="provindex__link" href="#papeg">Papua Pegunungan</a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- DOSSIER -->
+  <section class="dossier" id="dossier" aria-label="Isi provinsi">
+
     <div class="wrap">
-      <h2 class="section-title" id="jelajah-title">Lima pulau dari barat ke timur</h2>
-      <p class="section-lead">Pilih satu pulau, lalu telusuri enam sisinya: budaya, makanan, rumah adat, bahasa, tradisi, dan tempat bersejarah.</p>
-    </div>
-
-    <div class="wrap explorer__grid">
-
-      <div class="rail" role="group" aria-label="Pilih pulau">
-        <input class="sr-input" type="radio" name="pulau" id="pulau-sumatra" checked>
-        <label class="island" for="pulau-sumatra">
-          <span class="island__num">01</span>
-          <span class="island__text">
-            <span class="island__name">Sumatra</span>
-            <span class="island__sub">Bentang tinggi, lembah subur, atap tanduk kerbau.</span>
-          </span>
-        </label>
-
-        <input class="sr-input" type="radio" name="pulau" id="pulau-java">
-        <label class="island" for="pulau-java">
-          <span class="island__num">02</span>
-          <span class="island__text">
-            <span class="island__name">Java</span>
-            <span class="island__sub">Sawah berundak, candi batu, kota-kota tua.</span>
-          </span>
-        </label>
-
-        <input class="sr-input" type="radio" name="pulau" id="pulau-kalimantan">
-        <label class="island" for="pulau-kalimantan">
-          <span class="island__num">03</span>
-          <span class="island__text">
-            <span class="island__name">Kalimantan</span>
-            <span class="island__sub">Hutan sungai panjang, rumah panjang, ukiran bertulisan.</span>
-          </span>
-        </label>
-
-        <input class="sr-input" type="radio" name="pulau" id="pulau-sulawesi">
-        <label class="island" for="pulau-sulawesi">
-          <span class="island__num">04</span>
-          <span class="island__text">
-            <span class="island__name">Sulawesi</span>
-            <span class="island__sub">Tongkonan, rempah, gunung yang membelah pulau.</span>
-          </span>
-        </label>
-
-        <input class="sr-input" type="radio" name="pulau" id="pulau-papua">
-        <label class="island" for="pulau-papua">
-          <span class="island__num">05</span>
-          <span class="island__text">
-            <span class="island__name">Papua</span>
-            <span class="island__sub">Honai di lereng gunung, sagu, bahasa per lembah.</span>
-          </span>
-        </label>
-      </div>
-
-      <div class="stagewrap">
-
-        <div class="stage" aria-hidden="true">
-          <div class="stage__layer" data-foto="sumatra">
-            <div class="stage__fallback"></div>
-            <div class="stage__photo"></div>
-            <div class="stage__scrim"></div>
-          </div>
-          <div class="stage__layer" data-foto="java">
-            <div class="stage__fallback"></div>
-            <div class="stage__photo"></div>
-            <div class="stage__scrim"></div>
-          </div>
-          <div class="stage__layer" data-foto="kalimantan">
-            <div class="stage__fallback"></div>
-            <div class="stage__photo"></div>
-            <div class="stage__scrim"></div>
-          </div>
-          <div class="stage__layer" data-foto="sulawesi">
-            <div class="stage__fallback"></div>
-            <div class="stage__photo"></div>
-            <div class="stage__scrim"></div>
-          </div>
-          <div class="stage__layer" data-foto="papua">
-            <div class="stage__fallback"></div>
-            <div class="stage__photo"></div>
-            <div class="stage__scrim"></div>
-          </div>
-        </div>
-
-        <div class="sheet" data-pulau="sumatra">
-          <header class="sheet__head">
-            <h3 class="sheet__name">Sumatra</h3>
-            <p class="sheet__desc">Pulau yang membelah Samudra Hindia dari utara ke selatan, dengan deretan pegunungan tinggi di barat yang menghadap langsung ke lautan lepas.</p>
-            <p class="sr-only">Foto lapisan untuk Sumatra: atap rumah Gadang Minangkabau yang melengkung menyerupai tanduk kerbau.</p>
-          </header>
-
-          <div class="sheet__body">
-            <fieldset class="tabs">
-              <legend class="sr-only">Kategori Sumatra</legend>
-              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-1" checked>
-              <label class="tab" for="k-sumatra-1"><span class="tab__num">01</span>Budaya</label>
-              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-2">
-              <label class="tab" for="k-sumatra-2"><span class="tab__num">02</span>Makanan</label>
-              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-3">
-              <label class="tab" for="k-sumatra-3"><span class="tab__num">03</span>Rumah adat</label>
-              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-4">
-              <label class="tab" for="k-sumatra-4"><span class="tab__num">04</span>Bahasa</label>
-              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-5">
-              <label class="tab" for="k-sumatra-5"><span class="tab__num">05</span>Tradisi</label>
-              <input class="sr-input" type="radio" name="kat-sumatra" id="k-sumatra-6">
-              <label class="tab" for="k-sumatra-6"><span class="tab__num">06</span>Tempat bersejarah</label>
-            </fieldset>
-
-            <div class="panels">
-              <article class="panel" data-sel="sumatra-1">
-                <h4 class="panel__title">Budaya</h4>
-                <p>Tari Piring dari Tanah Minang memadukan gerakan melingkar dengan piring yang ditata rapi di telapak tangan. Di Bengkulu, Tabuik diarakkan keliling kota dengan arca raksasa yang dibuat khusus untuk hari besar.</p>
-              </article>
-              <article class="panel" data-sel="sumatra-2">
-                <h4 class="panel__title">Makanan</h4>
-                <p>Rendang dimasak perlahan dengan santan dan bumbu rempah sampai kuah mengental dan dagingnya empuk. Soto Medan memakai potongan daging dan jero dalam kuah bening yang gurih.</p>
-              </article>
-              <article class="panel" data-sel="sumatra-3">
-                <h4 class="panel__title">Rumah adat</h4>
-                <p>Rumah Gadang Minangkabau beratap melengkung seperti tanduk kerbau, dan jumlah gonjongnya disesuaikan dengan kedudukan pemiliknya. Di Sumatera Utara, Rumah Batak berdiri berderet di tepi Danau Toba dengan atap yang memanjang.</p>
-              </article>
-              <article class="panel" data-sel="sumatra-4">
-                <h4 class="panel__title">Bahasa</h4>
-                <p>Minangkabau, Batak, Bugis, dan Melayu menjadi bahasa utama pulau ini. Bahasa Melayu menjadi dasar Bahasa Indonesia dan sampai sekarang masih jadi penghubung antar pulau.</p>
-              </article>
-              <article class="panel" data-sel="sumatra-5">
-                <h4 class="panel__title">Tradisi</h4>
-                <p>Bertasbih adalah prosesi penyambutan dalam adat kawin dan penghormatan tamu di Minangkabau. Tabuik Bengkulu dilaksanakan menjelang bulan Muharram sebagai bentuk doa dan syukur bersama.</p>
-              </article>
-              <article class="panel" data-sel="sumatra-6">
-                <h4 class="panel__title">Tempat bersejarah</h4>
-                <p>Candi Bahal di Bukittinggi adalah kompleks candi Hindu dari sekitar abad ke-9 hingga ke-11, dan tata letaknya masih terlihat jelas. Kompleks Candi Muaro Jambi di tepi Sungai Batanghari menyimpan jejak pusat kegiatan Buddhisme Kerajaan Melayu dan kini berstatus cagar budaya nasional.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <div class="sheet" data-pulau="java">
-          <header class="sheet__head">
-            <h3 class="sheet__name">Java</h3>
-            <p class="sheet__desc">Pulau sawah dan gunung api yang menjadi tempat tinggal dan perdagangan paling ramai, membujur dari ujung barat sampai ujung timur.</p>
-            <p class="sr-only">Foto lapisan untuk Java: barisan Candi Borobudur yang berbingkai gunung pada kabut pagi.</p>
-          </header>
-
-          <div class="sheet__body">
-            <fieldset class="tabs">
-              <legend class="sr-only">Kategori Java</legend>
-              <input class="sr-input" type="radio" name="kat-java" id="k-java-1" checked>
-              <label class="tab" for="k-java-1"><span class="tab__num">01</span>Budaya</label>
-              <input class="sr-input" type="radio" name="kat-java" id="k-java-2">
-              <label class="tab" for="k-java-2"><span class="tab__num">02</span>Makanan</label>
-              <input class="sr-input" type="radio" name="kat-java" id="k-java-3">
-              <label class="tab" for="k-java-3"><span class="tab__num">03</span>Rumah adat</label>
-              <input class="sr-input" type="radio" name="kat-java" id="k-java-4">
-              <label class="tab" for="k-java-4"><span class="tab__num">04</span>Bahasa</label>
-              <input class="sr-input" type="radio" name="kat-java" id="k-java-5">
-              <label class="tab" for="k-java-5"><span class="tab__num">05</span>Tradisi</label>
-              <input class="sr-input" type="radio" name="kat-java" id="k-java-6">
-              <label class="tab" for="k-java-6"><span class="tab__num">06</span>Tempat bersejarah</label>
-            </fieldset>
-
-            <div class="panels">
-              <article class="panel" data-sel="java-1">
-                <h4 class="panel__title">Budaya</h4>
-                <p>Wayang menempatkan dalang bukan hanya sebagai pemain bayangan, tetapi juga pencerita, pemusik, dan tokoh ritual. Batik menjadikan kain sebagai arsip tertulis lewat motifnya, dan Reog Ponorogo sering membuka pesta desa.</p>
-              </article>
-              <article class="panel" data-sel="java-2">
-                <h4 class="panel__title">Makanan</h4>
-                <p>Sate dengan bumbu kacang sudah menjadi bagian dari malam hari di Yogyakarta. Gudeg dibuat dari nangka muda yang dikukus bersama areh, sedangkan Rawon Surabaya memakai kuah keluak gelap berisi daging dan telur.</p>
-              </article>
-              <article class="panel" data-sel="java-3">
-                <h4 class="panel__title">Rumah adat</h4>
-                <p>Rumah Joglo di Jawa Tengah memiliki atap limas yang bertumpu pada empat pilar saka guru, yang ditafsirkan sebagai urutan sosial. Di Yogyakarta, Rumah Limasan tumbuh makin tinggi ke arah belakang sebagai tanda keluarga yang sedang berhasil.</p>
-              </article>
-              <article class="panel" data-sel="java-4">
-                <h4 class="panel__title">Bahasa</h4>
-                <p>Jawa, Sunda, Madura, dan Betawi hidup berdampingan, masing-masing dengan kosakata dan tingkat kesopanan yang berbeda. Pertunjukan wayang memakai bentuk Jawa yang lebih tua sehingga penonton tetap bisa mengikuti ceritanya.</p>
-              </article>
-              <article class="panel" data-sel="java-5">
-                <h4 class="panel__title">Tradisi</h4>
-                <p>Grebeg Maulud di Demak dilaksanakan pada tanggal 12 Rabiul Awal dengan prosesi anak-anak yang membawa obor. Kuda Lumping di Jawa Timur ditampilkan setelah panen sebagai rasa syukur dan keberanian pemuda.</p>
-              </article>
-              <article class="panel" data-sel="java-6">
-                <h4 class="panel__title">Tempat bersejarah</h4>
-                <p>Borobudur dan Prambanan ditetapkan sebagai Warisan Dunia UNESCO pada 1991, yang pertama candi Buddha terbesar di dunia dan yang kedua candi Hindu untuk Trimurti. Trowulan di Jawa Timur menyisakan gapura kepala kala dari bekas ibu kota Majapahit.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <div class="sheet" data-pulau="kalimantan">
-          <header class="sheet__head">
-            <h3 class="sheet__name">Kalimantan</h3>
-            <p class="sheet__desc">Bentang yang arahnya ditentukan oleh sungai-sungai besar, dan dari sanalah perahu masuk ke wilayah yang tidak tersentuh jalan darat.</p>
-            <p class="sr-only">Foto lapisan untuk Kalimantan: rumah panjang di tepi sungai Kalimantan pada sore hari.</p>
-          </header>
-
-          <div class="sheet__body">
-            <fieldset class="tabs">
-              <legend class="sr-only">Kategori Kalimantan</legend>
-              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-1" checked>
-              <label class="tab" for="k-kalimantan-1"><span class="tab__num">01</span>Budaya</label>
-              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-2">
-              <label class="tab" for="k-kalimantan-2"><span class="tab__num">02</span>Makanan</label>
-              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-3">
-              <label class="tab" for="k-kalimantan-3"><span class="tab__num">03</span>Rumah adat</label>
-              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-4">
-              <label class="tab" for="k-kalimantan-4"><span class="tab__num">04</span>Bahasa</label>
-              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-5">
-              <label class="tab" for="k-kalimantan-5"><span class="tab__num">05</span>Tradisi</label>
-              <input class="sr-input" type="radio" name="kat-kalimantan" id="k-kalimantan-6">
-              <label class="tab" for="k-kalimantan-6"><span class="tab__num">06</span>Tempat bersejarah</label>
-            </fieldset>
-
-            <div class="panels">
-              <article class="panel" data-sel="kalimantan-1">
-                <h4 class="panel__title">Budaya</h4>
-                <p>Orang Dayak memahat motif pada perisai, mandau, dan tato sebagai bahasa yang dibaca, bukan sekadar hiasan. Rebab mulut dan gong menjadi pengiring utama ketika gala adat dilangsungkan.</p>
-              </article>
-              <article class="panel" data-sel="kalimantan-2">
-                <h4 class="panel__title">Makanan</h4>
-                <p>Soto Banjar khas Kalimantan Selatan memakai daging unggas dan ikan dengan kuah kental berbumbu kunyit, lengkuas, dan kemiri. Lawuh adalah hidangan sayur mentah yang diulek memakai cobek tuhu.</p>
-              </article>
-              <article class="panel" data-sel="kalimantan-3">
-                <h4 class="panel__title">Rumah adat</h4>
-                <p>Rumah Betang di Kalimantan Tengah bisa membentang sangat panjang dan menampung banyak keluarga dalam satu atap, dengan loteng sebagai ruang bersama. Di Kalimantan Timur, lamin Dayak memakai susunan dua lantai dengan kandang hewan dan tempat tinggal manusia bersebelahan.</p>
-              </article>
-              <article class="panel" data-sel="kalimantan-4">
-                <h4 class="panel__title">Bahasa</h4>
-                <p>Bahasa Dayak, Banjar, Kutai, dan Iban menjadi bahasa utama, sebagian besar masuk rumpun Austronesia. Sungai menjadi jalur utama, sehingga kosakata bahasa kaya akan istilah air dan hutan.</p>
-              </article>
-              <article class="panel" data-sel="kalimantan-5">
-                <h4 class="panel__title">Tradisi</h4>
-                <p>Hudoq Belawai di Kalimantan Tengah merupakan ritual syukur bagi masyarakat Dayak Benuaq dengan sesaji dan makan bersama. Tradisi Erai di sepanjang Sungai Kapuas dilaksanakan sebagai bentuk syukur kepada sungai.</p>
-              </article>
-              <article class="panel" data-sel="kalimantan-6">
-                <h4 class="panel__title">Tempat bersejarah</h4>
-                <p>Candi Muara Teweh di Barito Utara disebut candi, tetapi sebenarnya kumpulan peti batu dan makam dari masa Hindu. Di Tenggarong berdiri istana Kerajaan Kutai Kartanegara, kini Museum Mulawarman, dengan Prasasti Yupa sebagai bukti tertulis kerajaan.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <div class="sheet" data-pulau="sulawesi">
-          <header class="sheet__head">
-            <h3 class="sheet__name">Sulawesi</h3>
-            <p class="sheet__desc">Bentuknya seperti kelopak yang sedang mekar, keempat lengannya menjadi laut terbuka dan lengan bawahnya menjadi teluk yang tenang.</p>
-            <p class="sr-only">Foto lapisan untuk Sulawesi: atap rumah tongkonau Sulawesi Utara dalam siluet.</p>
-          </header>
-
-          <div class="sheet__body">
-            <fieldset class="tabs">
-              <legend class="sr-only">Kategori Sulawesi</legend>
-              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-1" checked>
-              <label class="tab" for="k-sulawesi-1"><span class="tab__num">01</span>Budaya</label>
-              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-2">
-              <label class="tab" for="k-sulawesi-2"><span class="tab__num">02</span>Makanan</label>
-              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-3">
-              <label class="tab" for="k-sulawesi-3"><span class="tab__num">03</span>Rumah adat</label>
-              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-4">
-              <label class="tab" for="k-sulawesi-4"><span class="tab__num">04</span>Bahasa</label>
-              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-5">
-              <label class="tab" for="k-sulawesi-5"><span class="tab__num">05</span>Tradisi</label>
-              <input class="sr-input" type="radio" name="kat-sulawesi" id="k-sulawesi-6">
-              <label class="tab" for="k-sulawesi-6"><span class="tab__num">06</span>Tempat bersejarah</label>
-            </fieldset>
-
-            <div class="panels">
-              <article class="panel" data-sel="sulawesi-1">
-                <h4 class="panel__title">Budaya</h4>
-                <p>Ma'badong di Sulawesi Utara adalah tradisi berkumpul yang dinyatakan lewat gendang dan nyanyian. Orang Toraja menjaga warisan ukir kayu, dari rumah tongkonan sampai rumah pemakaman tau tau.</p>
-              </article>
-              <article class="panel" data-sel="sulawesi-2">
-                <h4 class="panel__title">Makanan</h4>
-                <p>Coto Makassar adalah sup kental daging dan jero dengan bumbu kacang tanah yang digiling halus. Pallumara khas Sulawesi Selatan dimasak dari jagung, santan, dan kelapa parut, lazim disajikan bersama ikan.</p>
-              </article>
-              <article class="panel" data-sel="sulawesi-3">
-                <h4 class="panel__title">Rumah adat</h4>
-                <p>Tongkonan di Toraja beratap melengkung seperti perahu dengan ujung terangkat, bentuk yang sama muncul pada lumbung padi Tangkluk. Di Gowa, Balla Lompoa dibangun tanpa paku dan berdiri di atas batu.</p>
-              </article>
-              <article class="panel" data-sel="sulawesi-4">
-                <h4 class="panel__title">Bahasa</h4>
-                <p>Bahasa Bugis dan Makassar saling dipahami dan dipakai luas di pesisir selatan. Bahasa Toraja dipakai di dataran tinggi, sedangkan Minahasa dipakai di utara.</p>
-              </article>
-              <article class="panel" data-sel="sulawesi-5">
-                <h4 class="panel__title">Tradisi</h4>
-                <p>Rambu Solo' di Toraja berjalan sebagai rangkaian upacara pemakaman, dengan puncak pada peletakkan jenazah di dalam kurungan batu. Ma'badong di Minahasa dilaksanakan setelah duka untuk menyatakan kebersamaan warga.</p>
-              </article>
-              <article class="panel" data-sel="sulawesi-6">
-                <h4 class="panel__title">Tempat bersejarah</h4>
-                <p>Fort Rotterdam di Makassar dibangun pertama kali tahun 1545 oleh Kerajaan Gowa-Tallo sebagai Benteng Ujung Pandang, lalu dibangun ulang oleh Belanda setelah perang dengan Makassar. Situs megalit di Taman Nasional Lore Lindu, Sulawesi Tengah, seperti Baturesi, menunjukkan tradisi ukir batu yang berbeda dari candi Hindu.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <div class="sheet" data-pulau="papua">
-          <header class="sheet__head">
-            <h3 class="sheet__name">Papua</h3>
-            <p class="sheet__desc">Bagian paling timur, dengan dataran tinggi yang dikelilingi hutan dan lembah yang dihuni oleh bahasa yang berbeda.</p>
-            <p class="sr-only">Foto lapisan untuk Papua: honai di lembah Baliem yang dikelilingi bukit hijau.</p>
-          </header>
-
-          <div class="sheet__body">
-            <fieldset class="tabs">
-              <legend class="sr-only">Kategori Papua</legend>
-              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-1" checked>
-              <label class="tab" for="k-papua-1"><span class="tab__num">01</span>Budaya</label>
-              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-2">
-              <label class="tab" for="k-papua-2"><span class="tab__num">02</span>Makanan</label>
-              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-3">
-              <label class="tab" for="k-papua-3"><span class="tab__num">03</span>Rumah adat</label>
-              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-4">
-              <label class="tab" for="k-papua-4"><span class="tab__num">04</span>Bahasa</label>
-              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-5">
-              <label class="tab" for="k-papua-5"><span class="tab__num">05</span>Tradisi</label>
-              <input class="sr-input" type="radio" name="kat-papua" id="k-papua-6">
-              <label class="tab" for="k-papua-6"><span class="tab__num">06</span>Tempat bersejarah</label>
-            </fieldset>
-
-            <div class="panels">
-              <article class="panel" data-sel="papua-1">
-                <h4 class="panel__title">Budaya</h4>
-                <p>Noken adalah tas anyaman tangan yang menjadi lambang khas Papua, dikerjakan oleh perempuan di dataran tinggi. Tari Tifa dan dentingan tifa mengiringi upacara yang punya makna tersendiri, bukan sekadar hiburan.</p>
-              </article>
-              <article class="panel" data-sel="papua-2">
-                <h4 class="panel__title">Makanan</h4>
-                <p>Papeda adalah bubur sagu yang dimasak perlahan dan disajikan dengan ikan atau sayur, dan menjadi pokok harian di Papua. Sagu di dataran rendah diolah menjadi wadah penyimpanan apar dan bisa disimpan lama.</p>
-              </article>
-              <article class="panel" data-sel="papua-3">
-                <h4 class="panel__title">Rumah adat</h4>
-                <p>Honai di Papua Pegunungan berbentuk bulat dengan jendela bundar, atapnya kerucut dari daun sagu. Bentuknya membuat rumah ini tetap hangat di pegunungan yang dingin, dan dipakai bersama oleh satu keluarga besar.</p>
-              </article>
-              <article class="panel" data-sel="papua-4">
-                <h4 class="panel__title">Bahasa</h4>
-                <p>Bentang bahasa Papua sangat beragam dan bahasa setempat lebih sering dipakai daripada Bahasa Indonesia dalam keseharian. Masing-masing suku punya bahasa sendiri dan sebagian berasal dari keluarga bahasa yang berbeda-beda.</p>
-              </article>
-              <article class="panel" data-sel="papua-5">
-                <h4 class="panel__title">Tradisi</h4>
-                <p>Pesta Nggong di Papua merayakan panen tebu dengan tarian dan dentingan gendang. Musyawarah adat masih dipakai lembaga adat untuk membahas hal yang menyangkut tanah dan hak ulayat.</p>
-              </article>
-              <article class="panel" data-sel="papua-6">
-                <h4 class="panel__title">Tempat bersejarah</h4>
-                <p>Jayapura dikenal sebagai Numbay sebelum masa kolonial, lalu menjadi Hollandia dari 1910 sampai 1962 dan Sukarnapura sejak 1962 sebagai ibu kota Papua Belanda. Nama-nama itu menandai berulangnya perubahan penguasaan di wilayah paling timur Indonesia.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-
+      <div class="dossier__idle">
+        <h2>Belum ada provinsi yang dibuka</h2>
+        <p>Klik salah satu warna di peta, atau pilih nama dari daftar di atas. Setiap provinsi terbuka sebagai satu lembar: foto besar, lalu enam kategori yang bisa dibaca bergantian.</p>
       </div>
     </div>
+
+    <!-- ACEH -->
+    <article class="sheet" id="aceh" data-prov="aceh" aria-labelledby="plate-aceh">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/aceh.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 01 / Sumatera</p>
+          <h3 class="plate__name" id="plate-aceh">Aceh</h3>
+          <!-- ISI: ringkasan Aceh -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Aceh">
+            <a class="tab" href="#aceh-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#aceh-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#aceh-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#aceh-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#aceh-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#aceh-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="aceh-1" data-prov="aceh" data-fill="aceh-1" role="tabpanel" aria-label="Aceh Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Aceh / Budaya -->
+          </section>
+
+          <section class="panel" id="aceh-2" data-prov="aceh" data-fill="aceh-2" role="tabpanel" aria-label="Aceh Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Aceh / Makanan -->
+          </section>
+
+          <section class="panel" id="aceh-3" data-prov="aceh" data-fill="aceh-3" role="tabpanel" aria-label="Aceh Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Aceh / Rumah adat -->
+          </section>
+
+          <section class="panel" id="aceh-4" data-prov="aceh" data-fill="aceh-4" role="tabpanel" aria-label="Aceh Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Aceh / Bahasa -->
+          </section>
+
+          <section class="panel" id="aceh-5" data-prov="aceh" data-fill="aceh-5" role="tabpanel" aria-label="Aceh Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Aceh / Tradisi -->
+          </section>
+
+          <section class="panel" id="aceh-6" data-prov="aceh" data-fill="aceh-6" role="tabpanel" aria-label="Aceh Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Aceh / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SUMATERA UTARA -->
+    <article class="sheet" id="sumut" data-prov="sumut" aria-labelledby="plate-sumut">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sumut.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 02 / Sumatera</p>
+          <h3 class="plate__name" id="plate-sumut">Sumatera Utara</h3>
+          <!-- ISI: ringkasan Sumatera Utara -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sumatera Utara">
+            <a class="tab" href="#sumut-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sumut-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sumut-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sumut-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sumut-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sumut-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sumut-1" data-prov="sumut" data-fill="sumut-1" role="tabpanel" aria-label="Sumatera Utara Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sumatera Utara / Budaya -->
+          </section>
+
+          <section class="panel" id="sumut-2" data-prov="sumut" data-fill="sumut-2" role="tabpanel" aria-label="Sumatera Utara Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sumatera Utara / Makanan -->
+          </section>
+
+          <section class="panel" id="sumut-3" data-prov="sumut" data-fill="sumut-3" role="tabpanel" aria-label="Sumatera Utara Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sumatera Utara / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sumut-4" data-prov="sumut" data-fill="sumut-4" role="tabpanel" aria-label="Sumatera Utara Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sumatera Utara / Bahasa -->
+          </section>
+
+          <section class="panel" id="sumut-5" data-prov="sumut" data-fill="sumut-5" role="tabpanel" aria-label="Sumatera Utara Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sumatera Utara / Tradisi -->
+          </section>
+
+          <section class="panel" id="sumut-6" data-prov="sumut" data-fill="sumut-6" role="tabpanel" aria-label="Sumatera Utara Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sumatera Utara / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SUMATERA BARAT -->
+    <article class="sheet" id="sumbar" data-prov="sumbar" aria-labelledby="plate-sumbar">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sumbar.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 03 / Sumatera</p>
+          <h3 class="plate__name" id="plate-sumbar">Sumatera Barat</h3>
+          <!-- ISI: ringkasan Sumatera Barat -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sumatera Barat">
+            <a class="tab" href="#sumbar-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sumbar-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sumbar-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sumbar-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sumbar-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sumbar-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sumbar-1" data-prov="sumbar" data-fill="sumbar-1" role="tabpanel" aria-label="Sumatera Barat Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sumatera Barat / Budaya -->
+          </section>
+
+          <section class="panel" id="sumbar-2" data-prov="sumbar" data-fill="sumbar-2" role="tabpanel" aria-label="Sumatera Barat Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sumatera Barat / Makanan -->
+          </section>
+
+          <section class="panel" id="sumbar-3" data-prov="sumbar" data-fill="sumbar-3" role="tabpanel" aria-label="Sumatera Barat Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sumatera Barat / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sumbar-4" data-prov="sumbar" data-fill="sumbar-4" role="tabpanel" aria-label="Sumatera Barat Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sumatera Barat / Bahasa -->
+          </section>
+
+          <section class="panel" id="sumbar-5" data-prov="sumbar" data-fill="sumbar-5" role="tabpanel" aria-label="Sumatera Barat Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sumatera Barat / Tradisi -->
+          </section>
+
+          <section class="panel" id="sumbar-6" data-prov="sumbar" data-fill="sumbar-6" role="tabpanel" aria-label="Sumatera Barat Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sumatera Barat / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- RIAU -->
+    <article class="sheet" id="riau" data-prov="riau" aria-labelledby="plate-riau">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/riau.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 04 / Sumatera</p>
+          <h3 class="plate__name" id="plate-riau">Riau</h3>
+          <!-- ISI: ringkasan Riau -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Riau">
+            <a class="tab" href="#riau-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#riau-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#riau-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#riau-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#riau-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#riau-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="riau-1" data-prov="riau" data-fill="riau-1" role="tabpanel" aria-label="Riau Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Riau / Budaya -->
+          </section>
+
+          <section class="panel" id="riau-2" data-prov="riau" data-fill="riau-2" role="tabpanel" aria-label="Riau Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Riau / Makanan -->
+          </section>
+
+          <section class="panel" id="riau-3" data-prov="riau" data-fill="riau-3" role="tabpanel" aria-label="Riau Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Riau / Rumah adat -->
+          </section>
+
+          <section class="panel" id="riau-4" data-prov="riau" data-fill="riau-4" role="tabpanel" aria-label="Riau Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Riau / Bahasa -->
+          </section>
+
+          <section class="panel" id="riau-5" data-prov="riau" data-fill="riau-5" role="tabpanel" aria-label="Riau Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Riau / Tradisi -->
+          </section>
+
+          <section class="panel" id="riau-6" data-prov="riau" data-fill="riau-6" role="tabpanel" aria-label="Riau Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Riau / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- KEPULAUAN RIAU -->
+    <article class="sheet" id="kepriau" data-prov="kepriau" aria-labelledby="plate-kepriau">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/kepriau.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 05 / Sumatera</p>
+          <h3 class="plate__name" id="plate-kepriau">Kepulauan Riau</h3>
+          <!-- ISI: ringkasan Kepulauan Riau -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Kepulauan Riau">
+            <a class="tab" href="#kepriau-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#kepriau-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#kepriau-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#kepriau-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#kepriau-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#kepriau-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="kepriau-1" data-prov="kepriau" data-fill="kepriau-1" role="tabpanel" aria-label="Kepulauan Riau Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Kepulauan Riau / Budaya -->
+          </section>
+
+          <section class="panel" id="kepriau-2" data-prov="kepriau" data-fill="kepriau-2" role="tabpanel" aria-label="Kepulauan Riau Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Kepulauan Riau / Makanan -->
+          </section>
+
+          <section class="panel" id="kepriau-3" data-prov="kepriau" data-fill="kepriau-3" role="tabpanel" aria-label="Kepulauan Riau Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Kepulauan Riau / Rumah adat -->
+          </section>
+
+          <section class="panel" id="kepriau-4" data-prov="kepriau" data-fill="kepriau-4" role="tabpanel" aria-label="Kepulauan Riau Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Kepulauan Riau / Bahasa -->
+          </section>
+
+          <section class="panel" id="kepriau-5" data-prov="kepriau" data-fill="kepriau-5" role="tabpanel" aria-label="Kepulauan Riau Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Kepulauan Riau / Tradisi -->
+          </section>
+
+          <section class="panel" id="kepriau-6" data-prov="kepriau" data-fill="kepriau-6" role="tabpanel" aria-label="Kepulauan Riau Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Kepulauan Riau / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- JAMBI -->
+    <article class="sheet" id="jambi" data-prov="jambi" aria-labelledby="plate-jambi">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/jambi.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 06 / Sumatera</p>
+          <h3 class="plate__name" id="plate-jambi">Jambi</h3>
+          <!-- ISI: ringkasan Jambi -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Jambi">
+            <a class="tab" href="#jambi-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#jambi-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#jambi-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#jambi-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#jambi-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#jambi-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="jambi-1" data-prov="jambi" data-fill="jambi-1" role="tabpanel" aria-label="Jambi Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Jambi / Budaya -->
+          </section>
+
+          <section class="panel" id="jambi-2" data-prov="jambi" data-fill="jambi-2" role="tabpanel" aria-label="Jambi Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Jambi / Makanan -->
+          </section>
+
+          <section class="panel" id="jambi-3" data-prov="jambi" data-fill="jambi-3" role="tabpanel" aria-label="Jambi Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Jambi / Rumah adat -->
+          </section>
+
+          <section class="panel" id="jambi-4" data-prov="jambi" data-fill="jambi-4" role="tabpanel" aria-label="Jambi Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Jambi / Bahasa -->
+          </section>
+
+          <section class="panel" id="jambi-5" data-prov="jambi" data-fill="jambi-5" role="tabpanel" aria-label="Jambi Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Jambi / Tradisi -->
+          </section>
+
+          <section class="panel" id="jambi-6" data-prov="jambi" data-fill="jambi-6" role="tabpanel" aria-label="Jambi Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Jambi / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SUMATERA SELATAN -->
+    <article class="sheet" id="sumsel" data-prov="sumsel" aria-labelledby="plate-sumsel">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sumsel.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 07 / Sumatera</p>
+          <h3 class="plate__name" id="plate-sumsel">Sumatera Selatan</h3>
+          <!-- ISI: ringkasan Sumatera Selatan -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sumatera Selatan">
+            <a class="tab" href="#sumsel-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sumsel-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sumsel-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sumsel-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sumsel-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sumsel-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sumsel-1" data-prov="sumsel" data-fill="sumsel-1" role="tabpanel" aria-label="Sumatera Selatan Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sumatera Selatan / Budaya -->
+          </section>
+
+          <section class="panel" id="sumsel-2" data-prov="sumsel" data-fill="sumsel-2" role="tabpanel" aria-label="Sumatera Selatan Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sumatera Selatan / Makanan -->
+          </section>
+
+          <section class="panel" id="sumsel-3" data-prov="sumsel" data-fill="sumsel-3" role="tabpanel" aria-label="Sumatera Selatan Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sumatera Selatan / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sumsel-4" data-prov="sumsel" data-fill="sumsel-4" role="tabpanel" aria-label="Sumatera Selatan Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sumatera Selatan / Bahasa -->
+          </section>
+
+          <section class="panel" id="sumsel-5" data-prov="sumsel" data-fill="sumsel-5" role="tabpanel" aria-label="Sumatera Selatan Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sumatera Selatan / Tradisi -->
+          </section>
+
+          <section class="panel" id="sumsel-6" data-prov="sumsel" data-fill="sumsel-6" role="tabpanel" aria-label="Sumatera Selatan Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sumatera Selatan / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BENGKULU -->
+    <article class="sheet" id="bengkulu" data-prov="bengkulu" aria-labelledby="plate-bengkulu">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/bengkulu.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 08 / Sumatera</p>
+          <h3 class="plate__name" id="plate-bengkulu">Bengkulu</h3>
+          <!-- ISI: ringkasan Bengkulu -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Bengkulu">
+            <a class="tab" href="#bengkulu-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#bengkulu-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#bengkulu-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#bengkulu-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#bengkulu-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#bengkulu-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="bengkulu-1" data-prov="bengkulu" data-fill="bengkulu-1" role="tabpanel" aria-label="Bengkulu Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Bengkulu / Budaya -->
+          </section>
+
+          <section class="panel" id="bengkulu-2" data-prov="bengkulu" data-fill="bengkulu-2" role="tabpanel" aria-label="Bengkulu Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Bengkulu / Makanan -->
+          </section>
+
+          <section class="panel" id="bengkulu-3" data-prov="bengkulu" data-fill="bengkulu-3" role="tabpanel" aria-label="Bengkulu Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Bengkulu / Rumah adat -->
+          </section>
+
+          <section class="panel" id="bengkulu-4" data-prov="bengkulu" data-fill="bengkulu-4" role="tabpanel" aria-label="Bengkulu Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Bengkulu / Bahasa -->
+          </section>
+
+          <section class="panel" id="bengkulu-5" data-prov="bengkulu" data-fill="bengkulu-5" role="tabpanel" aria-label="Bengkulu Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Bengkulu / Tradisi -->
+          </section>
+
+          <section class="panel" id="bengkulu-6" data-prov="bengkulu" data-fill="bengkulu-6" role="tabpanel" aria-label="Bengkulu Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Bengkulu / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- LAMPUNG -->
+    <article class="sheet" id="lampung" data-prov="lampung" aria-labelledby="plate-lampung">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/lampung.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 09 / Sumatera</p>
+          <h3 class="plate__name" id="plate-lampung">Lampung</h3>
+          <!-- ISI: ringkasan Lampung -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Lampung">
+            <a class="tab" href="#lampung-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#lampung-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#lampung-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#lampung-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#lampung-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#lampung-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="lampung-1" data-prov="lampung" data-fill="lampung-1" role="tabpanel" aria-label="Lampung Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Lampung / Budaya -->
+          </section>
+
+          <section class="panel" id="lampung-2" data-prov="lampung" data-fill="lampung-2" role="tabpanel" aria-label="Lampung Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Lampung / Makanan -->
+          </section>
+
+          <section class="panel" id="lampung-3" data-prov="lampung" data-fill="lampung-3" role="tabpanel" aria-label="Lampung Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Lampung / Rumah adat -->
+          </section>
+
+          <section class="panel" id="lampung-4" data-prov="lampung" data-fill="lampung-4" role="tabpanel" aria-label="Lampung Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Lampung / Bahasa -->
+          </section>
+
+          <section class="panel" id="lampung-5" data-prov="lampung" data-fill="lampung-5" role="tabpanel" aria-label="Lampung Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Lampung / Tradisi -->
+          </section>
+
+          <section class="panel" id="lampung-6" data-prov="lampung" data-fill="lampung-6" role="tabpanel" aria-label="Lampung Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Lampung / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BANGKA BELITUNG -->
+    <article class="sheet" id="babel" data-prov="babel" aria-labelledby="plate-babel">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/babel.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 10 / Sumatera</p>
+          <h3 class="plate__name" id="plate-babel">Bangka Belitung</h3>
+          <!-- ISI: ringkasan Bangka Belitung -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Bangka Belitung">
+            <a class="tab" href="#babel-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#babel-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#babel-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#babel-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#babel-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#babel-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="babel-1" data-prov="babel" data-fill="babel-1" role="tabpanel" aria-label="Bangka Belitung Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Bangka Belitung / Budaya -->
+          </section>
+
+          <section class="panel" id="babel-2" data-prov="babel" data-fill="babel-2" role="tabpanel" aria-label="Bangka Belitung Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Bangka Belitung / Makanan -->
+          </section>
+
+          <section class="panel" id="babel-3" data-prov="babel" data-fill="babel-3" role="tabpanel" aria-label="Bangka Belitung Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Bangka Belitung / Rumah adat -->
+          </section>
+
+          <section class="panel" id="babel-4" data-prov="babel" data-fill="babel-4" role="tabpanel" aria-label="Bangka Belitung Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Bangka Belitung / Bahasa -->
+          </section>
+
+          <section class="panel" id="babel-5" data-prov="babel" data-fill="babel-5" role="tabpanel" aria-label="Bangka Belitung Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Bangka Belitung / Tradisi -->
+          </section>
+
+          <section class="panel" id="babel-6" data-prov="babel" data-fill="babel-6" role="tabpanel" aria-label="Bangka Belitung Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Bangka Belitung / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- JAWA BARAT -->
+    <article class="sheet" id="jabar" data-prov="jabar" aria-labelledby="plate-jabar">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/jabar.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 11 / Jawa</p>
+          <h3 class="plate__name" id="plate-jabar">Jawa Barat</h3>
+          <!-- ISI: ringkasan Jawa Barat -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Jawa Barat">
+            <a class="tab" href="#jabar-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#jabar-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#jabar-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#jabar-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#jabar-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#jabar-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="jabar-1" data-prov="jabar" data-fill="jabar-1" role="tabpanel" aria-label="Jawa Barat Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Jawa Barat / Budaya -->
+          </section>
+
+          <section class="panel" id="jabar-2" data-prov="jabar" data-fill="jabar-2" role="tabpanel" aria-label="Jawa Barat Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Jawa Barat / Makanan -->
+          </section>
+
+          <section class="panel" id="jabar-3" data-prov="jabar" data-fill="jabar-3" role="tabpanel" aria-label="Jawa Barat Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Jawa Barat / Rumah adat -->
+          </section>
+
+          <section class="panel" id="jabar-4" data-prov="jabar" data-fill="jabar-4" role="tabpanel" aria-label="Jawa Barat Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Jawa Barat / Bahasa -->
+          </section>
+
+          <section class="panel" id="jabar-5" data-prov="jabar" data-fill="jabar-5" role="tabpanel" aria-label="Jawa Barat Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Jawa Barat / Tradisi -->
+          </section>
+
+          <section class="panel" id="jabar-6" data-prov="jabar" data-fill="jabar-6" role="tabpanel" aria-label="Jawa Barat Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Jawa Barat / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BANTEN -->
+    <article class="sheet" id="banten" data-prov="banten" aria-labelledby="plate-banten">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/banten.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 12 / Jawa</p>
+          <h3 class="plate__name" id="plate-banten">Banten</h3>
+          <!-- ISI: ringkasan Banten -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Banten">
+            <a class="tab" href="#banten-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#banten-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#banten-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#banten-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#banten-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#banten-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="banten-1" data-prov="banten" data-fill="banten-1" role="tabpanel" aria-label="Banten Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Banten / Budaya -->
+          </section>
+
+          <section class="panel" id="banten-2" data-prov="banten" data-fill="banten-2" role="tabpanel" aria-label="Banten Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Banten / Makanan -->
+          </section>
+
+          <section class="panel" id="banten-3" data-prov="banten" data-fill="banten-3" role="tabpanel" aria-label="Banten Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Banten / Rumah adat -->
+          </section>
+
+          <section class="panel" id="banten-4" data-prov="banten" data-fill="banten-4" role="tabpanel" aria-label="Banten Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Banten / Bahasa -->
+          </section>
+
+          <section class="panel" id="banten-5" data-prov="banten" data-fill="banten-5" role="tabpanel" aria-label="Banten Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Banten / Tradisi -->
+          </section>
+
+          <section class="panel" id="banten-6" data-prov="banten" data-fill="banten-6" role="tabpanel" aria-label="Banten Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Banten / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- JAWA TENGAH -->
+    <article class="sheet" id="jateng" data-prov="jateng" aria-labelledby="plate-jateng">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/jateng.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 13 / Jawa</p>
+          <h3 class="plate__name" id="plate-jateng">Jawa Tengah</h3>
+          <!-- ISI: ringkasan Jawa Tengah -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Jawa Tengah">
+            <a class="tab" href="#jateng-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#jateng-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#jateng-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#jateng-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#jateng-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#jateng-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="jateng-1" data-prov="jateng" data-fill="jateng-1" role="tabpanel" aria-label="Jawa Tengah Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Jawa Tengah / Budaya -->
+          </section>
+
+          <section class="panel" id="jateng-2" data-prov="jateng" data-fill="jateng-2" role="tabpanel" aria-label="Jawa Tengah Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Jawa Tengah / Makanan -->
+          </section>
+
+          <section class="panel" id="jateng-3" data-prov="jateng" data-fill="jateng-3" role="tabpanel" aria-label="Jawa Tengah Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Jawa Tengah / Rumah adat -->
+          </section>
+
+          <section class="panel" id="jateng-4" data-prov="jateng" data-fill="jateng-4" role="tabpanel" aria-label="Jawa Tengah Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Jawa Tengah / Bahasa -->
+          </section>
+
+          <section class="panel" id="jateng-5" data-prov="jateng" data-fill="jateng-5" role="tabpanel" aria-label="Jawa Tengah Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Jawa Tengah / Tradisi -->
+          </section>
+
+          <section class="panel" id="jateng-6" data-prov="jateng" data-fill="jateng-6" role="tabpanel" aria-label="Jawa Tengah Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Jawa Tengah / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- DI YOGYAKARTA -->
+    <article class="sheet" id="diy" data-prov="diy" aria-labelledby="plate-diy">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/diy.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 14 / Jawa</p>
+          <h3 class="plate__name" id="plate-diy">DI Yogyakarta</h3>
+          <!-- ISI: ringkasan DI Yogyakarta -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori DI Yogyakarta">
+            <a class="tab" href="#diy-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#diy-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#diy-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#diy-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#diy-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#diy-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="diy-1" data-prov="diy" data-fill="diy-1" role="tabpanel" aria-label="DI Yogyakarta Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: DI Yogyakarta / Budaya -->
+          </section>
+
+          <section class="panel" id="diy-2" data-prov="diy" data-fill="diy-2" role="tabpanel" aria-label="DI Yogyakarta Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: DI Yogyakarta / Makanan -->
+          </section>
+
+          <section class="panel" id="diy-3" data-prov="diy" data-fill="diy-3" role="tabpanel" aria-label="DI Yogyakarta Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: DI Yogyakarta / Rumah adat -->
+          </section>
+
+          <section class="panel" id="diy-4" data-prov="diy" data-fill="diy-4" role="tabpanel" aria-label="DI Yogyakarta Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: DI Yogyakarta / Bahasa -->
+          </section>
+
+          <section class="panel" id="diy-5" data-prov="diy" data-fill="diy-5" role="tabpanel" aria-label="DI Yogyakarta Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: DI Yogyakarta / Tradisi -->
+          </section>
+
+          <section class="panel" id="diy-6" data-prov="diy" data-fill="diy-6" role="tabpanel" aria-label="DI Yogyakarta Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: DI Yogyakarta / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- JAWA TIMUR -->
+    <article class="sheet" id="jatim" data-prov="jatim" aria-labelledby="plate-jatim">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/jatim.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 15 / Jawa</p>
+          <h3 class="plate__name" id="plate-jatim">Jawa Timur</h3>
+          <!-- ISI: ringkasan Jawa Timur -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Jawa Timur">
+            <a class="tab" href="#jatim-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#jatim-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#jatim-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#jatim-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#jatim-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#jatim-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="jatim-1" data-prov="jatim" data-fill="jatim-1" role="tabpanel" aria-label="Jawa Timur Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Jawa Timur / Budaya -->
+          </section>
+
+          <section class="panel" id="jatim-2" data-prov="jatim" data-fill="jatim-2" role="tabpanel" aria-label="Jawa Timur Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Jawa Timur / Makanan -->
+          </section>
+
+          <section class="panel" id="jatim-3" data-prov="jatim" data-fill="jatim-3" role="tabpanel" aria-label="Jawa Timur Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Jawa Timur / Rumah adat -->
+          </section>
+
+          <section class="panel" id="jatim-4" data-prov="jatim" data-fill="jatim-4" role="tabpanel" aria-label="Jawa Timur Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Jawa Timur / Bahasa -->
+          </section>
+
+          <section class="panel" id="jatim-5" data-prov="jatim" data-fill="jatim-5" role="tabpanel" aria-label="Jawa Timur Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Jawa Timur / Tradisi -->
+          </section>
+
+          <section class="panel" id="jatim-6" data-prov="jatim" data-fill="jatim-6" role="tabpanel" aria-label="Jawa Timur Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Jawa Timur / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- KALIMANTAN BARAT -->
+    <article class="sheet" id="kalbar" data-prov="kalbar" aria-labelledby="plate-kalbar">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/kalbar.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 16 / Kalimantan</p>
+          <h3 class="plate__name" id="plate-kalbar">Kalimantan Barat</h3>
+          <!-- ISI: ringkasan Kalimantan Barat -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Kalimantan Barat">
+            <a class="tab" href="#kalbar-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#kalbar-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#kalbar-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#kalbar-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#kalbar-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#kalbar-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="kalbar-1" data-prov="kalbar" data-fill="kalbar-1" role="tabpanel" aria-label="Kalimantan Barat Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Kalimantan Barat / Budaya -->
+          </section>
+
+          <section class="panel" id="kalbar-2" data-prov="kalbar" data-fill="kalbar-2" role="tabpanel" aria-label="Kalimantan Barat Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Kalimantan Barat / Makanan -->
+          </section>
+
+          <section class="panel" id="kalbar-3" data-prov="kalbar" data-fill="kalbar-3" role="tabpanel" aria-label="Kalimantan Barat Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Kalimantan Barat / Rumah adat -->
+          </section>
+
+          <section class="panel" id="kalbar-4" data-prov="kalbar" data-fill="kalbar-4" role="tabpanel" aria-label="Kalimantan Barat Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Kalimantan Barat / Bahasa -->
+          </section>
+
+          <section class="panel" id="kalbar-5" data-prov="kalbar" data-fill="kalbar-5" role="tabpanel" aria-label="Kalimantan Barat Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Kalimantan Barat / Tradisi -->
+          </section>
+
+          <section class="panel" id="kalbar-6" data-prov="kalbar" data-fill="kalbar-6" role="tabpanel" aria-label="Kalimantan Barat Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Kalimantan Barat / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- KALIMANTAN TENGAH -->
+    <article class="sheet" id="kalteng" data-prov="kalteng" aria-labelledby="plate-kalteng">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/kalteng.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 17 / Kalimantan</p>
+          <h3 class="plate__name" id="plate-kalteng">Kalimantan Tengah</h3>
+          <!-- ISI: ringkasan Kalimantan Tengah -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Kalimantan Tengah">
+            <a class="tab" href="#kalteng-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#kalteng-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#kalteng-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#kalteng-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#kalteng-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#kalteng-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="kalteng-1" data-prov="kalteng" data-fill="kalteng-1" role="tabpanel" aria-label="Kalimantan Tengah Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Kalimantan Tengah / Budaya -->
+          </section>
+
+          <section class="panel" id="kalteng-2" data-prov="kalteng" data-fill="kalteng-2" role="tabpanel" aria-label="Kalimantan Tengah Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Kalimantan Tengah / Makanan -->
+          </section>
+
+          <section class="panel" id="kalteng-3" data-prov="kalteng" data-fill="kalteng-3" role="tabpanel" aria-label="Kalimantan Tengah Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Kalimantan Tengah / Rumah adat -->
+          </section>
+
+          <section class="panel" id="kalteng-4" data-prov="kalteng" data-fill="kalteng-4" role="tabpanel" aria-label="Kalimantan Tengah Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Kalimantan Tengah / Bahasa -->
+          </section>
+
+          <section class="panel" id="kalteng-5" data-prov="kalteng" data-fill="kalteng-5" role="tabpanel" aria-label="Kalimantan Tengah Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Kalimantan Tengah / Tradisi -->
+          </section>
+
+          <section class="panel" id="kalteng-6" data-prov="kalteng" data-fill="kalteng-6" role="tabpanel" aria-label="Kalimantan Tengah Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Kalimantan Tengah / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- KALIMANTAN SELATAN -->
+    <article class="sheet" id="kalsel" data-prov="kalsel" aria-labelledby="plate-kalsel">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/kalsel.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 18 / Kalimantan</p>
+          <h3 class="plate__name" id="plate-kalsel">Kalimantan Selatan</h3>
+          <!-- ISI: ringkasan Kalimantan Selatan -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Kalimantan Selatan">
+            <a class="tab" href="#kalsel-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#kalsel-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#kalsel-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#kalsel-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#kalsel-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#kalsel-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="kalsel-1" data-prov="kalsel" data-fill="kalsel-1" role="tabpanel" aria-label="Kalimantan Selatan Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Kalimantan Selatan / Budaya -->
+          </section>
+
+          <section class="panel" id="kalsel-2" data-prov="kalsel" data-fill="kalsel-2" role="tabpanel" aria-label="Kalimantan Selatan Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Kalimantan Selatan / Makanan -->
+          </section>
+
+          <section class="panel" id="kalsel-3" data-prov="kalsel" data-fill="kalsel-3" role="tabpanel" aria-label="Kalimantan Selatan Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Kalimantan Selatan / Rumah adat -->
+          </section>
+
+          <section class="panel" id="kalsel-4" data-prov="kalsel" data-fill="kalsel-4" role="tabpanel" aria-label="Kalimantan Selatan Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Kalimantan Selatan / Bahasa -->
+          </section>
+
+          <section class="panel" id="kalsel-5" data-prov="kalsel" data-fill="kalsel-5" role="tabpanel" aria-label="Kalimantan Selatan Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Kalimantan Selatan / Tradisi -->
+          </section>
+
+          <section class="panel" id="kalsel-6" data-prov="kalsel" data-fill="kalsel-6" role="tabpanel" aria-label="Kalimantan Selatan Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Kalimantan Selatan / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- KALIMANTAN TIMUR -->
+    <article class="sheet" id="kaltim" data-prov="kaltim" aria-labelledby="plate-kaltim">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/kaltim.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 19 / Kalimantan</p>
+          <h3 class="plate__name" id="plate-kaltim">Kalimantan Timur</h3>
+          <!-- ISI: ringkasan Kalimantan Timur -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Kalimantan Timur">
+            <a class="tab" href="#kaltim-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#kaltim-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#kaltim-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#kaltim-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#kaltim-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#kaltim-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="kaltim-1" data-prov="kaltim" data-fill="kaltim-1" role="tabpanel" aria-label="Kalimantan Timur Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Kalimantan Timur / Budaya -->
+          </section>
+
+          <section class="panel" id="kaltim-2" data-prov="kaltim" data-fill="kaltim-2" role="tabpanel" aria-label="Kalimantan Timur Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Kalimantan Timur / Makanan -->
+          </section>
+
+          <section class="panel" id="kaltim-3" data-prov="kaltim" data-fill="kaltim-3" role="tabpanel" aria-label="Kalimantan Timur Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Kalimantan Timur / Rumah adat -->
+          </section>
+
+          <section class="panel" id="kaltim-4" data-prov="kaltim" data-fill="kaltim-4" role="tabpanel" aria-label="Kalimantan Timur Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Kalimantan Timur / Bahasa -->
+          </section>
+
+          <section class="panel" id="kaltim-5" data-prov="kaltim" data-fill="kaltim-5" role="tabpanel" aria-label="Kalimantan Timur Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Kalimantan Timur / Tradisi -->
+          </section>
+
+          <section class="panel" id="kaltim-6" data-prov="kaltim" data-fill="kaltim-6" role="tabpanel" aria-label="Kalimantan Timur Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Kalimantan Timur / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- KALIMANTAN UTARA -->
+    <article class="sheet" id="kaltu" data-prov="kaltu" aria-labelledby="plate-kaltu">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/kaltu.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 20 / Kalimantan</p>
+          <h3 class="plate__name" id="plate-kaltu">Kalimantan Utara</h3>
+          <!-- ISI: ringkasan Kalimantan Utara -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Kalimantan Utara">
+            <a class="tab" href="#kaltu-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#kaltu-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#kaltu-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#kaltu-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#kaltu-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#kaltu-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="kaltu-1" data-prov="kaltu" data-fill="kaltu-1" role="tabpanel" aria-label="Kalimantan Utara Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Kalimantan Utara / Budaya -->
+          </section>
+
+          <section class="panel" id="kaltu-2" data-prov="kaltu" data-fill="kaltu-2" role="tabpanel" aria-label="Kalimantan Utara Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Kalimantan Utara / Makanan -->
+          </section>
+
+          <section class="panel" id="kaltu-3" data-prov="kaltu" data-fill="kaltu-3" role="tabpanel" aria-label="Kalimantan Utara Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Kalimantan Utara / Rumah adat -->
+          </section>
+
+          <section class="panel" id="kaltu-4" data-prov="kaltu" data-fill="kaltu-4" role="tabpanel" aria-label="Kalimantan Utara Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Kalimantan Utara / Bahasa -->
+          </section>
+
+          <section class="panel" id="kaltu-5" data-prov="kaltu" data-fill="kaltu-5" role="tabpanel" aria-label="Kalimantan Utara Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Kalimantan Utara / Tradisi -->
+          </section>
+
+          <section class="panel" id="kaltu-6" data-prov="kaltu" data-fill="kaltu-6" role="tabpanel" aria-label="Kalimantan Utara Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Kalimantan Utara / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SULAWESI UTARA -->
+    <article class="sheet" id="sulut" data-prov="sulut" aria-labelledby="plate-sulut">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sulut.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 21 / Sulawesi</p>
+          <h3 class="plate__name" id="plate-sulut">Sulawesi Utara</h3>
+          <!-- ISI: ringkasan Sulawesi Utara -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sulawesi Utara">
+            <a class="tab" href="#sulut-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sulut-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sulut-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sulut-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sulut-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sulut-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sulut-1" data-prov="sulut" data-fill="sulut-1" role="tabpanel" aria-label="Sulawesi Utara Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sulawesi Utara / Budaya -->
+          </section>
+
+          <section class="panel" id="sulut-2" data-prov="sulut" data-fill="sulut-2" role="tabpanel" aria-label="Sulawesi Utara Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sulawesi Utara / Makanan -->
+          </section>
+
+          <section class="panel" id="sulut-3" data-prov="sulut" data-fill="sulut-3" role="tabpanel" aria-label="Sulawesi Utara Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sulawesi Utara / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sulut-4" data-prov="sulut" data-fill="sulut-4" role="tabpanel" aria-label="Sulawesi Utara Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sulawesi Utara / Bahasa -->
+          </section>
+
+          <section class="panel" id="sulut-5" data-prov="sulut" data-fill="sulut-5" role="tabpanel" aria-label="Sulawesi Utara Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sulawesi Utara / Tradisi -->
+          </section>
+
+          <section class="panel" id="sulut-6" data-prov="sulut" data-fill="sulut-6" role="tabpanel" aria-label="Sulawesi Utara Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sulawesi Utara / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- GORONTALO -->
+    <article class="sheet" id="gorontalo" data-prov="gorontalo" aria-labelledby="plate-gorontalo">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/gorontalo.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 22 / Sulawesi</p>
+          <h3 class="plate__name" id="plate-gorontalo">Gorontalo</h3>
+          <!-- ISI: ringkasan Gorontalo -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Gorontalo">
+            <a class="tab" href="#gorontalo-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#gorontalo-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#gorontalo-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#gorontalo-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#gorontalo-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#gorontalo-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="gorontalo-1" data-prov="gorontalo" data-fill="gorontalo-1" role="tabpanel" aria-label="Gorontalo Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Gorontalo / Budaya -->
+          </section>
+
+          <section class="panel" id="gorontalo-2" data-prov="gorontalo" data-fill="gorontalo-2" role="tabpanel" aria-label="Gorontalo Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Gorontalo / Makanan -->
+          </section>
+
+          <section class="panel" id="gorontalo-3" data-prov="gorontalo" data-fill="gorontalo-3" role="tabpanel" aria-label="Gorontalo Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Gorontalo / Rumah adat -->
+          </section>
+
+          <section class="panel" id="gorontalo-4" data-prov="gorontalo" data-fill="gorontalo-4" role="tabpanel" aria-label="Gorontalo Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Gorontalo / Bahasa -->
+          </section>
+
+          <section class="panel" id="gorontalo-5" data-prov="gorontalo" data-fill="gorontalo-5" role="tabpanel" aria-label="Gorontalo Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Gorontalo / Tradisi -->
+          </section>
+
+          <section class="panel" id="gorontalo-6" data-prov="gorontalo" data-fill="gorontalo-6" role="tabpanel" aria-label="Gorontalo Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Gorontalo / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SULAWESI TENGAH -->
+    <article class="sheet" id="sulteng" data-prov="sulteng" aria-labelledby="plate-sulteng">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sulteng.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 23 / Sulawesi</p>
+          <h3 class="plate__name" id="plate-sulteng">Sulawesi Tengah</h3>
+          <!-- ISI: ringkasan Sulawesi Tengah -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sulawesi Tengah">
+            <a class="tab" href="#sulteng-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sulteng-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sulteng-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sulteng-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sulteng-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sulteng-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sulteng-1" data-prov="sulteng" data-fill="sulteng-1" role="tabpanel" aria-label="Sulawesi Tengah Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sulawesi Tengah / Budaya -->
+          </section>
+
+          <section class="panel" id="sulteng-2" data-prov="sulteng" data-fill="sulteng-2" role="tabpanel" aria-label="Sulawesi Tengah Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sulawesi Tengah / Makanan -->
+          </section>
+
+          <section class="panel" id="sulteng-3" data-prov="sulteng" data-fill="sulteng-3" role="tabpanel" aria-label="Sulawesi Tengah Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sulawesi Tengah / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sulteng-4" data-prov="sulteng" data-fill="sulteng-4" role="tabpanel" aria-label="Sulawesi Tengah Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sulawesi Tengah / Bahasa -->
+          </section>
+
+          <section class="panel" id="sulteng-5" data-prov="sulteng" data-fill="sulteng-5" role="tabpanel" aria-label="Sulawesi Tengah Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sulawesi Tengah / Tradisi -->
+          </section>
+
+          <section class="panel" id="sulteng-6" data-prov="sulteng" data-fill="sulteng-6" role="tabpanel" aria-label="Sulawesi Tengah Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sulawesi Tengah / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SULAWESI BARAT -->
+    <article class="sheet" id="sulbar" data-prov="sulbar" aria-labelledby="plate-sulbar">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sulbar.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 24 / Sulawesi</p>
+          <h3 class="plate__name" id="plate-sulbar">Sulawesi Barat</h3>
+          <!-- ISI: ringkasan Sulawesi Barat -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sulawesi Barat">
+            <a class="tab" href="#sulbar-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sulbar-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sulbar-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sulbar-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sulbar-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sulbar-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sulbar-1" data-prov="sulbar" data-fill="sulbar-1" role="tabpanel" aria-label="Sulawesi Barat Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sulawesi Barat / Budaya -->
+          </section>
+
+          <section class="panel" id="sulbar-2" data-prov="sulbar" data-fill="sulbar-2" role="tabpanel" aria-label="Sulawesi Barat Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sulawesi Barat / Makanan -->
+          </section>
+
+          <section class="panel" id="sulbar-3" data-prov="sulbar" data-fill="sulbar-3" role="tabpanel" aria-label="Sulawesi Barat Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sulawesi Barat / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sulbar-4" data-prov="sulbar" data-fill="sulbar-4" role="tabpanel" aria-label="Sulawesi Barat Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sulawesi Barat / Bahasa -->
+          </section>
+
+          <section class="panel" id="sulbar-5" data-prov="sulbar" data-fill="sulbar-5" role="tabpanel" aria-label="Sulawesi Barat Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sulawesi Barat / Tradisi -->
+          </section>
+
+          <section class="panel" id="sulbar-6" data-prov="sulbar" data-fill="sulbar-6" role="tabpanel" aria-label="Sulawesi Barat Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sulawesi Barat / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SULAWESI SELATAN -->
+    <article class="sheet" id="sulsel" data-prov="sulsel" aria-labelledby="plate-sulsel">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sulsel.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 25 / Sulawesi</p>
+          <h3 class="plate__name" id="plate-sulsel">Sulawesi Selatan</h3>
+          <!-- ISI: ringkasan Sulawesi Selatan -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sulawesi Selatan">
+            <a class="tab" href="#sulsel-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sulsel-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sulsel-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sulsel-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sulsel-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sulsel-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sulsel-1" data-prov="sulsel" data-fill="sulsel-1" role="tabpanel" aria-label="Sulawesi Selatan Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sulawesi Selatan / Budaya -->
+          </section>
+
+          <section class="panel" id="sulsel-2" data-prov="sulsel" data-fill="sulsel-2" role="tabpanel" aria-label="Sulawesi Selatan Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sulawesi Selatan / Makanan -->
+          </section>
+
+          <section class="panel" id="sulsel-3" data-prov="sulsel" data-fill="sulsel-3" role="tabpanel" aria-label="Sulawesi Selatan Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sulawesi Selatan / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sulsel-4" data-prov="sulsel" data-fill="sulsel-4" role="tabpanel" aria-label="Sulawesi Selatan Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sulawesi Selatan / Bahasa -->
+          </section>
+
+          <section class="panel" id="sulsel-5" data-prov="sulsel" data-fill="sulsel-5" role="tabpanel" aria-label="Sulawesi Selatan Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sulawesi Selatan / Tradisi -->
+          </section>
+
+          <section class="panel" id="sulsel-6" data-prov="sulsel" data-fill="sulsel-6" role="tabpanel" aria-label="Sulawesi Selatan Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sulawesi Selatan / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SULAWESI TENGGARA -->
+    <article class="sheet" id="sultra" data-prov="sultra" aria-labelledby="plate-sultra">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/sultra.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 26 / Sulawesi</p>
+          <h3 class="plate__name" id="plate-sultra">Sulawesi Tenggara</h3>
+          <!-- ISI: ringkasan Sulawesi Tenggara -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Sulawesi Tenggara">
+            <a class="tab" href="#sultra-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#sultra-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#sultra-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#sultra-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#sultra-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#sultra-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="sultra-1" data-prov="sultra" data-fill="sultra-1" role="tabpanel" aria-label="Sulawesi Tenggara Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Sulawesi Tenggara / Budaya -->
+          </section>
+
+          <section class="panel" id="sultra-2" data-prov="sultra" data-fill="sultra-2" role="tabpanel" aria-label="Sulawesi Tenggara Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Sulawesi Tenggara / Makanan -->
+          </section>
+
+          <section class="panel" id="sultra-3" data-prov="sultra" data-fill="sultra-3" role="tabpanel" aria-label="Sulawesi Tenggara Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Sulawesi Tenggara / Rumah adat -->
+          </section>
+
+          <section class="panel" id="sultra-4" data-prov="sultra" data-fill="sultra-4" role="tabpanel" aria-label="Sulawesi Tenggara Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Sulawesi Tenggara / Bahasa -->
+          </section>
+
+          <section class="panel" id="sultra-5" data-prov="sultra" data-fill="sultra-5" role="tabpanel" aria-label="Sulawesi Tenggara Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Sulawesi Tenggara / Tradisi -->
+          </section>
+
+          <section class="panel" id="sultra-6" data-prov="sultra" data-fill="sultra-6" role="tabpanel" aria-label="Sulawesi Tenggara Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Sulawesi Tenggara / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BALI -->
+    <article class="sheet" id="bali" data-prov="bali" aria-labelledby="plate-bali">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/bali.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 27 / Bali dan Nusa Tenggara</p>
+          <h3 class="plate__name" id="plate-bali">Bali</h3>
+          <!-- ISI: ringkasan Bali -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Bali">
+            <a class="tab" href="#bali-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#bali-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#bali-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#bali-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#bali-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#bali-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="bali-1" data-prov="bali" data-fill="bali-1" role="tabpanel" aria-label="Bali Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Bali / Budaya -->
+          </section>
+
+          <section class="panel" id="bali-2" data-prov="bali" data-fill="bali-2" role="tabpanel" aria-label="Bali Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Bali / Makanan -->
+          </section>
+
+          <section class="panel" id="bali-3" data-prov="bali" data-fill="bali-3" role="tabpanel" aria-label="Bali Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Bali / Rumah adat -->
+          </section>
+
+          <section class="panel" id="bali-4" data-prov="bali" data-fill="bali-4" role="tabpanel" aria-label="Bali Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Bali / Bahasa -->
+          </section>
+
+          <section class="panel" id="bali-5" data-prov="bali" data-fill="bali-5" role="tabpanel" aria-label="Bali Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Bali / Tradisi -->
+          </section>
+
+          <section class="panel" id="bali-6" data-prov="bali" data-fill="bali-6" role="tabpanel" aria-label="Bali Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Bali / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- NUSA TENGGARA BARAT -->
+    <article class="sheet" id="ntb" data-prov="ntb" aria-labelledby="plate-ntb">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/ntb.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 28 / Bali dan Nusa Tenggara</p>
+          <h3 class="plate__name" id="plate-ntb">Nusa Tenggara Barat</h3>
+          <!-- ISI: ringkasan Nusa Tenggara Barat -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Nusa Tenggara Barat">
+            <a class="tab" href="#ntb-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#ntb-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#ntb-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#ntb-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#ntb-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#ntb-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="ntb-1" data-prov="ntb" data-fill="ntb-1" role="tabpanel" aria-label="Nusa Tenggara Barat Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Nusa Tenggara Barat / Budaya -->
+          </section>
+
+          <section class="panel" id="ntb-2" data-prov="ntb" data-fill="ntb-2" role="tabpanel" aria-label="Nusa Tenggara Barat Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Nusa Tenggara Barat / Makanan -->
+          </section>
+
+          <section class="panel" id="ntb-3" data-prov="ntb" data-fill="ntb-3" role="tabpanel" aria-label="Nusa Tenggara Barat Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Nusa Tenggara Barat / Rumah adat -->
+          </section>
+
+          <section class="panel" id="ntb-4" data-prov="ntb" data-fill="ntb-4" role="tabpanel" aria-label="Nusa Tenggara Barat Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Nusa Tenggara Barat / Bahasa -->
+          </section>
+
+          <section class="panel" id="ntb-5" data-prov="ntb" data-fill="ntb-5" role="tabpanel" aria-label="Nusa Tenggara Barat Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Nusa Tenggara Barat / Tradisi -->
+          </section>
+
+          <section class="panel" id="ntb-6" data-prov="ntb" data-fill="ntb-6" role="tabpanel" aria-label="Nusa Tenggara Barat Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Nusa Tenggara Barat / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- NUSA TENGGARA TIMUR -->
+    <article class="sheet" id="ntt" data-prov="ntt" aria-labelledby="plate-ntt">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/ntt.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 29 / Bali dan Nusa Tenggara</p>
+          <h3 class="plate__name" id="plate-ntt">Nusa Tenggara Timur</h3>
+          <!-- ISI: ringkasan Nusa Tenggara Timur -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Nusa Tenggara Timur">
+            <a class="tab" href="#ntt-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#ntt-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#ntt-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#ntt-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#ntt-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#ntt-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="ntt-1" data-prov="ntt" data-fill="ntt-1" role="tabpanel" aria-label="Nusa Tenggara Timur Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Nusa Tenggara Timur / Budaya -->
+          </section>
+
+          <section class="panel" id="ntt-2" data-prov="ntt" data-fill="ntt-2" role="tabpanel" aria-label="Nusa Tenggara Timur Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Nusa Tenggara Timur / Makanan -->
+          </section>
+
+          <section class="panel" id="ntt-3" data-prov="ntt" data-fill="ntt-3" role="tabpanel" aria-label="Nusa Tenggara Timur Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Nusa Tenggara Timur / Rumah adat -->
+          </section>
+
+          <section class="panel" id="ntt-4" data-prov="ntt" data-fill="ntt-4" role="tabpanel" aria-label="Nusa Tenggara Timur Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Nusa Tenggara Timur / Bahasa -->
+          </section>
+
+          <section class="panel" id="ntt-5" data-prov="ntt" data-fill="ntt-5" role="tabpanel" aria-label="Nusa Tenggara Timur Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Nusa Tenggara Timur / Tradisi -->
+          </section>
+
+          <section class="panel" id="ntt-6" data-prov="ntt" data-fill="ntt-6" role="tabpanel" aria-label="Nusa Tenggara Timur Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Nusa Tenggara Timur / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MALUKU -->
+    <article class="sheet" id="maluku" data-prov="maluku" aria-labelledby="plate-maluku">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/maluku.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 30 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-maluku">Maluku</h3>
+          <!-- ISI: ringkasan Maluku -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Maluku">
+            <a class="tab" href="#maluku-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#maluku-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#maluku-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#maluku-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#maluku-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#maluku-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="maluku-1" data-prov="maluku" data-fill="maluku-1" role="tabpanel" aria-label="Maluku Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Maluku / Budaya -->
+          </section>
+
+          <section class="panel" id="maluku-2" data-prov="maluku" data-fill="maluku-2" role="tabpanel" aria-label="Maluku Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Maluku / Makanan -->
+          </section>
+
+          <section class="panel" id="maluku-3" data-prov="maluku" data-fill="maluku-3" role="tabpanel" aria-label="Maluku Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Maluku / Rumah adat -->
+          </section>
+
+          <section class="panel" id="maluku-4" data-prov="maluku" data-fill="maluku-4" role="tabpanel" aria-label="Maluku Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Maluku / Bahasa -->
+          </section>
+
+          <section class="panel" id="maluku-5" data-prov="maluku" data-fill="maluku-5" role="tabpanel" aria-label="Maluku Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Maluku / Tradisi -->
+          </section>
+
+          <section class="panel" id="maluku-6" data-prov="maluku" data-fill="maluku-6" role="tabpanel" aria-label="Maluku Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Maluku / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MALUKU UTARA -->
+    <article class="sheet" id="malut" data-prov="malut" aria-labelledby="plate-malut">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/malut.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 31 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-malut">Maluku Utara</h3>
+          <!-- ISI: ringkasan Maluku Utara -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Maluku Utara">
+            <a class="tab" href="#malut-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#malut-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#malut-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#malut-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#malut-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#malut-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="malut-1" data-prov="malut" data-fill="malut-1" role="tabpanel" aria-label="Maluku Utara Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Maluku Utara / Budaya -->
+          </section>
+
+          <section class="panel" id="malut-2" data-prov="malut" data-fill="malut-2" role="tabpanel" aria-label="Maluku Utara Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Maluku Utara / Makanan -->
+          </section>
+
+          <section class="panel" id="malut-3" data-prov="malut" data-fill="malut-3" role="tabpanel" aria-label="Maluku Utara Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Maluku Utara / Rumah adat -->
+          </section>
+
+          <section class="panel" id="malut-4" data-prov="malut" data-fill="malut-4" role="tabpanel" aria-label="Maluku Utara Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Maluku Utara / Bahasa -->
+          </section>
+
+          <section class="panel" id="malut-5" data-prov="malut" data-fill="malut-5" role="tabpanel" aria-label="Maluku Utara Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Maluku Utara / Tradisi -->
+          </section>
+
+          <section class="panel" id="malut-6" data-prov="malut" data-fill="malut-6" role="tabpanel" aria-label="Maluku Utara Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Maluku Utara / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAPUA -->
+    <article class="sheet" id="papua" data-prov="papua" aria-labelledby="plate-papua">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/papua.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 32 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-papua">Papua</h3>
+          <!-- ISI: ringkasan Papua -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Papua">
+            <a class="tab" href="#papua-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#papua-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#papua-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#papua-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#papua-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#papua-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="papua-1" data-prov="papua" data-fill="papua-1" role="tabpanel" aria-label="Papua Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Papua / Budaya -->
+          </section>
+
+          <section class="panel" id="papua-2" data-prov="papua" data-fill="papua-2" role="tabpanel" aria-label="Papua Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Papua / Makanan -->
+          </section>
+
+          <section class="panel" id="papua-3" data-prov="papua" data-fill="papua-3" role="tabpanel" aria-label="Papua Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Papua / Rumah adat -->
+          </section>
+
+          <section class="panel" id="papua-4" data-prov="papua" data-fill="papua-4" role="tabpanel" aria-label="Papua Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Papua / Bahasa -->
+          </section>
+
+          <section class="panel" id="papua-5" data-prov="papua" data-fill="papua-5" role="tabpanel" aria-label="Papua Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Papua / Tradisi -->
+          </section>
+
+          <section class="panel" id="papua-6" data-prov="papua" data-fill="papua-6" role="tabpanel" aria-label="Papua Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Papua / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAPUA BARAT -->
+    <article class="sheet" id="pabar" data-prov="pabar" aria-labelledby="plate-pabar">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/pabar.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 33 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-pabar">Papua Barat</h3>
+          <!-- ISI: ringkasan Papua Barat -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Papua Barat">
+            <a class="tab" href="#pabar-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#pabar-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#pabar-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#pabar-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#pabar-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#pabar-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="pabar-1" data-prov="pabar" data-fill="pabar-1" role="tabpanel" aria-label="Papua Barat Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Papua Barat / Budaya -->
+          </section>
+
+          <section class="panel" id="pabar-2" data-prov="pabar" data-fill="pabar-2" role="tabpanel" aria-label="Papua Barat Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Papua Barat / Makanan -->
+          </section>
+
+          <section class="panel" id="pabar-3" data-prov="pabar" data-fill="pabar-3" role="tabpanel" aria-label="Papua Barat Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Papua Barat / Rumah adat -->
+          </section>
+
+          <section class="panel" id="pabar-4" data-prov="pabar" data-fill="pabar-4" role="tabpanel" aria-label="Papua Barat Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Papua Barat / Bahasa -->
+          </section>
+
+          <section class="panel" id="pabar-5" data-prov="pabar" data-fill="pabar-5" role="tabpanel" aria-label="Papua Barat Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Papua Barat / Tradisi -->
+          </section>
+
+          <section class="panel" id="pabar-6" data-prov="pabar" data-fill="pabar-6" role="tabpanel" aria-label="Papua Barat Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Papua Barat / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAPUA BARAT DAYA -->
+    <article class="sheet" id="pabd" data-prov="pabd" aria-labelledby="plate-pabd">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/pabd.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 34 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-pabd">Papua Barat Daya</h3>
+          <!-- ISI: ringkasan Papua Barat Daya -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Papua Barat Daya">
+            <a class="tab" href="#pabd-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#pabd-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#pabd-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#pabd-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#pabd-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#pabd-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="pabd-1" data-prov="pabd" data-fill="pabd-1" role="tabpanel" aria-label="Papua Barat Daya Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Papua Barat Daya / Budaya -->
+          </section>
+
+          <section class="panel" id="pabd-2" data-prov="pabd" data-fill="pabd-2" role="tabpanel" aria-label="Papua Barat Daya Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Papua Barat Daya / Makanan -->
+          </section>
+
+          <section class="panel" id="pabd-3" data-prov="pabd" data-fill="pabd-3" role="tabpanel" aria-label="Papua Barat Daya Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Papua Barat Daya / Rumah adat -->
+          </section>
+
+          <section class="panel" id="pabd-4" data-prov="pabd" data-fill="pabd-4" role="tabpanel" aria-label="Papua Barat Daya Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Papua Barat Daya / Bahasa -->
+          </section>
+
+          <section class="panel" id="pabd-5" data-prov="pabd" data-fill="pabd-5" role="tabpanel" aria-label="Papua Barat Daya Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Papua Barat Daya / Tradisi -->
+          </section>
+
+          <section class="panel" id="pabd-6" data-prov="pabd" data-fill="pabd-6" role="tabpanel" aria-label="Papua Barat Daya Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Papua Barat Daya / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAPUA BARAT LAUT -->
+    <article class="sheet" id="pabnl" data-prov="pabnl" aria-labelledby="plate-pabnl">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/pabnl.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 35 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-pabnl">Papua Barat Laut</h3>
+          <!-- ISI: ringkasan Papua Barat Laut -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Papua Barat Laut">
+            <a class="tab" href="#pabnl-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#pabnl-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#pabnl-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#pabnl-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#pabnl-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#pabnl-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="pabnl-1" data-prov="pabnl" data-fill="pabnl-1" role="tabpanel" aria-label="Papua Barat Laut Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Papua Barat Laut / Budaya -->
+          </section>
+
+          <section class="panel" id="pabnl-2" data-prov="pabnl" data-fill="pabnl-2" role="tabpanel" aria-label="Papua Barat Laut Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Papua Barat Laut / Makanan -->
+          </section>
+
+          <section class="panel" id="pabnl-3" data-prov="pabnl" data-fill="pabnl-3" role="tabpanel" aria-label="Papua Barat Laut Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Papua Barat Laut / Rumah adat -->
+          </section>
+
+          <section class="panel" id="pabnl-4" data-prov="pabnl" data-fill="pabnl-4" role="tabpanel" aria-label="Papua Barat Laut Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Papua Barat Laut / Bahasa -->
+          </section>
+
+          <section class="panel" id="pabnl-5" data-prov="pabnl" data-fill="pabnl-5" role="tabpanel" aria-label="Papua Barat Laut Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Papua Barat Laut / Tradisi -->
+          </section>
+
+          <section class="panel" id="pabnl-6" data-prov="pabnl" data-fill="pabnl-6" role="tabpanel" aria-label="Papua Barat Laut Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Papua Barat Laut / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAPUA SELATAN -->
+    <article class="sheet" id="pasel" data-prov="pasel" aria-labelledby="plate-pasel">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/pasel.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 36 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-pasel">Papua Selatan</h3>
+          <!-- ISI: ringkasan Papua Selatan -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Papua Selatan">
+            <a class="tab" href="#pasel-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#pasel-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#pasel-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#pasel-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#pasel-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#pasel-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="pasel-1" data-prov="pasel" data-fill="pasel-1" role="tabpanel" aria-label="Papua Selatan Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Papua Selatan / Budaya -->
+          </section>
+
+          <section class="panel" id="pasel-2" data-prov="pasel" data-fill="pasel-2" role="tabpanel" aria-label="Papua Selatan Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Papua Selatan / Makanan -->
+          </section>
+
+          <section class="panel" id="pasel-3" data-prov="pasel" data-fill="pasel-3" role="tabpanel" aria-label="Papua Selatan Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Papua Selatan / Rumah adat -->
+          </section>
+
+          <section class="panel" id="pasel-4" data-prov="pasel" data-fill="pasel-4" role="tabpanel" aria-label="Papua Selatan Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Papua Selatan / Bahasa -->
+          </section>
+
+          <section class="panel" id="pasel-5" data-prov="pasel" data-fill="pasel-5" role="tabpanel" aria-label="Papua Selatan Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Papua Selatan / Tradisi -->
+          </section>
+
+          <section class="panel" id="pasel-6" data-prov="pasel" data-fill="pasel-6" role="tabpanel" aria-label="Papua Selatan Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Papua Selatan / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAPUA TENGAH -->
+    <article class="sheet" id="pateng" data-prov="pateng" aria-labelledby="plate-pateng">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/pateng.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 37 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-pateng">Papua Tengah</h3>
+          <!-- ISI: ringkasan Papua Tengah -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Papua Tengah">
+            <a class="tab" href="#pateng-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#pateng-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#pateng-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#pateng-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#pateng-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#pateng-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="pateng-1" data-prov="pateng" data-fill="pateng-1" role="tabpanel" aria-label="Papua Tengah Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Papua Tengah / Budaya -->
+          </section>
+
+          <section class="panel" id="pateng-2" data-prov="pateng" data-fill="pateng-2" role="tabpanel" aria-label="Papua Tengah Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Papua Tengah / Makanan -->
+          </section>
+
+          <section class="panel" id="pateng-3" data-prov="pateng" data-fill="pateng-3" role="tabpanel" aria-label="Papua Tengah Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Papua Tengah / Rumah adat -->
+          </section>
+
+          <section class="panel" id="pateng-4" data-prov="pateng" data-fill="pateng-4" role="tabpanel" aria-label="Papua Tengah Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Papua Tengah / Bahasa -->
+          </section>
+
+          <section class="panel" id="pateng-5" data-prov="pateng" data-fill="pateng-5" role="tabpanel" aria-label="Papua Tengah Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Papua Tengah / Tradisi -->
+          </section>
+
+          <section class="panel" id="pateng-6" data-prov="pateng" data-fill="pateng-6" role="tabpanel" aria-label="Papua Tengah Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Papua Tengah / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAPUA PEGUNUNGAN -->
+    <article class="sheet" id="papeg" data-prov="papeg" aria-labelledby="plate-papeg">
+      <div class="plate">
+        <div class="plate__layer plate__fallback" role="presentation"></div>
+        <div class="plate__layer plate__photo" style="background-image: url('img/papeg.jpg')" role="presentation"></div>
+        <div class="plate__layer plate__scrim" role="presentation"></div>
+        <div class="plate__inner">
+          <p class="plate__eyebrow">Provinsi 38 / Maluku dan Papua</p>
+          <h3 class="plate__name" id="plate-papeg">Papua Pegunungan</h3>
+          <!-- ISI: ringkasan Papua Pegunungan -->
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sheet__bar">
+          <a class="sheet__close" href="#peta">Tutup</a>
+        </div>
+        <div class="sheet__body">
+          <div class="tabs" role="tablist" aria-label="Kategori Papua Pegunungan">
+            <a class="tab" href="#papeg-1" role="tab"><span class="tab__num">01</span>Budaya</a>
+            <a class="tab" href="#papeg-2" role="tab"><span class="tab__num">02</span>Makanan</a>
+            <a class="tab" href="#papeg-3" role="tab"><span class="tab__num">03</span>Rumah adat</a>
+            <a class="tab" href="#papeg-4" role="tab"><span class="tab__num">04</span>Bahasa</a>
+            <a class="tab" href="#papeg-5" role="tab"><span class="tab__num">05</span>Tradisi</a>
+            <a class="tab" href="#papeg-6" role="tab"><span class="tab__num">06</span>Bersejarah</a>
+          </div>
+
+          <div class="panels">
+          <section class="panel" id="papeg-1" data-prov="papeg" data-fill="papeg-1" role="tabpanel" aria-label="Papua Pegunungan Budaya">
+            <h4 class="panel__title">Budaya</h4>
+            <!-- ISI: Papua Pegunungan / Budaya -->
+          </section>
+
+          <section class="panel" id="papeg-2" data-prov="papeg" data-fill="papeg-2" role="tabpanel" aria-label="Papua Pegunungan Makanan">
+            <h4 class="panel__title">Makanan</h4>
+            <!-- ISI: Papua Pegunungan / Makanan -->
+          </section>
+
+          <section class="panel" id="papeg-3" data-prov="papeg" data-fill="papeg-3" role="tabpanel" aria-label="Papua Pegunungan Rumah adat">
+            <h4 class="panel__title">Rumah adat</h4>
+            <!-- ISI: Papua Pegunungan / Rumah adat -->
+          </section>
+
+          <section class="panel" id="papeg-4" data-prov="papeg" data-fill="papeg-4" role="tabpanel" aria-label="Papua Pegunungan Bahasa">
+            <h4 class="panel__title">Bahasa</h4>
+            <!-- ISI: Papua Pegunungan / Bahasa -->
+          </section>
+
+          <section class="panel" id="papeg-5" data-prov="papeg" data-fill="papeg-5" role="tabpanel" aria-label="Papua Pegunungan Tradisi">
+            <h4 class="panel__title">Tradisi</h4>
+            <!-- ISI: Papua Pegunungan / Tradisi -->
+          </section>
+
+          <section class="panel" id="papeg-6" data-prov="papeg" data-fill="papeg-6" role="tabpanel" aria-label="Papua Pegunungan Bersejarah">
+            <h4 class="panel__title">Bersejarah</h4>
+            <!-- ISI: Papua Pegunungan / Bersejarah -->
+          </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </section>
-
 </main>
-
-<footer class="site-foot" id="penutup">
-  <div class="wrap foot__grid">
-    <div>
-      <h2 class="foot__title">Satu archipelago, banyak cara membaca</h2>
-      <p class="foot__text">Enam sisi itu belum daftar lengkap. Adat di setiap tempat jauh lebih dalam dari enam kalimat, dan setiap komunitas punya versi yang lebih panjang lagi. Yang tersisa di sini adalah peta kasar supaya kamu tahu mau mulai dari mana.</p>
-    </div>
-    <div class="foot__aside">
-      <p class="foot__cue-label">Lanjut membaca</p>
-      <a class="cue cue--light" href="#jelajah">Kembali ke daftar pulau</a>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 /* =============================================================================
    NUSA, jelajah budaya Indonesia
-   HTML + CSS only. Setiap state digerakkan :checked + :has(), tanpa JavaScript.
-   Urutan: variables, reset, base, layout, components, utilities, media query.
+   HTML + CSS only. State provinsi digerakkan :target, tanpa JavaScript.
+   Urutan: variables, reset, base, layout, components, state, utilities, media.
    ========================================================================== */
 
 /* 1. VARIABLES ----------------------------------------------------------- */
@@ -17,13 +17,17 @@
   --paper-2: #b9b3a9;
   --paper-3: #8c867c;
 
-  /* Aksen per pulau. Hanya satu aktif, dipasang lewat --accent. */
-  --sumatra: #ce6038;
-  --java: #e0a82e;
-  --kalimantan: #3fa98a;
-  --sulawesi: #6fa8dc;
-  --papua: #cc5c86;
-  --accent: var(--sumatra);
+  /* Aksen. Satu aksen global; tiap sheet menimpa --accent-nya sendiri. */
+  --accent: #c9563a;
+
+  /* Isian peta per wilayah, dipakai lewat .prov--wil. */
+  --land-sum: #3d2c23;
+  --land-jaw: #352a19;
+  --land-kal: #1f332b;
+  --land-sul: #1f2c3a;
+  --land-nus: #2f2a1f;
+  --land-mal: #3a2922;
+  --land-pap: #33212d;
 
   /* Radius: cetakan tidak punya sudut bulat, jadi hampir semua 0. */
   --r-sm: 2px;
@@ -45,7 +49,7 @@
   --s-10: 128px;
   --s-11: 160px;
   --gutter: clamp(20px, 5vw, 80px);
-  --section-pad: clamp(96px, 14vh, 200px);
+  --section-pad: clamp(88px, 13vh, 176px);
   --w-max: 1440px;
   --w-text: 66ch;
   --topbar-h: 56px;
@@ -54,7 +58,7 @@
   --font-display: "Bodoni Moda", Didot, "Times New Roman", Georgia, serif;
   --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --fs-hero: clamp(3.25rem, 12vw, 11rem);
-  --fs-island: clamp(2.5rem, 6.5vw, 5.75rem);
+  --fs-prov: clamp(2.75rem, 7.5vw, 6.5rem);
   --fs-sec: clamp(1.75rem, 3vw, 2.5rem);
   --fs-cell: clamp(1.25rem, 2vw, 1.75rem);
   --fs-body: clamp(1rem, 0.9rem + 0.3vw, 1.125rem);
@@ -66,6 +70,86 @@
   --t-mid: 320ms;
   --t-slow: 420ms;
 }
+
+/* Aksen 38 provinsi. Sheet memakainya lewat .sheet[data-prov]. */
+.sheet[data-prov="aceh"] { --accent: #c9563a; }
+.sheet[data-prov="sumut"] { --accent: #d06a3c; }
+.sheet[data-prov="sumbar"] { --accent: #c8892f; }
+.sheet[data-prov="riau"] { --accent: #b98a4a; }
+.sheet[data-prov="kepriau"] { --accent: #c2a15e; }
+.sheet[data-prov="jambi"] { --accent: #bf6f37; }
+.sheet[data-prov="sumsel"] { --accent: #a9623a; }
+.sheet[data-prov="bengkulu"] { --accent: #9e6b4a; }
+.sheet[data-prov="lampung"] { --accent: #8f6a52; }
+.sheet[data-prov="babel"] { --accent: #a98a63; }
+.sheet[data-prov="jabar"] { --accent: #c9a227; }
+.sheet[data-prov="banten"] { --accent: #c08428; }
+.sheet[data-prov="jateng"] { --accent: #b98a2e; }
+.sheet[data-prov="diy"] { --accent: #cf9a2a; }
+.sheet[data-prov="jatim"] { --accent: #a8873c; }
+.sheet[data-prov="bali"] { --accent: #d09a2e; }
+.sheet[data-prov="ntb"] { --accent: #c39a4a; }
+.sheet[data-prov="ntt"] { --accent: #b39a5e; }
+.sheet[data-prov="kalbar"] { --accent: #3f9c8a; }
+.sheet[data-prov="kalteng"] { --accent: #46a887; }
+.sheet[data-prov="kalsel"] { --accent: #35927e; }
+.sheet[data-prov="kaltim"] { --accent: #4aa37f; }
+.sheet[data-prov="kaltu"] { --accent: #5fa88a; }
+.sheet[data-prov="sulut"] { --accent: #5b8fc4; }
+.sheet[data-prov="gorontalo"] { --accent: #4f7fb0; }
+.sheet[data-prov="sulteng"] { --accent: #5f8fb8; }
+.sheet[data-prov="sulsel"] { --accent: #6b93c0; }
+.sheet[data-prov="sultra"] { --accent: #4a7fae; }
+.sheet[data-prov="sulbar"] { --accent: #5c86bd; }
+.sheet[data-prov="maluku"] { --accent: #c0763c; }
+.sheet[data-prov="malut"] { --accent: #b58a45; }
+.sheet[data-prov="papua"] { --accent: #b3567f; }
+.sheet[data-prov="pabar"] { --accent: #a05a86; }
+.sheet[data-prov="pabd"] { --accent: #96507a; }
+.sheet[data-prov="pabnl"] { --accent: #8d5c86; }
+.sheet[data-prov="pasel"] { --accent: #bb5580; }
+.sheet[data-prov="pateng"] { --accent: #ad4f86; }
+.sheet[data-prov="papeg"] { --accent: #9b4f7d; }
+
+/* Warna plat foto, dikelompokkan per wilayah supaya ringkas. */
+.sheet[data-prov="aceh"] { --l1: #170c0a; --l2: #351a12; --l3: #7a3a1c; }
+.sheet[data-prov="sumut"] { --l1: #160e0a; --l2: #2f1c14; --l3: #6f4227; }
+.sheet[data-prov="sumbar"] { --l1: #150f08; --l2: #332411; --l3: #7d5a18; }
+.sheet[data-prov="riau"] { --l1: #0e1009; --l2: #22301a; --l3: #4d5f2a; }
+.sheet[data-prov="kepriau"] { --l1: #0b0f0c; --l2: #1c2a22; --l3: #3f5a49; }
+.sheet[data-prov="jambi"] { --l1: #140e08; --l2: #2e2211; --l3: #6a4a1c; }
+.sheet[data-prov="sumsel"] { --l1: #120d09; --l2: #2a1e13; --l3: #5f4220; }
+.sheet[data-prov="bengkulu"] { --l1: #110d0a; --l2: #26201a; --l3: #57462f; }
+.sheet[data-prov="lampung"] { --l1: #0f0d0b; --l2: #221d18; --l3: #4c4034; }
+.sheet[data-prov="babel"] { --l1: #0c0e0d; --l2: #1d241f; --l3: #435043; }
+.sheet[data-prov="jabar"] { --l1: #131007; --l2: #2b2610; --l3: #66601c; }
+.sheet[data-prov="banten"] { --l1: #120f0a; --l2: #282216; --l3: #5e5228; }
+.sheet[data-prov="jateng"] { --l1: #13100a; --l2: #2a241a; --l3: #61553a; }
+.sheet[data-prov="diy"] { --l1: #14100a; --l2: #2d2519; --l3: #665637; }
+.sheet[data-prov="jatim"] { --l1: #110f0a; --l2: #262118; --l3: #5a4f36; }
+.sheet[data-prov="bali"] { --l1: #0d1109; --l2: #1e2a14; --l3: #4a5c2c; }
+.sheet[data-prov="ntb"] { --l1: #0d1009; --l2: #1f2716; --l3: #4a5730; }
+.sheet[data-prov="ntt"] { --l1: #0b0e0b; --l2: #1c231c; --l3: #434f42; }
+.sheet[data-prov="kalbar"] { --l1: #08110e; --l2: #14261f; --l3: #2f5044; }
+.sheet[data-prov="kalteng"] { --l1: #070f0c; --l2: #12231c; --l3: #2b4c3d; }
+.sheet[data-prov="kalsel"] { --l1: #080f0c; --l2: #14241d; --l3: #2e4a3c; }
+.sheet[data-prov="kaltim"] { --l1: #070e0b; --l2: #13221b; --l3: #2c4839; }
+.sheet[data-prov="kaltu"] { --l1: #080d0b; --l2: #16221d; --l3: #33463c; }
+.sheet[data-prov="sulut"] { --l1: #070b11; --l2: #131e2c; --l3: #2f4258; }
+.sheet[data-prov="gorontalo"] { --l1: #080b10; --l2: #161f2a; --l3: #364552; }
+.sheet[data-prov="sulteng"] { --l1: #070a0f; --l2: #141d27; --l3: #31404f; }
+.sheet[data-prov="sulsel"] { --l1: #080b0e; --l2: #171f24; --l3: #38454a; }
+.sheet[data-prov="sultra"] { --l1: #07090d; --l2: #141b23; --l3: #32404c; }
+.sheet[data-prov="sulbar"] { --l1: #080a0e; --l2: #161d24; --l3: #35424c; }
+.sheet[data-prov="maluku"] { --l1: #0f0c09; --l2: #241c15; --l3: #533d28; }
+.sheet[data-prov="malut"] { --l1: #0b0d0a; --l2: #1d2019; --l3: #454a3a; }
+.sheet[data-prov="papua"] { --l1: #120810; --l2: #2a1220; --l3: #5c2848; }
+.sheet[data-prov="pabar"] { --l1: #110a10; --l2: #271426; --l3: #562a4e; }
+.sheet[data-prov="pabd"] { --l1: #0f0a0e; --l2: #22131f; --l3: #4d2841; }
+.sheet[data-prov="pabnl"] { --l1: #0c0b0d; --l2: #1d1a20; --l3: #413a48; }
+.sheet[data-prov="pasel"] { --l1: #110910; --l2: #261225; --l3: #572a4a; }
+.sheet[data-prov="pateng"] { --l1: #100910; --l2: #241226; --l3: #50294a; }
+.sheet[data-prov="papeg"] { --l1: #0e0b0e; --l2: #1f1720; --l3: #453444; }
 
 /* 2. RESET --------------------------------------------------------------- */
 
@@ -88,12 +172,6 @@ img,
 svg {
   display: block;
   max-width: 100%;
-}
-
-button,
-input {
-  font: inherit;
-  color: inherit;
 }
 
 fieldset {
@@ -140,20 +218,6 @@ a:hover {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-}
-
-/* Radio disembunyikan secara aksesibel: tetap fokusabel, tidak display:none. */
-.sr-input {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-  appearance: none;
 }
 
 /* 4. LAYOUT -------------------------------------------------------------- */
@@ -209,8 +273,8 @@ a:hover {
   position: relative;
   display: grid;
   align-items: end;
-  min-block-size: 100vh;
-  min-block-size: 100svh;
+  min-block-size: 92vh;
+  min-block-size: 92svh;
   padding-block: calc(var(--topbar-h) + var(--s-8)) var(--s-8);
   overflow: hidden;
 }
@@ -255,24 +319,238 @@ a:hover {
   color: var(--paper-2);
 }
 
-.explorer {
-  padding-block: var(--section-pad) var(--s-9);
+.atlas {
+  padding-block: var(--section-pad) var(--s-7);
 }
 
-.explorer__grid {
-  display: grid;
-  gap: var(--s-7);
-  margin-block-start: var(--s-8);
+.atlas__head {
+  max-inline-size: 58ch;
 }
 
-/* Anak grid boleh menyusut, supaya rail dan bar tab tetap bisa digulir. */
-.explorer__grid > *,
-.stagewrap > * {
-  min-inline-size: 0;
+.atlas__note {
+  margin-block-start: var(--s-5);
+  max-inline-size: 62ch;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--paper-3);
 }
 
-.stagewrap {
-  position: relative;
+/* Peta: viewport bergulir di layar kecil, melebar penuh di layar besar. */
+.mapview {
+  margin-block-start: var(--s-7);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mapview::-webkit-scrollbar {
+  block-size: 6px;
+}
+
+.mapview::-webkit-scrollbar-thumb {
+  background: var(--line-2);
+}
+
+.map {
+  inline-size: 100%;
+  min-inline-size: 740px;
+  block-size: auto;
+  margin-inline: auto;
+}
+
+.map__sea {
+  fill: #0d0f12;
+}
+
+.map__region {
+  fill: var(--paper-3);
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-anchor: middle;
+  opacity: 0.32;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Setiap provinsi satu path, dikelilingi garis batas yang sama. */
+.pv {
+  fill: var(--land);
+  stroke: var(--line-2);
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  transition:
+    fill var(--t-fast) var(--ease),
+    stroke var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+.prov--sum { --land: var(--land-sum); }
+.prov--jaw { --land: var(--land-jaw); }
+.prov--kal { --land: var(--land-kal); }
+.prov--sul { --land: var(--land-sul); }
+.prov--nus { --land: var(--land-nus); }
+.prov--mal { --land: var(--land-mal); }
+.prov--pap { --land: var(--land-pap); }
+
+/* Area transparan yang diperbesar untuk pulau-pulau kecil. */
+.pv--hit {
+  fill: transparent;
+  stroke: none;
+}
+
+/* Provinsi yang sudah punya isi: lebih terang, kursor pointer, bisa diklik. */
+.prov--live .pv {
+  fill: color-mix(in oklab, var(--land) 62%, var(--paper-3) 38%);
+  cursor: pointer;
+}
+
+.prov .pv:hover,
+.prov:focus-visible .pv {
+  fill: color-mix(in oklab, var(--land) 24%, var(--paper-3) 76%);
+  stroke: var(--paper);
+  stroke-width: 2px;
+  transform: scale(1.07);
+}
+
+.prov:focus-visible .pv {
+  stroke-width: 2.5px;
+}
+
+/* Label nama muncul saat hover atau fokus keyboard. */
+.prov text {
+  fill: var(--paper);
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-anchor: middle;
+  opacity: 0;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #0b0b0c;
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  transition: opacity var(--t-fast) var(--ease);
+}
+
+.prov:hover text,
+.prov:focus-visible text {
+  opacity: 1;
+}
+
+/* Terpilih: warna aksen, garis lebih tebal, glow, dan bentuk sedikit membesar
+   sehingga menutupi garis batas provinsi tetangga. */
+body:has([data-prov="aceh"]:target) .prov[data-prov="aceh"] .pv,
+body:has([data-prov="sumut"]:target) .prov[data-prov="sumut"] .pv,
+body:has([data-prov="sumbar"]:target) .prov[data-prov="sumbar"] .pv,
+body:has([data-prov="riau"]:target) .prov[data-prov="riau"] .pv,
+body:has([data-prov="kepriau"]:target) .prov[data-prov="kepriau"] .pv,
+body:has([data-prov="jambi"]:target) .prov[data-prov="jambi"] .pv,
+body:has([data-prov="sumsel"]:target) .prov[data-prov="sumsel"] .pv,
+body:has([data-prov="bengkulu"]:target) .prov[data-prov="bengkulu"] .pv,
+body:has([data-prov="lampung"]:target) .prov[data-prov="lampung"] .pv,
+body:has([data-prov="babel"]:target) .prov[data-prov="babel"] .pv,
+body:has([data-prov="jabar"]:target) .prov[data-prov="jabar"] .pv,
+body:has([data-prov="banten"]:target) .prov[data-prov="banten"] .pv,
+body:has([data-prov="jateng"]:target) .prov[data-prov="jateng"] .pv,
+body:has([data-prov="diy"]:target) .prov[data-prov="diy"] .pv,
+body:has([data-prov="jatim"]:target) .prov[data-prov="jatim"] .pv,
+body:has([data-prov="bali"]:target) .prov[data-prov="bali"] .pv,
+body:has([data-prov="ntb"]:target) .prov[data-prov="ntb"] .pv,
+body:has([data-prov="ntt"]:target) .prov[data-prov="ntt"] .pv,
+body:has([data-prov="kalbar"]:target) .prov[data-prov="kalbar"] .pv,
+body:has([data-prov="kalteng"]:target) .prov[data-prov="kalteng"] .pv,
+body:has([data-prov="kalsel"]:target) .prov[data-prov="kalsel"] .pv,
+body:has([data-prov="kaltim"]:target) .prov[data-prov="kaltim"] .pv,
+body:has([data-prov="kaltu"]:target) .prov[data-prov="kaltu"] .pv,
+body:has([data-prov="sulut"]:target) .prov[data-prov="sulut"] .pv,
+body:has([data-prov="gorontalo"]:target) .prov[data-prov="gorontalo"] .pv,
+body:has([data-prov="sulteng"]:target) .prov[data-prov="sulteng"] .pv,
+body:has([data-prov="sulsel"]:target) .prov[data-prov="sulsel"] .pv,
+body:has([data-prov="sultra"]:target) .prov[data-prov="sultra"] .pv,
+body:has([data-prov="sulbar"]:target) .prov[data-prov="sulbar"] .pv,
+body:has([data-prov="maluku"]:target) .prov[data-prov="maluku"] .pv,
+body:has([data-prov="malut"]:target) .prov[data-prov="malut"] .pv,
+body:has([data-prov="papua"]:target) .prov[data-prov="papua"] .pv,
+body:has([data-prov="pabar"]:target) .prov[data-prov="pabar"] .pv,
+body:has([data-prov="pabd"]:target) .prov[data-prov="pabd"] .pv,
+body:has([data-prov="pabnl"]:target) .prov[data-prov="pabnl"] .pv,
+body:has([data-prov="pasel"]:target) .prov[data-prov="pasel"] .pv,
+body:has([data-prov="pateng"]:target) .prov[data-prov="pateng"] .pv,
+body:has([data-prov="papeg"]:target) .prov[data-prov="papeg"] .pv {
+  fill: color-mix(in oklab, var(--land) 30%, var(--accent) 70%);
+  stroke: var(--accent);
+  stroke-width: 2.5px;
+  transform: scale(1.09);
+  filter: drop-shadow(0 0 0.55rem color-mix(in srgb, var(--accent) 55%, transparent));
+}
+
+body:has([data-prov="aceh"]:target) .prov[data-prov="aceh"] text,
+body:has([data-prov="sumut"]:target) .prov[data-prov="sumut"] text,
+body:has([data-prov="sumbar"]:target) .prov[data-prov="sumbar"] text,
+body:has([data-prov="riau"]:target) .prov[data-prov="riau"] text,
+body:has([data-prov="kepriau"]:target) .prov[data-prov="kepriau"] text,
+body:has([data-prov="jambi"]:target) .prov[data-prov="jambi"] text,
+body:has([data-prov="sumsel"]:target) .prov[data-prov="sumsel"] text,
+body:has([data-prov="bengkulu"]:target) .prov[data-prov="bengkulu"] text,
+body:has([data-prov="lampung"]:target) .prov[data-prov="lampung"] text,
+body:has([data-prov="babel"]:target) .prov[data-prov="babel"] text,
+body:has([data-prov="jabar"]:target) .prov[data-prov="jabar"] text,
+body:has([data-prov="banten"]:target) .prov[data-prov="banten"] text,
+body:has([data-prov="jateng"]:target) .prov[data-prov="jateng"] text,
+body:has([data-prov="diy"]:target) .prov[data-prov="diy"] text,
+body:has([data-prov="jatim"]:target) .prov[data-prov="jatim"] text,
+body:has([data-prov="bali"]:target) .prov[data-prov="bali"] text,
+body:has([data-prov="ntb"]:target) .prov[data-prov="ntb"] text,
+body:has([data-prov="ntt"]:target) .prov[data-prov="ntt"] text,
+body:has([data-prov="kalbar"]:target) .prov[data-prov="kalbar"] text,
+body:has([data-prov="kalteng"]:target) .prov[data-prov="kalteng"] text,
+body:has([data-prov="kalsel"]:target) .prov[data-prov="kalsel"] text,
+body:has([data-prov="kaltim"]:target) .prov[data-prov="kaltim"] text,
+body:has([data-prov="kaltu"]:target) .prov[data-prov="kaltu"] text,
+body:has([data-prov="sulut"]:target) .prov[data-prov="sulut"] text,
+body:has([data-prov="gorontalo"]:target) .prov[data-prov="gorontalo"] text,
+body:has([data-prov="sulteng"]:target) .prov[data-prov="sulteng"] text,
+body:has([data-prov="sulsel"]:target) .prov[data-prov="sulsel"] text,
+body:has([data-prov="sultra"]:target) .prov[data-prov="sultra"] text,
+body:has([data-prov="sulbar"]:target) .prov[data-prov="sulbar"] text,
+body:has([data-prov="maluku"]:target) .prov[data-prov="maluku"] text,
+body:has([data-prov="malut"]:target) .prov[data-prov="malut"] text,
+body:has([data-prov="papua"]:target) .prov[data-prov="papua"] text,
+body:has([data-prov="pabar"]:target) .prov[data-prov="pabar"] text,
+body:has([data-prov="pabd"]:target) .prov[data-prov="pabd"] text,
+body:has([data-prov="pabnl"]:target) .prov[data-prov="pabnl"] text,
+body:has([data-prov="pasel"]:target) .prov[data-prov="pasel"] text,
+body:has([data-prov="pateng"]:target) .prov[data-prov="pateng"] text,
+body:has([data-prov="papeg"]:target) .prov[data-prov="papeg"] text {
+  opacity: 1;
+}
+
+.dossier {
+  padding-block-end: var(--s-10);
+}
+
+.dossier__idle {
+  padding-block: var(--s-8);
+  max-inline-size: 52ch;
+  color: var(--paper-2);
+}
+
+.dossier__idle h2 {
+  font-size: var(--fs-sec);
+  margin-block-end: var(--s-4);
+}
+
+body:has(.sheet:target) .dossier__idle,
+body:has(.panel:target) .dossier__idle {
+  display: none;
 }
 
 .site-foot {
@@ -344,202 +622,208 @@ a:hover {
   transform: translateY(var(--s-3));
 }
 
-/* Pemilih pulau. Label adalah kontrolnya, input radio hanya menyimpan state. */
-.rail {
-  position: sticky;
-  inset-block-start: var(--topbar-h);
-  z-index: 6;
-  display: flex;
-  gap: var(--s-2);
-  margin-inline: calc(var(--gutter) * -1);
-  padding: var(--s-2) var(--gutter);
-  background: var(--ink);
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
-  scrollbar-width: none;
+.mapnote {
+  margin-block-start: var(--s-3);
+  font-size: var(--fs-label);
+  line-height: 1.6;
+  color: var(--paper-3);
+  letter-spacing: 0.02em;
 }
 
-.rail::-webkit-scrollbar {
+/* Daftar alternatif: jalur keyboard dan layar kecil tanpa geometri SVG. */
+.provindex {
+  margin-block-start: var(--s-7);
+  border-block-start: 1px solid var(--line);
+}
+
+.provindex__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  min-block-size: 44px;
+  padding-block: var(--s-4);
+  font-size: 0.9375rem;
+  color: var(--paper);
+  cursor: pointer;
+  list-style: none;
+}
+
+.provindex__toggle::-webkit-details-marker {
   display: none;
 }
 
-.island {
-  position: relative;
+.provindex__toggle::after {
+  content: "";
   flex: 0 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--s-3);
-  align-content: start;
-  min-inline-size: 172px;
-  min-block-size: 44px;
-  padding: var(--s-3) var(--s-4);
+  inline-size: 9px;
+  block-size: 9px;
+  border-inline-end: 1px solid var(--paper-2);
+  border-block-end: 1px solid var(--paper-2);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.provindex[open] .provindex__toggle::after {
+  transform: rotate(225deg) translateY(-2px);
+}
+
+.provindex__body {
+  padding-block-end: var(--s-6);
+}
+
+.provindex__group + .provindex__group {
+  margin-block-start: var(--s-5);
+}
+
+.provindex__label {
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper-3);
+}
+
+.provindex__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: var(--s-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.provindex__link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 36px;
+  padding: var(--s-2) var(--s-3);
+  font-size: 0.8125rem;
+  color: var(--paper-2);
+  text-decoration: none;
   border: 1px solid var(--line);
   background: var(--ink-2);
-  cursor: pointer;
-  scroll-snap-align: start;
 }
 
-.island__num,
-.tab__num {
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: var(--paper-3);
-  padding-block-start: 0.45em;
-}
-
-.island__name {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.375rem;
-  line-height: 1;
-}
-
-.island__sub {
-  display: block;
-  margin-block-start: var(--s-1);
-  max-inline-size: 26ch;
-  font-size: 0.8125rem;
-  line-height: 1.45;
-  color: var(--paper-2);
-}
-
-.island:hover {
+.provindex__link:hover {
+  color: var(--paper);
   border-color: var(--line-2);
 }
 
-.rail .sr-input:checked + .island {
-  border-color: var(--accent);
-  background: var(--ink-3);
+/* Provinsi yang isinya belum dikerjakan: tampil, tapi tidak bisa dibuka. */
+.provindex__soon {
+  color: var(--paper-3);
+  cursor: default;
+  border-style: dashed;
+  opacity: 0.6;
 }
 
-.rail .sr-input:checked + .island .island__num {
-  color: var(--accent);
-}
-
-.rail .sr-input:checked + .island::after {
-  content: "";
-  position: absolute;
-  inset-block: -1px;
-  inset-inline-start: -1px;
-  inline-size: 2px;
-  background: var(--accent);
-}
-
-.rail .sr-input:focus-visible + .island {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* Panggung foto. Lima lapis foto ditumpuk, hanya satu yang terlihat. */
-.stage {
+/* Plate foto: lebar penuh, nama provinsi di atasnya. */
+.plate {
   position: relative;
-  block-size: 52vh;
-  block-size: 52svh;
-  background: var(--ink);
+  display: grid;
+  align-content: end;
+  min-block-size: 60vh;
+  min-block-size: 60svh;
+  margin-block-start: var(--s-8);
   overflow: hidden;
 }
 
-.stage__layer {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity var(--t-slow) var(--ease);
-}
-
-.stage__layer > * {
+.plate__layer {
   position: absolute;
   inset: 0;
 }
 
-.stage__layer[data-foto="sumatra"] {
-  --a-glow: rgba(206, 96, 56, 0.34);
-  --l1: #1a0f0a;
-  --l2: #3a1d12;
-  --l3: #7a3a1c;
-}
-.stage__layer[data-foto="java"] {
-  --a-glow: rgba(224, 168, 46, 0.3);
-  --l1: #17120a;
-  --l2: #3a2c10;
-  --l3: #8a6a1e;
-}
-.stage__layer[data-foto="kalimantan"] {
-  --a-glow: rgba(63, 169, 138, 0.3);
-  --l1: #08120f;
-  --l2: #0f2a22;
-  --l3: #1d5544;
-}
-.stage__layer[data-foto="sulawesi"] {
-  --a-glow: rgba(111, 168, 220, 0.3);
-  --l1: #080f16;
-  --l2: #10263a;
-  --l3: #1f4a6e;
-}
-.stage__layer[data-foto="papua"] {
-  --a-glow: rgba(204, 92, 134, 0.32);
-  --l1: #160a12;
-  --l2: #33122a;
-  --l3: #6b2547;
-}
-
-.stage__fallback {
+.plate__fallback {
   background: linear-gradient(155deg, var(--l1), var(--l2) 52%, var(--l3));
 }
 
-.stage__photo {
+.plate__photo {
   background-color: var(--l2);
   background-size: cover;
   background-position: center;
 }
 
-.stage__layer[data-foto="sumatra"] .stage__photo {
-  background-image: url("img/sumatra.jpg");
-}
-.stage__layer[data-foto="java"] .stage__photo {
-  background-image: url("img/java.jpg");
-}
-.stage__layer[data-foto="kalimantan"] .stage__photo {
-  background-image: url("img/kalimantan.jpg");
-}
-.stage__layer[data-foto="sulawesi"] .stage__photo {
-  background-image: url("img/sulawesi.jpg");
-}
-.stage__layer[data-foto="papua"] .stage__photo {
-  background-image: url("img/papua.jpg");
+.plate__scrim {
+  background-image:
+    linear-gradient(180deg, rgba(6, 6, 7, 0.62) 0%, rgba(6, 6, 7, 0.26) 34%, rgba(6, 6, 7, 0.88) 100%),
+    radial-gradient(120% 90% at 74% 18%, color-mix(in srgb, var(--accent) 34%, transparent), rgba(6, 6, 7, 0) 70%);
 }
 
-.stage__scrim {
-  background-image:
-    linear-gradient(90deg, rgba(6, 6, 7, 0.9) 0%, rgba(6, 6, 7, 0.78) 45%, rgba(6, 6, 7, 0.1) 75%),
-    linear-gradient(180deg, rgba(6, 6, 7, 0.78) 0%, rgba(6, 6, 7, 0.4) 38%, rgba(6, 6, 7, 0.9) 100%),
-    radial-gradient(110% 80% at 78% 20%, var(--a-glow), rgba(6, 6, 7, 0) 70%);
+.plate__inner {
+  position: relative;
+  z-index: 1;
+  inline-size: 100%;
+  max-inline-size: var(--w-max);
+  margin-inline: auto;
+  padding: var(--s-8) var(--gutter);
+}
+
+.plate__eyebrow {
+  font-size: var(--fs-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--paper-2);
+}
+
+.plate__name {
+  margin-block-start: var(--s-3);
+  font-size: var(--fs-prov);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+}
+
+.plate__desc {
+  margin-block-start: var(--s-5);
+  max-inline-size: 46ch;
+  color: var(--paper);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.75);
 }
 
 /* Lembar konten. Permukaan solid, jadi kontras teks tidak bergantung foto. */
 .sheet {
   display: none;
-  position: relative;
 }
 
-.sheet__head {
-  margin-block-start: var(--s-7);
-  max-inline-size: 34rem;
+.sheet__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-block-start: var(--s-5);
 }
 
-.sheet__name {
-  font-size: var(--fs-island);
-  letter-spacing: -0.03em;
-}
-
-.sheet__desc {
-  margin-block-start: var(--s-4);
-  max-inline-size: 44ch;
+.sheet__close {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-block-size: 44px;
+  margin-inline-start: auto;
+  padding-inline: var(--s-4);
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
   color: var(--paper-2);
+  border: 1px solid var(--line);
+  background: var(--ink-2);
+}
+
+.sheet__close:hover {
+  color: var(--paper);
+  border-color: var(--accent);
+}
+
+.sheet__close::before {
+  content: "";
+  inline-size: 7px;
+  block-size: 7px;
+  border-block-start: 1px solid currentColor;
+  border-inline-start: 1px solid currentColor;
+  transform: rotate(45deg);
 }
 
 .sheet__body {
-  margin-block-start: var(--s-6);
+  margin-block-start: var(--s-4);
   padding: var(--s-5);
   background: var(--ink-2);
   border: 1px solid var(--line);
@@ -574,6 +858,7 @@ a:hover {
   font-size: 0.9375rem;
   line-height: 1.2;
   color: var(--paper-2);
+  text-decoration: none;
   cursor: pointer;
   scroll-snap-align: start;
   white-space: nowrap;
@@ -595,21 +880,11 @@ a:hover {
   transition: transform var(--t-mid) var(--ease);
 }
 
-.tabs .sr-input:checked + .tab {
-  color: var(--paper);
-}
-
-.tabs .sr-input:checked + .tab .tab__num {
-  color: var(--accent);
-}
-
-.tabs .sr-input:checked + .tab::after {
-  transform: scaleX(1);
-}
-
-.tabs .sr-input:focus-visible + .tab {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+.tab__num {
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--paper-3);
 }
 
 .panel {
@@ -631,45 +906,72 @@ a:hover {
   font-size: var(--fs-sec);
 }
 
-/* Label navigasi biasa: kapitalisasi natural, tanpa tracking ekstrem. */
 .foot__cue-label {
   font-size: var(--fs-label);
   color: var(--paper-3);
 }
 
-/* STATE: satu radio pulau mengubah aksen, foto, dan lembar yang tampil. ---- */
+/* 6. STATE --------------------------------------------------------------- */
 
-.explorer:has(#pulau-sumatra:checked) {
-  --accent: var(--sumatra);
-}
-.explorer:has(#pulau-java:checked) {
-  --accent: var(--java);
-}
-.explorer:has(#pulau-kalimantan:checked) {
-  --accent: var(--kalimantan);
-}
-.explorer:has(#pulau-sulawesi:checked) {
-  --accent: var(--sulawesi);
-}
-.explorer:has(#pulau-papua:checked) {
-  --accent: var(--papua);
-}
-
-.explorer:has(#pulau-sumatra:checked) .stage__layer[data-foto="sumatra"],
-.explorer:has(#pulau-sumatra:checked) .sheet[data-pulau="sumatra"],
-.explorer:has(#pulau-java:checked) .stage__layer[data-foto="java"],
-.explorer:has(#pulau-java:checked) .sheet[data-pulau="java"],
-.explorer:has(#pulau-kalimantan:checked) .stage__layer[data-foto="kalimantan"],
-.explorer:has(#pulau-kalimantan:checked) .sheet[data-pulau="kalimantan"],
-.explorer:has(#pulau-sulawesi:checked) .stage__layer[data-foto="sulawesi"],
-.explorer:has(#pulau-sulawesi:checked) .sheet[data-pulau="sulawesi"],
-.explorer:has(#pulau-papua:checked) .stage__layer[data-foto="papua"],
-.explorer:has(#pulau-papua:checked) .sheet[data-pulau="papua"] {
+/* Sheet terbuka: dari tautan peta, dari daftar, atau dari tab kategorinya. */
+.sheet:target,
+.sheet:has(.panel:target) {
   display: block;
-  opacity: 1;
 }
 
-/* STATE: tiap kategori membuka satu sel, sekali per pulau. ---------------- */
+/* Kategori terbuka. Sheet yang dibuka tanpa memilih tab memakai yang pertama. */
+.panel:target,
+.sheet:target .panel:first-child {
+  display: block;
+  animation: panel-in var(--t-mid) var(--ease) both;
+}
+
+/* Tab aktif mengikuti panel yang sedang terbuka. Posisi relatif, jadi aturan ini
+   berlaku untuk semua provinsi tanpa daftar per provinsi. */
+.sheet:target .tab:nth-child(1),
+.sheet:has(.panel:nth-child(1):target) .tab:nth-child(1),
+.sheet:target .tab:nth-child(2),
+.sheet:has(.panel:nth-child(2):target) .tab:nth-child(2),
+.sheet:target .tab:nth-child(3),
+.sheet:has(.panel:nth-child(3):target) .tab:nth-child(3),
+.sheet:target .tab:nth-child(4),
+.sheet:has(.panel:nth-child(4):target) .tab:nth-child(4),
+.sheet:target .tab:nth-child(5),
+.sheet:has(.panel:nth-child(5):target) .tab:nth-child(5),
+.sheet:target .tab:nth-child(6),
+.sheet:has(.panel:nth-child(6):target) .tab:nth-child(6) {
+  color: var(--paper);
+}
+
+.sheet:target .tab:nth-child(1)::after,
+.sheet:has(.panel:nth-child(1):target) .tab:nth-child(1)::after,
+.sheet:target .tab:nth-child(2)::after,
+.sheet:has(.panel:nth-child(2):target) .tab:nth-child(2)::after,
+.sheet:target .tab:nth-child(3)::after,
+.sheet:has(.panel:nth-child(3):target) .tab:nth-child(3)::after,
+.sheet:target .tab:nth-child(4)::after,
+.sheet:has(.panel:nth-child(4):target) .tab:nth-child(4)::after,
+.sheet:target .tab:nth-child(5)::after,
+.sheet:has(.panel:nth-child(5):target) .tab:nth-child(5)::after,
+.sheet:target .tab:nth-child(6)::after,
+.sheet:has(.panel:nth-child(6):target) .tab:nth-child(6)::after {
+  transform: scaleX(1);
+}
+
+.sheet:target .tab:nth-child(1) .tab__num,
+.sheet:has(.panel:nth-child(1):target) .tab:nth-child(1) .tab__num,
+.sheet:target .tab:nth-child(2) .tab__num,
+.sheet:has(.panel:nth-child(2):target) .tab:nth-child(2) .tab__num,
+.sheet:target .tab:nth-child(3) .tab__num,
+.sheet:has(.panel:nth-child(3):target) .tab:nth-child(3) .tab__num,
+.sheet:target .tab:nth-child(4) .tab__num,
+.sheet:has(.panel:nth-child(4):target) .tab:nth-child(4) .tab__num,
+.sheet:target .tab:nth-child(5) .tab__num,
+.sheet:has(.panel:nth-child(5):target) .tab:nth-child(5) .tab__num,
+.sheet:target .tab:nth-child(6) .tab__num,
+.sheet:has(.panel:nth-child(6):target) .tab:nth-child(6) .tab__num {
+  color: var(--accent);
+}
 
 @keyframes panel-in {
   from {
@@ -682,41 +984,25 @@ a:hover {
   }
 }
 
-.sheet[data-pulau="sumatra"]:has(#k-sumatra-1:checked) .panel[data-sel="sumatra-1"],
-.sheet[data-pulau="sumatra"]:has(#k-sumatra-2:checked) .panel[data-sel="sumatra-2"],
-.sheet[data-pulau="sumatra"]:has(#k-sumatra-3:checked) .panel[data-sel="sumatra-3"],
-.sheet[data-pulau="sumatra"]:has(#k-sumatra-4:checked) .panel[data-sel="sumatra-4"],
-.sheet[data-pulau="sumatra"]:has(#k-sumatra-5:checked) .panel[data-sel="sumatra-5"],
-.sheet[data-pulau="sumatra"]:has(#k-sumatra-6:checked) .panel[data-sel="sumatra-6"],
-.sheet[data-pulau="java"]:has(#k-java-1:checked) .panel[data-sel="java-1"],
-.sheet[data-pulau="java"]:has(#k-java-2:checked) .panel[data-sel="java-2"],
-.sheet[data-pulau="java"]:has(#k-java-3:checked) .panel[data-sel="java-3"],
-.sheet[data-pulau="java"]:has(#k-java-4:checked) .panel[data-sel="java-4"],
-.sheet[data-pulau="java"]:has(#k-java-5:checked) .panel[data-sel="java-5"],
-.sheet[data-pulau="java"]:has(#k-java-6:checked) .panel[data-sel="java-6"],
-.sheet[data-pulau="kalimantan"]:has(#k-kalimantan-1:checked) .panel[data-sel="kalimantan-1"],
-.sheet[data-pulau="kalimantan"]:has(#k-kalimantan-2:checked) .panel[data-sel="kalimantan-2"],
-.sheet[data-pulau="kalimantan"]:has(#k-kalimantan-3:checked) .panel[data-sel="kalimantan-3"],
-.sheet[data-pulau="kalimantan"]:has(#k-kalimantan-4:checked) .panel[data-sel="kalimantan-4"],
-.sheet[data-pulau="kalimantan"]:has(#k-kalimantan-5:checked) .panel[data-sel="kalimantan-5"],
-.sheet[data-pulau="kalimantan"]:has(#k-kalimantan-6:checked) .panel[data-sel="kalimantan-6"],
-.sheet[data-pulau="sulawesi"]:has(#k-sulawesi-1:checked) .panel[data-sel="sulawesi-1"],
-.sheet[data-pulau="sulawesi"]:has(#k-sulawesi-2:checked) .panel[data-sel="sulawesi-2"],
-.sheet[data-pulau="sulawesi"]:has(#k-sulawesi-3:checked) .panel[data-sel="sulawesi-3"],
-.sheet[data-pulau="sulawesi"]:has(#k-sulawesi-4:checked) .panel[data-sel="sulawesi-4"],
-.sheet[data-pulau="sulawesi"]:has(#k-sulawesi-5:checked) .panel[data-sel="sulawesi-5"],
-.sheet[data-pulau="sulawesi"]:has(#k-sulawesi-6:checked) .panel[data-sel="sulawesi-6"],
-.sheet[data-pulau="papua"]:has(#k-papua-1:checked) .panel[data-sel="papua-1"],
-.sheet[data-pulau="papua"]:has(#k-papua-2:checked) .panel[data-sel="papua-2"],
-.sheet[data-pulau="papua"]:has(#k-papua-3:checked) .panel[data-sel="papua-3"],
-.sheet[data-pulau="papua"]:has(#k-papua-4:checked) .panel[data-sel="papua-4"],
-.sheet[data-pulau="papua"]:has(#k-papua-5:checked) .panel[data-sel="papua-5"],
-.sheet[data-pulau="papua"]:has(#k-papua-6:checked) .panel[data-sel="papua-6"] {
-  display: block;
-  animation: panel-in var(--t-mid) var(--ease) both;
+@keyframes map-in {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-/* 6. UTILITIES ----------------------------------------------------------- */
+/* Peta masuk dengan satu geseran kecil, bukan dekorasi. */
+@media (prefers-reduced-motion: no-preference) {
+  .mapview {
+    animation: map-in var(--t-slow) var(--ease) both;
+  }
+}
+
+/* 7. UTILITIES ----------------------------------------------------------- */
 
 .sr-only {
   position: absolute;
@@ -728,17 +1014,12 @@ a:hover {
   white-space: nowrap;
 }
 
-/* 7. MEDIA QUERY --------------------------------------------------------- */
+/* 8. MEDIA QUERY --------------------------------------------------------- */
 
 @media (min-width: 48em) {
-  .stage {
-    block-size: 62vh;
-    block-size: 62svh;
-  }
-
-  .island {
-    min-inline-size: 200px;
-    padding: var(--s-4) var(--s-5);
+  .plate {
+    min-block-size: 66vh;
+    min-block-size: 66svh;
   }
 
   .sheet__body {
@@ -749,6 +1030,14 @@ a:hover {
     gap: var(--s-7);
   }
 
+  .provindex__list {
+    gap: var(--s-3);
+  }
+
+  .provindex__link {
+    min-block-size: 40px;
+  }
+
   .foot__grid {
     grid-template-columns: 1.4fr 1fr;
     column-gap: var(--s-8);
@@ -756,84 +1045,37 @@ a:hover {
 }
 
 @media (min-width: 64em) {
-  .explorer {
+  .dossier {
     padding-block-end: var(--s-11);
   }
 
-  .explorer__grid {
-    grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
-    column-gap: clamp(var(--s-7), 4vw, var(--s-8));
-    align-items: start;
+  .plate {
+    min-block-size: 72vh;
+    min-block-size: 72svh;
   }
 
-  /* Rel island tetap menempel di kiri desktop, tidak lagi bergulir. */
-  .rail {
-    position: sticky;
-    inset-block-start: calc(var(--topbar-h) + var(--s-5));
-    flex-direction: column;
-    margin-inline: 0;
-    padding: 0;
-    background: none;
-    overflow: visible;
-  }
-
-  .island {
-    min-inline-size: 0;
-  }
-
-  /* Pangkok foto menempel di layar, konten berjalan di atasnya. */
-  .stagewrap {
-    display: grid;
-    padding-block-end: 45svh;
-  }
-
-  .stage,
-  .sheet {
-    grid-area: 1 / 1;
-  }
-
-  .stage {
-    block-size: 100vh;
-    block-size: 100svh;
-  }
-
-  .sheet {
-    padding-block-start: 32svh;
-  }
-
-  /* Nama pulau duduk di atas foto, isi duduk di permukaan solid. */
-  .sheet__head {
-    position: absolute;
-    inset-block-start: 34svh;
-    inset-inline-start: 0;
-    inline-size: min(42%, 26rem);
-    margin-block-start: 0;
+  .plate__inner {
+    padding-block: var(--s-9);
   }
 
   .sheet__body {
-    inline-size: min(50rem, 54%);
+    inline-size: min(60rem, 78%);
     margin-inline-start: auto;
-    margin-block-start: 18svh;
   }
 }
 
 @media (min-width: 80em) {
-  .sheet__head {
-    inline-size: min(38%, 30rem);
-  }
-
   .sheet__body {
-    inline-size: min(54rem, 52%);
+    inline-size: min(64rem, 72%);
   }
 }
 
-/* Gerak tetap ada, tapi struktural, bukan dekoratif. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
+    animation-iteration-count: 1ms !important;
     transition-duration: 1ms !important;
     scroll-behavior: auto !important;
   }
